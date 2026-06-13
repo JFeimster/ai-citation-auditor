@@ -1,0 +1,67 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Example Public Lookup Action",
+    "version": "1.0.0",
+    "description": "Template no-auth action for a public lookup endpoint."
+  },
+  "servers": [
+    {
+      "url": "https://public-lookup.invalid"
+    }
+  ],
+  "paths": {
+    "/lookup": {
+      "get": {
+        "operationId": "publicLookup",
+        "summary": "Public lookup",
+        "description": "Performs a public read-only lookup for a query string.",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Lookup query."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lookup result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "query",
+                    "summary",
+                    "source_url",
+                    "updated_at"
+                  ],
+                  "properties": {
+                    "query": {
+                      "type": "string"
+                    },
+                    "summary": {
+                      "type": "string"
+                    },
+                    "source_url": {
+                      "type": "string",
+                      "format": "uri"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

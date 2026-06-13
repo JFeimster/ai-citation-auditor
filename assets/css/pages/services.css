@@ -1,0 +1,16 @@
+/* Load on offer and service pages only. Keep this file thin and scoped. */
+
+.service-offer-grid { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.service-offer-card { display: grid; gap: 0.75rem; padding: 1.25rem; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--surface); box-shadow: var(--shadow); }
+.service-deliverables,
+.service-fit-list,
+.service-boundary-list,
+.service-process { margin: 0; padding-left: 1.2rem; display: grid; gap: 0.55rem; }
+.service-process { counter-reset: step; list-style: none; padding-left: 0; }
+.service-process li { position: relative; padding-left: 2.2rem; }
+.service-process li::before { counter-increment: step; content: counter(step); position: absolute; left: 0; top: 0.05rem; width: 1.5rem; height: 1.5rem; display: grid; place-items: center; border-radius: 999px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #03101f; font-size: 0.82rem; font-weight: 800; }
+.service-proof-note,
+.service-cta-panel { padding: 1.1rem 1.2rem; border: 1px solid var(--border); border-radius: var(--radius-sm); background: linear-gradient(180deg, rgba(15, 23, 42, 0.94), rgba(11, 18, 34, 0.96)); }
+.service-cta-panel { display: grid; gap: 0.75rem; }
+.service-proof-note { color: var(--muted); }
+@media (max-width: 720px) { .service-offer-grid { grid-template-columns: 1fr; } .service-offer-card, .service-cta-panel, .service-proof-note { padding: 1rem; } }

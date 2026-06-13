@@ -1,0 +1,76 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Example OAuth Action",
+    "version": "1.0.0",
+    "description": "Template OAuth action for a profile endpoint."
+  },
+  "servers": [
+    {
+      "url": "https://oauth-action.invalid"
+    }
+  ],
+  "paths": {
+    "/me": {
+      "get": {
+        "operationId": "getMe",
+        "summary": "Get current user profile",
+        "description": "Returns the current user profile using OAuth authorization code flow.",
+        "responses": {
+          "200": {
+            "description": "Current user profile",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "display_name",
+                    "scopes"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "display_name": {
+                      "type": "string"
+                    },
+                    "scopes": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "read:profile"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "oauth2": {
+        "type": "oauth2",
+        "flows": {
+          "authorizationCode": {
+            "authorizationUrl": "https://oauth-action.invalid/oauth/authorize",
+            "tokenUrl": "https://oauth-action.invalid/oauth/token",
+            "scopes": {
+              "read:profile": "Read profile info"
+            }
+          }
+        }
+      }
+    }
+  }
+}
