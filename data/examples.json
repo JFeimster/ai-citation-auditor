@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Starter audit prompt",
+    "type": "prompt",
+    "content": "Audit this finance page for AI citation readiness. Score it, identify risky claims, recommend better H2s, suggest tables and FAQs, map internal links, and give me a publish checklist."
+  },
+  {
+    "title": "Safer funding rewrite",
+    "type": "rewrite",
+    "content": "Replace guaranteed approval language with fit-based wording that explains the criteria, the audience, and the limits of the offer."
+  },
+  {
+    "title": "Sample audit output",
+    "type": "scorecard",
+    "content": "Citation readiness: 78/100. Strong answer block. Missing comparison table. CTA implies certainty. Add supporting FAQ and internal link to the funding explainer."
+  }
+]

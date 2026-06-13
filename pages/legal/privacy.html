@@ -3,28 +3,102 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AI Citation Auditor</title>
-  <meta name="theme-color" content="#070A12" />
+  <title>Privacy | AI Citation Auditor</title>
+  <meta name="description" content="Privacy notice for AI Citation Auditor. Simple, minimal, and specific about what this site does and does not collect." />
+  <link rel="canonical" href="https://ai-citation-auditor.vercel.app/pages/legal/privacy.html" />
+  <meta property="og:title" content="Privacy | AI Citation Auditor" />
+  <meta property="og:description" content="Minimal privacy notice for a static site and external GPT link." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ai-citation-auditor.vercel.app/pages/legal/privacy.html" />
+  <meta property="og:image" content="https://ai-citation-auditor.vercel.app/assets/img/ui/og-default.svg" />
+  <meta name="theme-color" content="#060913" />
+  <link rel="icon" href="/assets/img/brand/favicon.svg" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
   <script defer src="/assets/js/main.js"></script>
 </head>
-<body>
-  <header class="site-header">
-    <nav class="container">
-      <a href="/">AI Citation Auditor</a>
-      <a href="/pages/services.html" style="margin-left:12px;">Services</a>
-      <a href="/pages/cite-framework.html" style="margin-left:12px;">C.I.T.E. Framework</a>
-      <a href="/pages/blog/index.html" style="margin-left:12px;">Blog</a>
+<body class="page">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="/" aria-label="AI Citation Auditor home"><span class="brand-mark">C</span><span>AI Citation Auditor</span></a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav" data-nav-toggle><span></span><span></span><span></span></button>
+      <div class="nav-links" id="primary-nav" data-nav-menu>
+        <a href="/pages/services.html">Services</a>
+        <a href="/pages/cite-framework.html">C.I.T.E.</a>
+        <a href="/pages/examples.html">Examples</a>
+        <a href="/pages/blog/index.html">Blog</a>
+        <a class="btn btn-secondary btn-small" href="mailto:jasonfeimster@gmail.com">Contact</a>
+        <a class="btn btn-primary btn-small" href="https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor" target="_blank" rel="noopener">Open GPT</a>
+      </div>
     </nav>
   </header>
 
-  <main class="container">
-    <h1>Placeholder page</h1>
-    <p>This page was created by the scaffold script.</p>
+  <main id="main">
+    <section class="hero page-hero">
+      <div class="container page-hero-grid">
+        <div>
+          <p class="eyebrow">Privacy</p>
+          <h1>Minimal by design.</h1>
+          <p class="lead">
+            This is a static site. The GPT itself lives on OpenAI’s platform, and this site only needs enough information
+            to answer direct questions and respond to contact requests.
+          </p>
+        </div>
+        <aside class="panel">
+          <p class="eyebrow">Contact</p>
+          <p><a href="mailto:jasonfeimster@gmail.com">jasonfeimster@gmail.com</a></p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container content-grid">
+        <article class="card">
+          <h2>What we collect</h2>
+          <ul>
+            <li>If you email us, we receive the information you send.</li>
+            <li>If analytics are added later, they should be disclosed here.</li>
+            <li>Prompts you send to the GPT are handled inside OpenAI’s service, not this site.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h2>What we do not collect</h2>
+          <ul>
+            <li>No account creation on this site.</li>
+            <li>No payment collection on this site.</li>
+            <li>No local form storage unless a future feature says otherwise.</li>
+            <li>No attempt to collect finance or identity data from visitors.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="panel">
+          <p class="eyebrow">Data use</p>
+          <p>
+            If you contact us, we use the message only to respond. If we add analytics or other third-party tools later,
+            this page should be updated to describe the tool, the purpose, and any relevant opt-out options.
+          </p>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="container" style="padding:24px 0; opacity:.8;">
-    <a href="/pages/legal/disclaimer.html">Disclaimer</a>
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="/"><span class="brand-mark">C</span><span>AI Citation Auditor</span></a>
+        <p class="footer-copy">Educational only. No legal, tax, underwriting, lending, or financial advice. No guarantees.</p>
+      </div>
+      <div class="footer-links">
+        <a href="/pages/legal/disclaimer.html">Disclaimer</a>
+        <a href="/pages/services.html">Services</a>
+        <a href="mailto:jasonfeimster@gmail.com">jasonfeimster@gmail.com</a>
+      </div>
+    </div>
   </footer>
 </body>
 </html>

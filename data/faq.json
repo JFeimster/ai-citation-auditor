@@ -1,0 +1,22 @@
+[
+  {
+    "question": "Does AI Citation Auditor guarantee rankings or citations?",
+    "answer": "No. It helps improve citation readiness, structure, clarity, and trust signals. It does not guarantee rankings, citations, traffic, approvals, credit outcomes, or financial results."
+  },
+  {
+    "question": "What kind of content should I audit first?",
+    "answer": "Start with finance pages that influence trust or conversions: funding explainers, credit pages, fintech landing pages, affiliate content, calculators, and high-value blog posts."
+  },
+  {
+    "question": "Can it replace legal or compliance review?",
+    "answer": "No. It can flag risky wording and structural gaps, but it is not legal, tax, underwriting, lending, or financial advice."
+  },
+  {
+    "question": "What input works best?",
+    "answer": "Paste a draft article, landing page copy, outline, or extracted page text. You can also ask for a section-by-section audit or a rewrite pass."
+  },
+  {
+    "question": "What should the final output include?",
+    "answer": "A scorecard, answer-block fixes, risky claim rewrites, H2 and FAQ improvements, table suggestions, internal link ideas, and a publish checklist."
+  }
+]

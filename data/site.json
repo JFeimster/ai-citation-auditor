@@ -1,7 +1,8 @@
 {
   "siteName": "AI Citation Auditor",
+  "siteUrl": "https://ai-citation-auditor.vercel.app",
   "primaryGptUrl": "https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor",
   "themeColor": "#070A12",
-  "ogImage": "/assets/img/ui/og-default.png",
+  "ogImage": "/assets/img/ui/og-default.svg",
   "contactEmail": "jasonfeimster@gmail.com"
 }

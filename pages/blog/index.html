@@ -3,28 +3,124 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AI Citation Auditor</title>
-  <meta name="theme-color" content="#070A12" />
+  <title>Blog | AI Citation Auditor</title>
+  <meta name="description" content="Read practical notes on citation readiness, risky claims, and finance-content structure for AI answer engines." />
+  <link rel="canonical" href="https://ai-citation-auditor.vercel.app/pages/blog/index.html" />
+  <meta property="og:title" content="Blog | AI Citation Auditor" />
+  <meta property="og:description" content="Practical finance-content notes on structure, claim safety, and AI citation readiness." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ai-citation-auditor.vercel.app/pages/blog/index.html" />
+  <meta property="og:image" content="https://ai-citation-auditor.vercel.app/assets/img/ui/og-default.svg" />
+  <meta name="theme-color" content="#060913" />
+  <link rel="icon" href="/assets/img/brand/favicon.svg" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
   <script defer src="/assets/js/main.js"></script>
 </head>
-<body>
-  <header class="site-header">
-    <nav class="container">
-      <a href="/">AI Citation Auditor</a>
-      <a href="/pages/services.html" style="margin-left:12px;">Services</a>
-      <a href="/pages/cite-framework.html" style="margin-left:12px;">C.I.T.E. Framework</a>
-      <a href="/pages/blog/index.html" style="margin-left:12px;">Blog</a>
+<body class="page">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="/" aria-label="AI Citation Auditor home"><span class="brand-mark">C</span><span>AI Citation Auditor</span></a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav" data-nav-toggle><span></span><span></span><span></span></button>
+      <div class="nav-links" id="primary-nav" data-nav-menu>
+        <a href="/pages/services.html">Services</a>
+        <a href="/pages/cite-framework.html">C.I.T.E.</a>
+        <a href="/pages/examples.html">Examples</a>
+        <a href="/pages/blog/index.html">Blog</a>
+        <a class="btn btn-secondary btn-small" href="mailto:jasonfeimster@gmail.com">Contact</a>
+        <a class="btn btn-primary btn-small" href="https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor" target="_blank" rel="noopener">Open GPT</a>
+      </div>
     </nav>
   </header>
 
-  <main class="container">
-    <h1>Placeholder page</h1>
-    <p>This page was created by the scaffold script.</p>
+  <main id="main">
+    <section class="hero page-hero">
+      <div class="container page-hero-grid">
+        <div>
+          <p class="eyebrow">Blog</p>
+          <h1>Notes for finance pages that need to survive AI summaries.</h1>
+          <p class="lead">
+            Two short posts, no fluff. One explains citation readiness. The other shows how to clean up risky funding claims
+            before they become the loudest thing on the page.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor" target="_blank" rel="noopener">Open the GPT</a>
+            <a class="btn btn-secondary" href="/pages/finance-content-checklist.html">Use the checklist</a>
+          </div>
+        </div>
+        <aside class="panel">
+          <p class="eyebrow">Read next</p>
+          <div class="list-stack">
+            <a href="/pages/blog/2026/ai-citation-readiness-for-finance.html">AI citation readiness for finance</a>
+            <a href="/pages/blog/2026/risky-funding-claims-checklist.html">Risky funding claims checklist</a>
+            <a href="/pages/risk-claims.html">Risk claims page</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container blog-grid">
+        <article class="post-card">
+          <div class="post-meta">
+            <span class="pill">2026</span>
+            <span>Article</span>
+          </div>
+          <h2><a href="/pages/blog/2026/ai-citation-readiness-for-finance.html">AI citation readiness for finance: what actually matters?</a></h2>
+          <p>Find the signals that help a finance page get understood without turning into vague SEO glue.</p>
+          <div class="footer-links">
+            <a href="/pages/services.html">Services</a>
+            <a href="/pages/cite-framework.html">C.I.T.E.</a>
+          </div>
+        </article>
+
+        <article class="post-card">
+          <div class="post-meta">
+            <span class="pill">2026</span>
+            <span>Checklist</span>
+          </div>
+          <h2><a href="/pages/blog/2026/risky-funding-claims-checklist.html">Risky funding claims checklist: how to rewrite the stuff AI and compliance hate</a></h2>
+          <p>A fast review of the claim patterns most likely to make finance content sound better than it is.</p>
+          <div class="footer-links">
+            <a href="/pages/finance-content-checklist.html">Checklist</a>
+            <a href="/pages/risk-claims.html">Risk claims</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container content-grid">
+        <div>
+          <p class="eyebrow">Why this exists</p>
+          <h2>Because the page can be useful and still be impossible to extract.</h2>
+          <p class="section-lede">
+            The posts here are written to be easy to read, easy to scan, and easy to rewrite. That matters when the next reader is a human, an AI system, or both.
+          </p>
+        </div>
+        <div class="card-grid">
+          <article class="card"><h3>Structure</h3><p>Question-style headings, tables, and short paragraphs.</p></article>
+          <article class="card"><h3>Safety</h3><p>Finance claims written with boundaries and limits.</p></article>
+          <article class="card"><h3>Action</h3><p>Each post points to the next useful page.</p></article>
+          <article class="card"><h3>Utility</h3><p>No filler, no fake certainty, no content fog machine.</p></article>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="container" style="padding:24px 0; opacity:.8;">
-    <a href="/pages/legal/disclaimer.html">Disclaimer</a>
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="/"><span class="brand-mark">C</span><span>AI Citation Auditor</span></a>
+        <p class="footer-copy">Educational only. No legal, tax, underwriting, lending, or financial advice. No guarantees.</p>
+      </div>
+      <div class="footer-links">
+        <a href="/pages/legal/disclaimer.html">Disclaimer</a>
+        <a href="/pages/legal/privacy.html">Privacy</a>
+        <a href="mailto:jasonfeimster@gmail.com">jasonfeimster@gmail.com</a>
+      </div>
+    </div>
   </footer>
 </body>
 </html>

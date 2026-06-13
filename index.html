@@ -1,70 +1,70 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AI Citation Auditor — Finance Content Audits for AI Answer Engines</title>
-  <meta name="description" content="Audit finance content for AI citation readiness, answer clarity, extraction structure, schema fit, trust signals, internal links, and risky claims before publishing." />
+  <title>AI Citation Auditor | Finance Content Audits for AI Answer Engines</title>
+  <meta name="description" content="Audit finance content for AI citation readiness, answer clarity, extraction structure, trust signals, and risky claims before you publish." />
+  <link rel="canonical" href="https://ai-citation-auditor.vercel.app/" />
   <meta property="og:title" content="AI Citation Auditor" />
-  <meta property="og:description" content="Finance-content audits built for answer clarity, trust signals, schema fit, and safer AI search visibility." />
+  <meta property="og:description" content="A finance-content audit GPT for answer clarity, trust signals, safer wording, and citation readiness." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://dummyimage.com/1200x630/070a12/f8fafc&text=AI+Citation+Auditor" />
-  <meta name="theme-color" content="#070A12" />
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="script.js"></script>
-
-  <!-- Replace with your preferred analytics script if needed. -->
+  <meta property="og:url" content="https://ai-citation-auditor.vercel.app/" />
+  <meta property="og:image" content="https://ai-citation-auditor.vercel.app/assets/img/ui/og-default.svg" />
+  <meta name="theme-color" content="#060913" />
+  <link rel="icon" href="/assets/img/brand/favicon.svg" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <script defer src="/assets/js/main.js"></script>
 </head>
-<body>
+<body class="page">
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header" data-header>
-    <nav class="nav container" aria-label="Main navigation">
-      <a class="brand" href="#top" aria-label="AI Citation Auditor home">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="/" aria-label="AI Citation Auditor home">
         <span class="brand-mark">C</span>
         <span>AI Citation Auditor</span>
       </a>
 
-      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-nav-toggle>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav" data-nav-toggle>
         <span></span><span></span><span></span>
       </button>
 
-      <div class="nav-links" data-nav-menu>
-        <a href="#built-for">Built for</a>
-        <a href="#audit">Audit</a>
-        <a href="#framework">Framework</a>
-        <a href="#faq">FAQ</a>
-        <a class="btn btn-small" href="https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor" target="_blank" rel="noopener">Try the GPT</a>
+      <div class="nav-links" id="primary-nav" data-nav-menu>
+        <a href="/pages/services.html">Services</a>
+        <a href="/pages/cite-framework.html">C.I.T.E.</a>
+        <a href="/pages/examples.html">Examples</a>
+        <a href="/pages/blog/index.html">Blog</a>
+        <a class="btn btn-secondary btn-small" href="mailto:jasonfeimster@gmail.com">Contact</a>
+        <a class="btn btn-primary btn-small" href="https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor" target="_blank" rel="noopener">
+          Open GPT
+        </a>
       </div>
     </nav>
   </header>
 
   <main id="main">
-    <section class="hero section" id="top">
+    <section class="hero">
       <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">Finance content audit GPT · Built for AI answer readiness</p>
-          <h1>Audit finance content before AI engines ignore it — or misread it.</h1>
-          <p class="hero-subhead">
-            AI Citation Auditor reviews funding, credit, fintech, lending, and business-finance content for answer clarity,
-            extraction structure, trust signals, schema fit, internal links, and risky claims before you publish.
+        <div>
+          <p class="eyebrow">Finance content audit GPT</p>
+          <h1>Audit finance content before AI answers flatten it into mush.</h1>
+          <p class="lead">
+            AI Citation Auditor reviews funding, credit, fintech, lending, and business-finance pages for direct answers,
+            structure, trust signals, safer wording, internal links, and citation readiness before you publish.
           </p>
-
-          <div class="hero-actions" aria-label="Primary actions">
+          <div class="hero-actions">
             <a class="btn btn-primary" href="https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor" target="_blank" rel="noopener">
-              Try the AI Citation Auditor
+              Open the GPT
             </a>
-            <a class="btn btn-secondary" href="#audit">See what it checks</a>
+            <a class="btn btn-secondary" href="#what-it-does">See the audit flow</a>
           </div>
-
-          <p class="microcopy">
-            Free GPT access. ChatGPT account required. No ranking, citation, approval, credit, or financial-outcome guarantees.
-          </p>
+          <p class="note">Educational only. No legal, tax, underwriting, lending, or financial advice. No guarantees.</p>
         </div>
 
-        <div class="hero-panel" aria-label="Example audit scorecard preview">
+        <aside class="hero-panel panel" aria-label="Sample audit preview">
           <div class="panel-top">
-            <span class="status-dot"></span>
+            <div class="status-dot" aria-hidden="true"></div>
             <span>Audit preview</span>
           </div>
           <div class="score-card">
@@ -75,21 +75,21 @@
             <div class="score-ring" aria-hidden="true">78</div>
           </div>
           <div class="checks">
-            <div class="check good"><span></span> Strong answer target in intro</div>
+            <div class="check good"><span></span> Strong answer target in the intro</div>
             <div class="check warn"><span></span> Missing comparison table</div>
-            <div class="check warn"><span></span> CTA implies funding certainty</div>
+            <div class="check bad"><span></span> CTA implies funding certainty</div>
             <div class="check good"><span></span> Schema opportunity identified</div>
           </div>
-          <div class="panel-note">
-            Suggested fix: add a concise answer block, rewrite risky approval language, add eligibility context,
+          <div class="note">
+            Add a concise answer block, rewrite the risky approval language, include eligibility context,
             and link to a supporting funding explainer.
           </div>
-        </div>
+        </aside>
       </div>
     </section>
 
     <section class="trust-strip" aria-label="Core audit areas">
-      <div class="container strip-grid">
+      <div class="container trust-grid">
         <span>Answer clarity</span>
         <span>Extraction structure</span>
         <span>Finance-safe wording</span>
@@ -98,22 +98,85 @@
       </div>
     </section>
 
-    <section class="section" id="built-for">
-      <div class="container section-grid">
+    <section class="section" id="what-it-does">
+      <div class="container content-grid">
         <div>
-          <p class="eyebrow">Built for operators</p>
-          <h2>For finance teams tired of generic SEO sludge.</h2>
+          <p class="eyebrow">What it does</p>
+          <h2>It turns vague finance content into a page AI can actually parse.</h2>
           <p class="section-lede">
-            Most content audits still grade pages like search results are only ten blue links.
-            Your finance content now has to be understandable, extractable, trustworthy, and careful enough
-            for AI answer engines to summarize without turning your claims into a compliance mess.
+            Paste a draft, URL text, outline, or page copy. The GPT audits the page through a finance-specific
+            citation-readiness lens and returns practical fixes you can hand to writers, editors, SEOs, or compliance.
+          </p>
+          <div class="button-row">
+            <a class="btn btn-secondary" href="/pages/services.html">See services page</a>
+            <a class="btn btn-secondary" href="/pages/risk-claims.html">Review risky claims</a>
+          </div>
+        </div>
+
+        <div class="card-grid">
+          <article class="card">
+            <h3>Score the page</h3>
+            <p>Get a citation-readiness scorecard across answer clarity, evidence, structure, schema, links, CTAs, and claim risk.</p>
+          </article>
+          <article class="card">
+            <h3>Fix weak answer blocks</h3>
+            <p>Find missing definitions, direct answers, comparison sections, tables, FAQs, and summary blocks.</p>
+          </article>
+          <article class="card">
+            <h3>Rewrite risky claims</h3>
+            <p>Replace aggressive funding, credit, approval, and outcome language with safer, clearer wording.</p>
+          </article>
+          <article class="card">
+            <h3>Tighten extraction structure</h3>
+            <p>Improve H2s, lists, tables, and section flow so machines and humans can extract the right answer.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how-it-works">
+      <div class="container content-grid">
+        <div>
+          <p class="eyebrow">How it works</p>
+          <h2>The C.I.T.E. framework keeps the audit from drifting into vibes.</h2>
+          <p class="section-lede">
+            C.I.T.E. stands for Clarity, Information structure, Trust signals, and Entity / ecosystem fit.
+            It is built for finance content that needs to be understandable, extractable, and careful enough to survive AI summaries.
           </p>
         </div>
 
-        <div class="bento-grid">
+        <div class="timeline">
+          <div class="timeline-item">
+            <strong>Clarity</strong>
+            <span>Can an answer engine quickly understand the page’s core answer?</span>
+          </div>
+          <div class="timeline-item">
+            <strong>Information structure</strong>
+            <span>Are headings, tables, summaries, and lists easy to extract?</span>
+          </div>
+          <div class="timeline-item">
+            <strong>Trust signals</strong>
+            <span>Does the page show enough context, boundaries, and editorial care?</span>
+          </div>
+          <div class="timeline-item">
+            <strong>Entity fit</strong>
+            <span>Do schema, internal links, and CTAs support the right decision path?</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="who-for">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Who it’s for</p>
+          <h2>Built for operators who need useful content, not compliance bait in a blazer.</h2>
+        </div>
+
+        <div class="who-grid">
           <article class="card">
             <h3>Finance brands</h3>
-            <p>Pressure-test explainers, landing pages, guides, and product pages before they go live.</p>
+            <p>Pressure-test explainers, landing pages, and product pages before they go live.</p>
           </article>
           <article class="card">
             <h3>Fintech creators</h3>
@@ -131,164 +194,68 @@
       </div>
     </section>
 
-    <section class="section section-alt" id="audit">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">What it does</p>
-          <h2>Upload the page. Get the audit map.</h2>
-          <p>
-            Paste a draft, URL content, outline, or page copy. The GPT reviews the content through a finance-specific
-            citation-readiness lens and returns practical fixes you can hand to writers, editors, SEOs, or compliance reviewers.
-          </p>
-        </div>
-
-        <div class="feature-grid">
-          <article class="feature-card">
-            <span class="icon">01</span>
-            <h3>Score the page</h3>
-            <p>Get a citation-readiness scorecard across answer clarity, evidence, structure, schema, links, CTAs, and claim risk.</p>
-          </article>
-          <article class="feature-card">
-            <span class="icon">02</span>
-            <h3>Fix weak answer blocks</h3>
-            <p>Identify missing definitions, direct answers, comparison sections, tables, FAQs, and summary blocks.</p>
-          </article>
-          <article class="feature-card">
-            <span class="icon">03</span>
-            <h3>Rewrite risky claims</h3>
-            <p>Replace vague or aggressive funding, credit, approval, and financial-outcome claims with safer, clearer wording.</p>
-          </article>
-          <article class="feature-card">
-            <span class="icon">04</span>
-            <h3>Tighten extraction structure</h3>
-            <p>Improve H2s, scannability, list logic, table opportunities, and page sections so machines and humans can parse them.</p>
-          </article>
-          <article class="feature-card">
-            <span class="icon">05</span>
-            <h3>Map link opportunities</h3>
-            <p>Recommend internal links that add context, reduce ambiguity, and support the user’s next decision.</p>
-          </article>
-          <article class="feature-card">
-            <span class="icon">06</span>
-            <h3>Ship with a checklist</h3>
-            <p>End with a publish checklist covering schema, FAQs, CTAs, evidence, links, and wording risk.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="framework">
-      <div class="container framework-grid">
+    <section class="section">
+      <div class="container rich-grid">
         <div>
-          <p class="eyebrow">The C.I.T.E. framework</p>
-          <h2>Not a vibe check. A finance-specific audit system.</h2>
+          <p class="eyebrow">Starter prompt</p>
+          <h2>Copy the prompt, paste a page, and let it call out the weak spots.</h2>
           <p class="section-lede">
-            AI Citation Auditor is built from a finance-specific C.I.T.E. audit framework covering answer clarity,
-            evidence and context, financial-decision alignment, extraction structure, compliance-safe wording,
-            schema fit, and internal-link strategy.
+            Use this before publishing a new article, refreshing an existing finance page, or preparing a page for AI search.
           </p>
-          <a class="btn btn-primary" href="https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor" target="_blank" rel="noopener">
-            Run your first audit
-          </a>
-        </div>
-
-        <div class="timeline" aria-label="CITE framework steps">
-          <div class="timeline-item">
-            <strong>Clarity</strong>
-            <span>Can an answer engine quickly understand the page’s core answer?</span>
-          </div>
-          <div class="timeline-item">
-            <strong>Information structure</strong>
-            <span>Are headings, tables, FAQs, summaries, and lists easy to extract?</span>
-          </div>
-          <div class="timeline-item">
-            <strong>Trust signals</strong>
-            <span>Does the page show enough context, boundaries, support, and editorial care?</span>
-          </div>
-          <div class="timeline-item">
-            <strong>Entity and ecosystem fit</strong>
-            <span>Do schema, internal links, related pages, and CTAs support the right decision path?</span>
+          <div class="prompt-box">
+            <div class="prompt-label">Starter prompt</div>
+            <p>
+              “Audit this finance page for AI citation readiness. Score it, identify risky claims, recommend better H2s,
+              suggest tables and FAQs, map internal links, and give me a publish checklist.”
+            </p>
+            <button class="copy-btn" type="button" data-copy="Audit this finance page for AI citation readiness. Score it, identify risky claims, recommend better H2s, suggest tables and FAQs, map internal links, and give me a publish checklist.">
+              Copy prompt
+            </button>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section class="section section-alt" id="demo">
-      <div class="container demo-grid">
-        <div>
-          <p class="eyebrow">Demo workflow</p>
-          <h2>No fluff. No guru fog. Just the audit.</h2>
-          <p class="section-lede">
-            Use it before publishing a new article, refreshing an existing finance page, cleaning up affiliate content,
-            or preparing a page for AI search optimization.
-          </p>
+        <div class="card">
+          <p class="eyebrow">Sample output</p>
+          <h3>What a good audit looks like</h3>
+          <div class="table-shell">
+            <table>
+              <thead>
+                <tr>
+                  <th>Signal</th>
+                  <th>Read</th>
+                  <th>Fix</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Intro answer block</td>
+                  <td>Clear</td>
+                  <td>Keep the direct answer in the first 100 words.</td>
+                </tr>
+                <tr>
+                  <td>Comparison table</td>
+                  <td>Missing</td>
+                  <td>Add a table that shows options, tradeoffs, and limits.</td>
+                </tr>
+                <tr>
+                  <td>CTA wording</td>
+                  <td>Risky</td>
+                  <td>Remove certainty claims and use fit-based language.</td>
+                </tr>
+                <tr>
+                  <td>Internal links</td>
+                  <td>Thin</td>
+                  <td>Link to the framework, services, and risk claims pages.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-
-        <div class="prompt-box">
-          <div class="prompt-label">Starter prompt</div>
-          <p>
-            “Audit this business funding article for AI citation readiness. Score it, identify risky claims,
-            recommend improved H2s, suggest tables and FAQs, map internal links, and give me a final publish checklist.”
-          </p>
-          <button class="copy-btn" type="button" data-copy='Audit this business funding article for AI citation readiness. Score it, identify risky claims, recommend improved H2s, suggest tables and FAQs, map internal links, and give me a final publish checklist.'>
-            Copy prompt
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="use-cases">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Use cases</p>
-          <h2>Run it anywhere finance content carries trust risk.</h2>
-        </div>
-
-        <div class="use-case-list">
-          <article>
-            <h3>Business funding articles</h3>
-            <p>Improve definitions, eligibility context, comparison tables, and approval-risk wording.</p>
-          </article>
-          <article>
-            <h3>Business credit pages</h3>
-            <p>Clarify process, timelines, limitations, and claims around credit-building outcomes.</p>
-          </article>
-          <article>
-            <h3>Fintech landing pages</h3>
-            <p>Align CTAs with what the page can honestly support and explain.</p>
-          </article>
-          <article>
-            <h3>Affiliate finance content</h3>
-            <p>Add structure, caution, context, and internal links so the page feels less thin and more useful.</p>
-          </article>
-          <article>
-            <h3>AI search refreshes</h3>
-            <p>Find missing answer blocks, schema opportunities, FAQs, and extraction-friendly sections.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section cta-section" id="access">
-      <div class="container cta-card">
-        <p class="eyebrow">Free access</p>
-        <h2>Before you publish the next finance page, audit the parts AI will actually read.</h2>
-        <p>
-          Open the GPT, paste your content, and get a practical citation-readiness review with structure fixes,
-          safer wording, schema suggestions, and a final publish checklist.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor" target="_blank" rel="noopener">
-            Try the AI Citation Auditor
-          </a>
-          <a class="btn btn-secondary" href="#faq">Read FAQ</a>
-        </div>
-        <p class="microcopy">ChatGPT account required. Designed as a free utility and lead-in for deeper finance content audits.</p>
       </div>
     </section>
 
     <section class="section" id="faq">
-      <div class="container faq-wrap">
+      <div class="container">
         <div class="section-heading">
           <p class="eyebrow">FAQ</p>
           <h2>Sharp answers before you run the audit.</h2>
@@ -301,38 +268,53 @@
           </details>
           <details>
             <summary>Is this only for finance content?</summary>
-            <p>It is strongest for finance, fintech, funding, lending, business credit, ecommerce finance, and related operator content where clarity and claim safety matter.</p>
+            <p>It is strongest for finance, fintech, funding, lending, business credit, and related operator content where clarity and claim safety matter most.</p>
           </details>
           <details>
             <summary>What should I paste into the GPT?</summary>
-            <p>Paste a draft article, landing page, outline, page copy, or extracted URL text. You can also ask it to audit a specific section, CTA, FAQ block, or internal-link plan.</p>
+            <p>Paste a draft article, landing page, outline, or extracted URL text. You can also ask it to audit a specific section, CTA, FAQ block, or internal-link plan.</p>
           </details>
           <details>
             <summary>Can this replace legal or compliance review?</summary>
             <p>No. It can flag wording that may be risky or overconfident, but it is not legal, compliance, tax, lending, credit, or financial advice.</p>
           </details>
-          <details>
-            <summary>What kind of output should I expect?</summary>
-            <p>A scorecard, missing answer blocks, improved H2s, table suggestions, risky claim rewrites, FAQ rewrites, schema recommendations, internal link additions, CTA review, and a publish checklist.</p>
-          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="panel">
+          <p class="eyebrow">Final CTA</p>
+          <h2>Before you publish the next finance page, audit the parts AI will actually read.</h2>
+          <p>
+            Open the GPT, paste your content, and get a practical citation-readiness review with structure fixes,
+            safer wording, schema suggestions, and a final publish checklist.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor" target="_blank" rel="noopener">
+              Try the GPT
+            </a>
+            <a class="btn btn-secondary" href="/pages/blog/index.html">Read the blog</a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <a class="brand" href="#top">
+        <a class="brand" href="/" aria-label="AI Citation Auditor home">
           <span class="brand-mark">C</span>
           <span>AI Citation Auditor</span>
         </a>
-        <p>Finance-content audits for operators who need answers, not another dashboard.</p>
+        <p class="footer-copy">Finance-content audits for operators who need answers, not another dashboard.</p>
       </div>
       <div class="footer-links">
-        <a href="#audit">What it checks</a>
-        <a href="#framework">Framework</a>
-        <a href="#access">Try the GPT</a>
+        <a href="/pages/legal/disclaimer.html">Disclaimer</a>
+        <a href="/pages/legal/privacy.html">Privacy</a>
+        <a href="mailto:jasonfeimster@gmail.com">jasonfeimster@gmail.com</a>
       </div>
     </div>
   </footer>
