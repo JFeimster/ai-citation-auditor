@@ -1,714 +1,139 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Free AI Citation Readiness Audit — AI Citation Auditor</title>
-  <meta name="description" content="Paste a finance article and run a free AI citation readiness audit. Score answer clarity, extraction structure, trust signals, schema fit, internal links, and risky claims before you publish." />
-  <meta property="og:title" content="Free AI Citation Readiness Audit" />
-  <meta property="og:description" content="Paste your finance article. Get a free AI citation readiness audit built for Google AI Overviews, ChatGPT, Gemini, and Perplexity." />
+  <title>Free Audit | AI Citation Auditor</title>
+  <meta name="description" content="Run a free AI citation readiness audit for finance content and surface risky claims, structure gaps, and missing trust signals." />
+  <link rel="canonical" href="https://ai-citation-auditor.vercel.app/pages/audit.html" />
+  <meta property="og:title" content="Free Audit | AI Citation Auditor" />
+  <meta property="og:description" content="A practical finance-content audit page that points you to the GPT and the C.I.T.E. framework." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://dummyimage.com/1200x630/070a12/f8fafc&text=Free+AI+Citation+Audit" />
+  <meta property="og:url" content="https://ai-citation-auditor.vercel.app/pages/audit.html" />
+  <meta property="og:image" content="https://ai-citation-auditor.vercel.app/assets/img/ui/og-default.svg" />
   <meta name="theme-color" content="#070A12" />
-
-  <style>
-    :root {
-      --bg: #070A12;
-      --surface: #101827;
-      --surface-2: #151F32;
-      --text: #F8FAFC;
-      --muted: #94A3B8;
-      --primary: #7C3AED;
-      --secondary: #06B6D4;
-      --hot: #F97316;
-      --success: #22C55E;
-      --border: rgba(148, 163, 184, .18);
-      --shadow: 0 24px 80px rgba(0, 0, 0, .35);
-      --radius: 24px;
-      --radius-sm: 16px;
-      --max: 1140px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(124, 58, 237, .24), transparent 30rem),
-        radial-gradient(circle at top right, rgba(6, 182, 212, .16), transparent 28rem),
-        var(--bg);
-      line-height: 1.6;
-    }
-
-    body.nav-open { overflow: hidden; }
-    a { color: inherit; text-decoration: none; }
-    button, input, textarea { font: inherit; }
-
-    .container { width: min(100% - 32px, var(--max)); margin-inline: auto; }
-
-    .skip-link {
-      position: absolute; left: 16px; top: -80px; z-index: 100;
-      padding: 10px 14px; background: var(--text); color: var(--bg); border-radius: 999px;
-    }
-    .skip-link:focus { top: 16px; }
-
-    /* Header */
-    .site-header {
-      position: sticky; top: 0; z-index: 50;
-      border-bottom: 1px solid transparent;
-      transition: background .2s ease, border-color .2s ease, backdrop-filter .2s ease;
-    }
-    .site-header.is-scrolled {
-      background: rgba(7, 10, 18, .82);
-      border-color: var(--border);
-      backdrop-filter: blur(18px);
-    }
-    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; }
-    .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: -.03em; }
-    .brand-mark {
-      width: 34px; height: 34px; display: inline-grid; place-items: center;
-      border: 1px solid var(--border); border-radius: 12px;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white; box-shadow: 0 10px 36px rgba(124, 58, 237, .45);
-    }
-    .nav-links { display: none; align-items: center; gap: 22px; color: var(--muted); font-size: .95rem; }
-    .nav-links a:hover, .nav-links a:focus-visible { color: var(--text); }
-    .nav-toggle {
-      width: 44px; height: 44px; border: 1px solid var(--border); border-radius: 14px;
-      background: rgba(16, 24, 39, .85); color: var(--text);
-      display: inline-grid; place-content: center; gap: 5px; cursor: pointer;
-    }
-    .nav-toggle span { width: 18px; height: 2px; background: currentColor; border-radius: 999px; }
-    .nav-links.is-open {
-      position: fixed; inset: 76px 16px auto 16px; display: grid; gap: 14px; padding: 18px;
-      background: rgba(16, 24, 39, .98); border: 1px solid var(--border);
-      border-radius: var(--radius-sm); box-shadow: var(--shadow);
-    }
-
-    .section { padding: 80px 0; }
-    .hero { padding: 80px 0 56px; }
-
-    .hero-grid, .section-grid, .footer-grid { display: grid; gap: 36px; }
-
-    .eyebrow {
-      margin: 0 0 14px; color: var(--secondary); font-size: .78rem; font-weight: 800;
-      letter-spacing: .12em; text-transform: uppercase;
-    }
-    h1, h2, h3, p { margin-top: 0; }
-    h1 { max-width: 820px; margin-bottom: 22px; font-size: clamp(2.6rem, 7vw, 4.6rem); line-height: .94; letter-spacing: -.06em; }
-    h2 { margin-bottom: 18px; font-size: clamp(1.9rem, 4.5vw, 3.2rem); line-height: 1; letter-spacing: -.05em; }
-    h3 { margin-bottom: 10px; font-size: 1.08rem; letter-spacing: -.02em; }
-
-    .hero-subhead, .section-lede, .section-heading p, .cta-card p {
-      color: var(--muted); font-size: clamp(1.02rem, 2vw, 1.18rem);
-    }
-    .hero-subhead { max-width: 640px; }
-
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 30px 0 12px; }
-
-    .btn {
-      display: inline-flex; min-height: 48px; align-items: center; justify-content: center;
-      border-radius: 999px; border: 1px solid transparent; padding: 13px 18px; font-weight: 800;
-      transition: transform .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease;
-      cursor: pointer;
-    }
-    .btn:hover, .btn:focus-visible { transform: translateY(-2px); }
-    .btn-primary {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white; box-shadow: 0 18px 44px rgba(124, 58, 237, .32);
-    }
-    .btn-secondary { border-color: var(--border); background: rgba(248, 250, 252, .04); color: var(--text); }
-    .btn-small { min-height: 40px; padding: 9px 14px; background: var(--text); color: var(--bg); }
-    .btn-block { width: 100%; }
-    .microcopy { color: var(--muted); font-size: .92rem; }
-
-    .hero-panel, .card, .feature-card, .audit-box, .cta-card, .sample-card, details {
-      border: 1px solid var(--border);
-      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.025)), rgba(16, 24, 39, .74);
-      border-radius: var(--radius); box-shadow: var(--shadow);
-    }
-
-    /* Audit input box */
-    .audit-box { padding: 22px; overflow: hidden; position: relative; }
-    .audit-box::before {
-      content: ""; position: absolute; inset: -90px -90px auto auto;
-      width: 180px; height: 180px; border-radius: 999px;
-      background: rgba(249, 115, 22, .25); filter: blur(30px);
-    }
-    .audit-box-top { display: flex; align-items: center; gap: 9px; color: var(--muted); margin-bottom: 16px; position: relative; }
-    .status-dot { width: 10px; height: 10px; border-radius: 999px; background: var(--success); box-shadow: 0 0 24px var(--success); }
-    .field-label { display: block; font-weight: 800; font-size: .92rem; margin-bottom: 8px; }
-    .field-row { display: grid; gap: 14px; grid-template-columns: 1fr; margin-bottom: 14px; }
-    input[type="text"], textarea {
-      width: 100%; color: var(--text); background: rgba(7, 10, 18, .55);
-      border: 1px solid var(--border); border-radius: 14px; padding: 12px 14px; resize: vertical;
-    }
-    input[type="text"]:focus, textarea:focus { outline: 2px solid var(--secondary); outline-offset: 1px; }
-    textarea { min-height: 180px; }
-    .audit-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
-    .field-hint { color: var(--muted); font-size: .85rem; margin: 6px 0 0; }
-    .copied-note { color: var(--success); font-size: .85rem; min-height: 1.2em; margin: 8px 0 0; }
-
-    /* Trust strip */
-    .trust-strip { border-block: 1px solid var(--border); background: rgba(16, 24, 39, .48); }
-    .strip-grid { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px; padding: 18px 0; }
-    .strip-grid span {
-      color: var(--muted); font-size: .92rem; padding: 8px 12px;
-      border: 1px solid var(--border); border-radius: 999px; background: rgba(255, 255, 255, .03);
-    }
-
-    .section-alt {
-      background: linear-gradient(180deg, rgba(21, 31, 50, .28), rgba(7, 10, 18, 0)), rgba(255, 255, 255, .015);
-    }
-    .section-heading { max-width: 760px; margin-bottom: 34px; }
-
-    .feature-grid, .bento-grid { display: grid; gap: 16px; }
-    .card, .feature-card { padding: 22px; }
-    .card p, .feature-card p, .site-footer p { color: var(--muted); margin-bottom: 0; }
-    .feature-card { position: relative; overflow: hidden; }
-    .feature-card::after {
-      content: ""; position: absolute; inset: auto 18px 0 18px; height: 1px;
-      background: linear-gradient(90deg, transparent, var(--secondary), transparent); opacity: .55;
-    }
-    .icon { display: inline-flex; margin-bottom: 18px; color: var(--secondary); font-weight: 900; letter-spacing: .08em; }
-
-    /* Sample output */
-    .sample-grid { display: grid; gap: 22px; }
-    .sample-card { padding: 24px; }
-    .score-card {
-      display: flex; align-items: center; justify-content: space-between; gap: 20px;
-      padding: 18px; border-radius: 20px; background: rgba(7, 10, 18, .55); border: 1px solid var(--border); margin-bottom: 18px;
-    }
-    .score-label { display: block; color: var(--muted); font-size: .9rem; }
-    .score-card strong { display: block; font-size: 2rem; line-height: 1.1; }
-    .score-ring {
-      width: 76px; height: 76px; display: grid; place-items: center; border-radius: 50%;
-      background: radial-gradient(circle at center, var(--surface) 58%, transparent 60%),
-        conic-gradient(var(--secondary) 78%, rgba(148, 163, 184, .2) 0);
-      font-weight: 900;
-    }
-    .checks { display: grid; gap: 11px; }
-    .check { display: flex; align-items: flex-start; gap: 10px; color: var(--muted); }
-    .check span { width: 10px; height: 10px; border-radius: 999px; margin-top: 7px; flex: none; }
-    .check.good span { background: var(--success); }
-    .check.warn span { background: var(--hot); }
-    .panel-note {
-      padding: 16px; border-left: 3px solid var(--secondary); background: rgba(6, 182, 212, .08);
-      color: var(--text); border-radius: 14px; margin-top: 18px;
-    }
-    .deliverables { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
-    .deliverables li { display: flex; gap: 10px; align-items: flex-start; color: var(--muted); }
-    .deliverables li::before { content: "✓"; color: var(--secondary); font-weight: 900; }
-
-    /* Service upsell / pricing */
-    .pricing-grid { display: grid; gap: 16px; }
-    .price-card { padding: 24px; display: flex; flex-direction: column; gap: 12px; }
-    .price-card.featured { border-color: rgba(124, 58, 237, .5); box-shadow: 0 24px 80px rgba(124, 58, 237, .2); }
-    .price-tag { font-size: 1.5rem; font-weight: 900; }
-    .price-tag small { display: block; color: var(--muted); font-size: .82rem; font-weight: 600; }
-    .price-card ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; color: var(--muted); font-size: .95rem; }
-    .price-card ul li::before { content: "• "; color: var(--secondary); }
-    .pill { align-self: flex-start; padding: 5px 10px; border-radius: 999px; background: rgba(124, 58, 237, .18); color: #ddd6fe; font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
-
-    /* CTA */
-    .cta-card {
-      padding: clamp(28px, 6vw, 58px); text-align: center;
-      background: radial-gradient(circle at top left, rgba(124, 58, 237, .28), transparent 25rem),
-        radial-gradient(circle at bottom right, rgba(6, 182, 212, .18), transparent 24rem),
-        rgba(16, 24, 39, .78);
-    }
-    .cta-card .hero-actions { justify-content: center; }
-
-    /* FAQ */
-    .faq-wrap { max-width: 880px; }
-    .faq-list { display: grid; gap: 12px; }
-    details { padding: 18px 20px; }
-    summary { cursor: pointer; font-weight: 800; }
-    summary:focus-visible { outline: 2px solid var(--secondary); outline-offset: 4px; }
-    details p { padding-top: 12px; color: var(--muted); margin-bottom: 0; }
-
-    .site-footer { padding: 34px 0; border-top: 1px solid var(--border); }
-    .footer-links { display: flex; flex-wrap: wrap; gap: 16px; color: var(--muted); }
-    .footer-links a:hover { color: var(--text); }
-
-    @media (min-width: 760px) {
-      .nav-toggle { display: none; }
-      .nav-links { display: flex; }
-      .hero-grid { grid-template-columns: minmax(0, 1.05fr) minmax(340px, .95fr); align-items: start; }
-      .section-grid, .footer-grid { grid-template-columns: 1fr 1fr; align-items: start; }
-      .bento-grid, .feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .sample-grid { grid-template-columns: 1fr 1fr; }
-      .pricing-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .footer-links { justify-content: end; }
-      .field-row.two { grid-template-columns: 1fr 1fr; }
-    }
-    @media (min-width: 980px) {
-      .feature-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    }
-  </style>
+  <link rel="icon" href="/assets/img/brand/favicon.svg" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <script defer src="/assets/js/main.js"></script>
 </head>
-<body>
+<body class="page">
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header" data-header>
-    <nav class="nav container" aria-label="Main navigation">
-      <a class="brand" href="#top" aria-label="AI Citation Auditor home">
-        <span class="brand-mark">C</span>
-        <span>AI Citation Auditor</span>
-      </a>
-
-      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-nav-toggle>
-        <span></span><span></span><span></span>
-      </button>
-
-      <div class="nav-links" data-nav-menu>
-        <a href="#problem">Problem</a>
-        <a href="#checks">What it checks</a>
-        <a href="#sample">Sample output</a>
-        <a href="#services">Services</a>
-        <a class="btn btn-small" href="#run">Run the Free Audit</a>
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="/" aria-label="AI Citation Auditor home"><span class="brand-mark">C</span><span>AI Citation Auditor</span></a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav" data-nav-toggle><span></span><span></span><span></span></button>
+      <div class="nav-links" id="primary-nav" data-nav-menu>
+        <a href="/pages/services.html">Services</a>
+        <a href="/pages/audit.html">Audit</a>
+        <a href="/pages/cite-framework.html">C.I.T.E.</a>
+        <a href="/pages/examples.html">Examples</a>
+        <a href="/pages/blog/index.html">Blog</a>
+        <a class="btn btn-secondary btn-small" href="mailto:jasonfeimster@gmail.com">Contact</a>
+        <a class="btn btn-primary btn-small" href="https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor" target="_blank" rel="noopener">Open GPT</a>
       </div>
     </nav>
   </header>
 
   <main id="main">
-    <!-- HERO + RUN THE AUDIT -->
-    <section class="hero section" id="top">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">Free lead-magnet tool · Built for AI answer engines</p>
-          <h1>Run a free AI citation readiness audit on your finance content.</h1>
-          <p class="hero-subhead">
-            Paste a finance article, funding page, or landing page. Get a citation-readiness review built for
-            Google AI Overviews, ChatGPT, Gemini, and Perplexity — answer clarity, extraction structure,
-            trust signals, schema fit, internal links, and risky claims.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#run">Run the Free Audit</a>
-            <a class="btn btn-secondary" href="#sample">See sample output</a>
-          </div>
-
-          <p class="microcopy">
-            Free GPT access. ChatGPT account required. No ranking, citation, approval, credit, or financial-outcome guarantees.
-          </p>
-        </div>
-
-        <!-- The actual paste box -->
-        <div class="audit-box" id="run">
-          <div class="audit-box-top">
-            <span class="status-dot"></span>
-            <span>Free citation readiness audit</span>
-          </div>
-
-          <label class="field-label" for="article">Paste your finance article or page copy</label>
-          <textarea id="article" placeholder="Paste your draft, page copy, outline, or extracted URL text here..."></textarea>
-          <p class="field-hint">Tip: paste the full draft for the most useful audit. Short snippets get a quick review.</p>
-
-          <div class="field-row two" style="margin-top:14px;">
-            <div>
-              <label class="field-label" for="keyword">Primary keyword (optional)</label>
-              <input type="text" id="keyword" placeholder="e.g. business funding readiness" />
-            </div>
-            <div>
-              <label class="field-label" for="audience">Target audience (optional)</label>
-              <input type="text" id="audience" placeholder="e.g. SaaS founders, brokers" />
-            </div>
-          </div>
-
-          <div class="audit-actions">
-            <button class="btn btn-primary btn-block" type="button" id="runAudit">Run the Free Audit</button>
-          </div>
-          <p class="copied-note" id="copiedNote" role="status" aria-live="polite"></p>
-          <p class="field-hint" style="margin-top:6px;">
-            We copy a ready-to-run audit prompt and open the GPT in a new tab. Paste it in to start.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="trust-strip" aria-label="Core audit areas">
-      <div class="container strip-grid">
-        <span>Answer clarity</span>
-        <span>Extraction structure</span>
-        <span>Finance-safe wording</span>
-        <span>Schema fit</span>
-        <span>Internal links</span>
-      </div>
-    </section>
-
-    <!-- PROBLEM -->
-    <section class="section" id="problem">
-      <div class="container section-grid">
+    <section class="hero page-hero">
+      <div class="container page-hero-grid">
         <div>
-          <p class="eyebrow">The problem</p>
-          <h2>Search turned into an answer box with a wallet.</h2>
+          <p class="eyebrow">Free Audit</p>
+          <h1>Run the page through a sharper lens before you publish it.</h1>
+          <p class="lead">
+            This audit page is the front door. The GPT does the actual review, but this page tells you what to check,
+            what to avoid, and where to go next when the page touches finance decisions.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor" target="_blank" rel="noopener">Open the GPT</a>
+            <a class="btn btn-secondary" href="/pages/finance-content-checklist.html">Use the checklist</a>
+          </div>
+        </div>
+        <aside class="panel">
+          <p class="eyebrow">What to audit</p>
+          <ul class="list-stack">
+            <li>Direct answer blocks</li>
+            <li>Risky funding or credit claims</li>
+            <li>Tables, FAQs, and headings</li>
+            <li>Internal links and CTA fit</li>
+          </ul>
+          <p class="note">Educational only. No legal, tax, underwriting, lending, credit, or financial advice. No guarantees.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container content-grid">
+        <div>
+          <p class="eyebrow">How to use it</p>
+          <h2>Paste the page and ask for a practical audit.</h2>
           <p class="section-lede">
-            Google AI Overviews, ChatGPT, Gemini, and Perplexity now answer money questions before the user
-            ever lands on your site. For finance brands, that is not just an SEO problem — it is a trust,
-            lead-flow, authority, and revenue problem.
-          </p>
-          <p class="microcopy" style="margin-top:14px;">
-            Based on the strategy in “AI Search Optimization for Finance Brands: How to Get Cited When Google and ChatGPT Answer First.”
+            The audit should tell you what is clear, what is missing, and what wording needs to be rewritten before the page goes live.
           </p>
         </div>
-
-        <div class="bento-grid">
-          <article class="card">
-            <h3>Your answer is buried</h3>
-            <p>Throat-clearing intros and vague headings make it hard for answer engines to extract a clear answer.</p>
-          </article>
-          <article class="card">
-            <h3>Risky claims sneak in</h3>
-            <p>“Guaranteed approval” and “get funded today” turn finance content into compliance roulette.</p>
-          </article>
-          <article class="card">
-            <h3>No trust trail</h3>
-            <p>Missing disclaimers, dates, and context make pages harder for AI to trust and cite.</p>
-          </article>
-          <article class="card">
-            <h3>Weak structure</h3>
-            <p>No tables, FAQs, or question-style H2s means AI can’t summarize the useful parts.</p>
-          </article>
+        <div class="timeline">
+          <div class="timeline-item"><strong>1. Paste content</strong><span>Use draft copy, page text, or an outline.</span></div>
+          <div class="timeline-item"><strong>2. Read the score</strong><span>Focus on structure, trust, and claim risk.</span></div>
+          <div class="timeline-item"><strong>3. Fix the page</strong><span>Apply the recommended rewrites and link updates.</span></div>
+          <div class="timeline-item"><strong>4. Review again</strong><span>Run the second pass before publish.</span></div>
         </div>
       </div>
     </section>
 
-    <!-- WHAT THE AUDIT CHECKS -->
-    <section class="section section-alt" id="checks">
+    <section class="section section-alt">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow">What the audit checks</p>
-          <h2>The C.I.T.E. method, applied to your page.</h2>
-          <p>
-            A finance-specific citation-readiness review — not a generic SEO grade. Here’s what it pressure-tests
-            before you publish.
-          </p>
+          <p class="eyebrow">What good looks like</p>
+          <h2>Short, specific, and bounded.</h2>
         </div>
-
-        <div class="feature-grid">
-          <article class="feature-card">
-            <span class="icon">01</span>
-            <h3>Answer clarity</h3>
-            <p>Checks for a direct 40–60 word answer block, a plain-English definition, and a named audience near the top.</p>
-          </article>
-          <article class="feature-card">
-            <span class="icon">02</span>
-            <h3>Extraction structure</h3>
-            <p>Reviews question-style H2s, short paragraphs, tables, FAQs, and step-by-step workflows AI can parse.</p>
-          </article>
-          <article class="feature-card">
-            <span class="icon">03</span>
-            <h3>Finance-safe wording</h3>
-            <p>Flags risky funding, credit, approval, and outcome claims and suggests safer educational rewrites.</p>
-          </article>
-          <article class="feature-card">
-            <span class="icon">04</span>
-            <h3>Trust signals</h3>
-            <p>Looks for updated dates, disclaimers, methodology, realistic examples, and source-backed claims.</p>
-          </article>
-          <article class="feature-card">
-            <span class="icon">05</span>
-            <h3>Internal links &amp; schema</h3>
-            <p>Maps pillar/spoke link opportunities and recommends Article, FAQPage, BreadcrumbList, and HowTo schema.</p>
-          </article>
-          <article class="feature-card">
-            <span class="icon">06</span>
-            <h3>CTA alignment</h3>
-            <p>Confirms the call-to-action matches the reader’s next logical step — and ends with a publish checklist.</p>
-          </article>
+        <div class="table-shell">
+          <table>
+            <thead>
+              <tr>
+                <th>Area</th>
+                <th>Good signal</th>
+                <th>Bad signal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Headline</td><td>Names the audience and outcome</td><td>Overpromises results</td></tr>
+              <tr><td>FAQ</td><td>Answers real questions</td><td>Repeats marketing copy</td></tr>
+              <tr><td>CTA</td><td>Matches the next step</td><td>Suggests certainty</td></tr>
+              <tr><td>Disclosure</td><td>States limits clearly</td><td>Hides the boundaries</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
 
-    <!-- SAMPLE OUTPUT -->
-    <section class="section" id="sample">
+    <section class="section">
       <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Sample output</p>
-          <h2>What you get back.</h2>
-          <p>A practical scorecard plus fixes you can hand to writers, editors, SEOs, or compliance reviewers.</p>
-        </div>
-
-        <div class="sample-grid">
-          <div class="sample-card">
-            <div class="score-card">
-              <div>
-                <span class="score-label">Citation readiness</span>
-                <strong>78 / 100</strong>
-              </div>
-              <div class="score-ring" aria-hidden="true">78</div>
-            </div>
-            <div class="checks">
-              <div class="check good"><span></span> Strong answer target in the intro</div>
-              <div class="check warn"><span></span> Missing comparison table for funding options</div>
-              <div class="check warn"><span></span> CTA implies funding certainty — needs rewrite</div>
-              <div class="check good"><span></span> Schema opportunity identified (Article + FAQPage)</div>
-              <div class="check warn"><span></span> Only 2 internal links — add supporting spokes</div>
-            </div>
-            <div class="panel-note">
-              Suggested fix: add a concise answer block, rewrite risky approval language, add eligibility context,
-              and link to a supporting funding explainer.
-            </div>
+        <div class="panel">
+          <p class="eyebrow">Related pages</p>
+          <div class="footer-links">
+            <a href="/pages/services.html">Services</a>
+            <a href="/pages/cite-framework.html">C.I.T.E. framework</a>
+            <a href="/pages/finance-content-checklist.html">Finance content checklist</a>
+            <a href="/pages/risk-claims.html">Risk claims</a>
           </div>
-
-          <div class="sample-card">
-            <h3>Every audit returns:</h3>
-            <ul class="deliverables">
-              <li>Citation readiness scorecard (100-point)</li>
-              <li>Missing answer blocks + suggested copy</li>
-              <li>Better, question-style H2s</li>
-              <li>Suggested tables and comparisons</li>
-              <li>Risky claims with safer rewrites</li>
-              <li>Internal link additions</li>
-              <li>FAQ rewrites built for AI extraction</li>
-              <li>Schema recommendation</li>
-              <li>CTA alignment review</li>
-              <li>Final publish checklist</li>
-            </ul>
-            <div class="hero-actions" style="margin-top:22px;">
-              <a class="btn btn-primary" href="#run">Run the Free Audit</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- GPT LINK CTA -->
-    <section class="section cta-section" id="access">
-      <div class="container cta-card">
-        <p class="eyebrow">Free GPT access</p>
-        <h2>Before you publish, audit the parts AI will actually read.</h2>
-        <p>
-          Open the AI Citation Auditor, paste your content, and get a citation-readiness review with structure fixes,
-          safer wording, schema suggestions, and a final publish checklist.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor" target="_blank" rel="noopener">
-            Open the AI Citation Auditor
-          </a>
-          <a class="btn btn-secondary" href="#run">Paste &amp; run here</a>
-        </div>
-        <p class="microcopy">ChatGPT account required. Designed as a free utility and lead-in for deeper finance content audits.</p>
-      </div>
-    </section>
-
-    <!-- SERVICE UPSELL -->
-    <section class="section section-alt" id="services">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Want it done for you?</p>
-          <h2>Manual finance content audits &amp; refreshes.</h2>
-          <p>The free GPT is the fast lane. When you want a human-led cleanup across a page or a full cluster, start here.</p>
-        </div>
-
-        <div class="pricing-grid">
-          <article class="price-card">
-            <span class="pill">Starter</span>
-            <div class="price-tag">Single-page audit<small>One finance article or landing page</small></div>
-            <ul>
-              <li>Full citation readiness review</li>
-              <li>Risky claim rewrites</li>
-              <li>Answer block + H2 fixes</li>
-              <li>Schema &amp; FAQ recommendations</li>
-            </ul>
-            <a class="btn btn-secondary btn-block" href="mailto:jasonfeimster@gmail.com?subject=Single-Page%20Finance%20Content%20Audit">Request a manual audit</a>
-          </article>
-
-          <article class="price-card featured">
-            <span class="pill">Growth</span>
-            <div class="price-tag">5-page refresh<small>Refresh your highest-value finance pages</small></div>
-            <ul>
-              <li>Everything in Starter, ×5 pages</li>
-              <li>Internal link map across pages</li>
-              <li>Cannibalization check</li>
-              <li>Prioritized publish checklist</li>
-            </ul>
-            <a class="btn btn-primary btn-block" href="mailto:jasonfeimster@gmail.com?subject=5-Page%20Finance%20Content%20Refresh">Start a 5-page refresh</a>
-          </article>
-
-          <article class="price-card">
-            <span class="pill">System</span>
-            <div class="price-tag">Content cluster<small>Hub + spokes + internal link map</small></div>
-            <ul>
-              <li>Pillar &amp; spoke architecture</li>
-              <li>Cluster-wide internal linking</li>
-              <li>Schema strategy across pages</li>
-              <li>AI-search optimization sprint</li>
-            </ul>
-            <a class="btn btn-secondary btn-block" href="mailto:jasonfeimster@gmail.com?subject=Finance%20Content%20Cluster%20Audit">Book an audit call</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="section" id="faq">
-      <div class="container faq-wrap">
-        <div class="section-heading">
-          <p class="eyebrow">FAQ</p>
-          <h2>Sharp answers before you run the audit.</h2>
-        </div>
-
-        <div class="faq-list">
-          <details>
-            <summary>Does this guarantee AI citations or rankings?</summary>
-            <p>No. It improves citation readiness, answer clarity, structure, and trust signals. It does not guarantee rankings, citations, traffic, approvals, credit outcomes, or financial results.</p>
-          </details>
-          <details>
-            <summary>What should I paste in?</summary>
-            <p>Paste a draft article, landing page, outline, page copy, or extracted URL text. You can also ask it to review a specific section, CTA, FAQ block, or internal-link plan.</p>
-          </details>
-          <details>
-            <summary>Is this only for finance content?</summary>
-            <p>It is strongest for finance, fintech, funding, lending, business credit, ecommerce finance, and related operator content where clarity and claim safety matter most.</p>
-          </details>
-          <details>
-            <summary>Can this replace legal or compliance review?</summary>
-            <p>No. It can flag wording that may be risky or overconfident, but it is not legal, compliance, tax, lending, credit, or financial advice.</p>
-          </details>
-          <details>
-            <summary>What does the output look like?</summary>
-            <p>A scorecard, missing answer blocks, improved H2s, table suggestions, risky claim rewrites, FAQ rewrites, schema recommendations, internal link additions, a CTA review, and a publish checklist.</p>
-          </details>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <a class="brand" href="#top">
-          <span class="brand-mark">C</span>
-          <span>AI Citation Auditor</span>
-        </a>
-        <p>Finance-content audits for operators who need answers, not another dashboard.</p>
+        <a class="brand" href="/"><span class="brand-mark">C</span><span>AI Citation Auditor</span></a>
+        <p class="footer-copy">Educational only. No legal, tax, underwriting, lending, or financial advice. No guarantees.</p>
       </div>
       <div class="footer-links">
-        <a href="#checks">What it checks</a>
-        <a href="#sample">Sample output</a>
-        <a href="#services">Services</a>
-        <a href="#run">Run the Free Audit</a>
+        <a href="/pages/legal/disclaimer.html">Disclaimer</a>
+        <a href="/pages/legal/privacy.html">Privacy</a>
+        <a href="mailto:jasonfeimster@gmail.com">jasonfeimster@gmail.com</a>
       </div>
     </div>
   </footer>
-
-  <script>
-    (function () {
-      "use strict";
-
-      var GPT_URL = "https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor";
-
-      document.addEventListener("DOMContentLoaded", function () {
-        initMobileNav();
-        initStickyHeader();
-        initRunAudit();
-      });
-
-      function initMobileNav() {
-        var toggle = document.querySelector("[data-nav-toggle]");
-        var menu = document.querySelector("[data-nav-menu]");
-        if (!toggle || !menu) return;
-
-        toggle.addEventListener("click", function () {
-          var isOpen = menu.classList.toggle("is-open");
-          toggle.setAttribute("aria-expanded", String(isOpen));
-          document.body.classList.toggle("nav-open", isOpen);
-        });
-
-        menu.addEventListener("click", function (e) {
-          if (!e.target.closest("a")) return;
-          menu.classList.remove("is-open");
-          toggle.setAttribute("aria-expanded", "false");
-          document.body.classList.remove("nav-open");
-        });
-
-        document.addEventListener("keydown", function (e) {
-          if (e.key !== "Escape") return;
-          menu.classList.remove("is-open");
-          toggle.setAttribute("aria-expanded", "false");
-          document.body.classList.remove("nav-open");
-        });
-      }
-
-      function initStickyHeader() {
-        var header = document.querySelector("[data-header]");
-        if (!header) return;
-        function update() { header.classList.toggle("is-scrolled", window.scrollY > 12); }
-        update();
-        window.addEventListener("scroll", update, { passive: true });
-      }
-
-      function initRunAudit() {
-        var btn = document.getElementById("runAudit");
-        var note = document.getElementById("copiedNote");
-        if (!btn) return;
-
-        btn.addEventListener("click", async function () {
-          var prompt = buildPrompt();
-          try {
-            await copyText(prompt);
-            setNote(note, "Audit prompt copied. Opening the GPT — paste it in to start.");
-          } catch (err) {
-            fallbackCopy(prompt);
-            setNote(note, "Audit prompt copied. Opening the GPT — paste it in to start.");
-          }
-          window.open(GPT_URL, "_blank", "noopener");
-        });
-      }
-
-      function buildPrompt() {
-        var article = (document.getElementById("article") || {}).value || "";
-        var keyword = (document.getElementById("keyword") || {}).value || "";
-        var audience = (document.getElementById("audience") || {}).value || "";
-
-        var lines = [
-          "Run a Full Citation Readiness Audit on this finance content.",
-          ""
-        ];
-        if (keyword.trim()) lines.push("Primary keyword: " + keyword.trim());
-        if (audience.trim()) lines.push("Target audience: " + audience.trim());
-        if (keyword.trim() || audience.trim()) lines.push("");
-
-        lines.push(
-          "Score it, identify risky claims, recommend improved H2s, suggest tables and FAQs,",
-          "map internal links, recommend schema, review the CTA, and give me a final publish checklist.",
-          "",
-          "Content to audit:",
-          article.trim() ? article.trim() : "[Paste your content here]"
-        );
-        return lines.join("\n");
-      }
-
-      function copyText(text) {
-        if (!navigator.clipboard || !window.isSecureContext) {
-          return Promise.reject(new Error("Clipboard API unavailable"));
-        }
-        return navigator.clipboard.writeText(text);
-      }
-
-      function fallbackCopy(text) {
-        var ta = document.createElement("textarea");
-        ta.value = text;
-        ta.setAttribute("readonly", "");
-        ta.style.position = "fixed";
-        ta.style.top = "-9999px";
-        document.body.appendChild(ta);
-        ta.select();
-        try { document.execCommand("copy"); } catch (e) {}
-        document.body.removeChild(ta);
-      }
-
-      function setNote(el, msg) {
-        if (!el) return;
-        el.textContent = msg;
-        window.setTimeout(function () { el.textContent = ""; }, 4000);
-      }
-    })();
-  </script>
 </body>
 </html>

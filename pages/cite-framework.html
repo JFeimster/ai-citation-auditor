@@ -1,753 +1,192 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The C.I.T.E. Framework — AI Citation Auditor</title>
-  <meta name="description" content="The C.I.T.E. Framework is a finance-specific method for making content answer-engine ready: Clarify the answer, Include evidence and context, Tie it to a financial decision, and Engineer for extraction." />
-  <meta property="og:title" content="The C.I.T.E. Framework for Finance Content" />
-  <meta property="og:description" content="A finance-specific framework for AI citation readiness: clear answers, evidence, financial-decision relevance, and extraction-ready structure." />
+  <title>C.I.T.E. Framework | AI Citation Auditor</title>
+  <meta name="description" content="Learn the C.I.T.E. framework behind AI Citation Auditor: Clarity, Information structure, Trust signals, and Entity fit." />
+  <link rel="canonical" href="https://ai-citation-auditor.vercel.app/pages/cite-framework.html" />
+  <meta property="og:title" content="C.I.T.E. Framework | AI Citation Auditor" />
+  <meta property="og:description" content="A practical finance-content framework for answer clarity, structure, trust, and extraction." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://dummyimage.com/1200x630/070a12/f8fafc&text=The+C.I.T.E.+Framework" />
-  <meta name="theme-color" content="#070A12" />
-
-  <style>
-    :root {
-      --bg: #070A12;
-      --surface: #101827;
-      --surface-2: #151F32;
-      --text: #F8FAFC;
-      --muted: #94A3B8;
-      --primary: #7C3AED;
-      --secondary: #06B6D4;
-      --hot: #F97316;
-      --success: #22C55E;
-      --border: rgba(148, 163, 184, .18);
-      --shadow: 0 24px 80px rgba(0, 0, 0, .35);
-      --radius: 24px;
-      --radius-sm: 16px;
-      --max: 1140px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(124, 58, 237, .24), transparent 30rem),
-        radial-gradient(circle at top right, rgba(6, 182, 212, .16), transparent 28rem),
-        var(--bg);
-      line-height: 1.6;
-    }
-
-    body.nav-open { overflow: hidden; }
-    a { color: inherit; text-decoration: none; }
-    button, input, textarea { font: inherit; }
-
-    .container { width: min(100% - 32px, var(--max)); margin-inline: auto; }
-
-    .skip-link {
-      position: absolute; left: 16px; top: -80px; z-index: 100;
-      padding: 10px 14px; background: var(--text); color: var(--bg); border-radius: 999px;
-    }
-    .skip-link:focus { top: 16px; }
-
-    /* Header */
-    .site-header {
-      position: sticky; top: 0; z-index: 50;
-      border-bottom: 1px solid transparent;
-      transition: background .2s ease, border-color .2s ease, backdrop-filter .2s ease;
-    }
-    .site-header.is-scrolled {
-      background: rgba(7, 10, 18, .82);
-      border-color: var(--border);
-      backdrop-filter: blur(18px);
-    }
-    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; }
-    .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: -.03em; }
-    .brand-mark {
-      width: 34px; height: 34px; display: inline-grid; place-items: center;
-      border: 1px solid var(--border); border-radius: 12px;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white; box-shadow: 0 10px 36px rgba(124, 58, 237, .45);
-    }
-    .nav-links { display: none; align-items: center; gap: 22px; color: var(--muted); font-size: .95rem; }
-    .nav-links a:hover, .nav-links a:focus-visible { color: var(--text); }
-    .nav-toggle {
-      width: 44px; height: 44px; border: 1px solid var(--border); border-radius: 14px;
-      background: rgba(16, 24, 39, .85); color: var(--text);
-      display: inline-grid; place-content: center; gap: 5px; cursor: pointer;
-    }
-    .nav-toggle span { width: 18px; height: 2px; background: currentColor; border-radius: 999px; }
-    .nav-links.is-open {
-      position: fixed; inset: 76px 16px auto 16px; display: grid; gap: 14px; padding: 18px;
-      background: rgba(16, 24, 39, .98); border: 1px solid var(--border);
-      border-radius: var(--radius-sm); box-shadow: var(--shadow);
-    }
-
-    .section { padding: 80px 0; }
-    .hero { padding: 84px 0 60px; }
-
-    .hero-grid, .section-grid, .footer-grid { display: grid; gap: 36px; }
-
-    .eyebrow {
-      margin: 0 0 14px; color: var(--secondary); font-size: .78rem; font-weight: 800;
-      letter-spacing: .12em; text-transform: uppercase;
-    }
-    h1, h2, h3, p { margin-top: 0; }
-    h1 { max-width: 860px; margin-bottom: 22px; font-size: clamp(2.6rem, 7vw, 4.8rem); line-height: .94; letter-spacing: -.06em; }
-    h2 { margin-bottom: 18px; font-size: clamp(1.9rem, 4.5vw, 3.2rem); line-height: 1; letter-spacing: -.05em; }
-    h3 { margin-bottom: 10px; font-size: 1.08rem; letter-spacing: -.02em; }
-
-    .hero-subhead, .section-lede, .section-heading p, .cta-card p {
-      color: var(--muted); font-size: clamp(1.02rem, 2vw, 1.18rem);
-    }
-    .hero-subhead { max-width: 680px; }
-
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 30px 0 12px; }
-
-    .btn {
-      display: inline-flex; min-height: 48px; align-items: center; justify-content: center;
-      border-radius: 999px; border: 1px solid transparent; padding: 13px 18px; font-weight: 800;
-      transition: transform .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease;
-      cursor: pointer;
-    }
-    .btn:hover, .btn:focus-visible { transform: translateY(-2px); }
-    .btn-primary {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white; box-shadow: 0 18px 44px rgba(124, 58, 237, .32);
-    }
-    .btn-secondary { border-color: var(--border); background: rgba(248, 250, 252, .04); color: var(--text); }
-    .btn-small { min-height: 40px; padding: 9px 14px; background: var(--text); color: var(--bg); }
-    .btn-block { width: 100%; }
-    .microcopy { color: var(--muted); font-size: .92rem; }
-
-    .hero-panel, .card, .pillar-card, .cta-card, .quote-card, details {
-      border: 1px solid var(--border);
-      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.025)), rgba(16, 24, 39, .74);
-      border-radius: var(--radius); box-shadow: var(--shadow);
-    }
-
-    /* Hero CITE acronym panel */
-    .hero-panel { padding: 24px; overflow: hidden; position: relative; }
-    .hero-panel::before {
-      content: ""; position: absolute; inset: -90px -90px auto auto;
-      width: 180px; height: 180px; border-radius: 999px;
-      background: rgba(249, 115, 22, .25); filter: blur(30px);
-    }
-    .cite-stack { display: grid; gap: 12px; position: relative; }
-    .cite-row {
-      display: flex; align-items: center; gap: 14px; padding: 14px;
-      border: 1px solid var(--border); border-radius: 18px; background: rgba(7, 10, 18, .55);
-    }
-    .cite-letter {
-      width: 42px; height: 42px; flex: none; display: grid; place-items: center;
-      border-radius: 12px; font-weight: 900; font-size: 1.3rem; color: white;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-    }
-    .cite-row strong { display: block; font-size: .98rem; }
-    .cite-row span { color: var(--muted); font-size: .88rem; }
-
-    /* Trust strip */
-    .trust-strip { border-block: 1px solid var(--border); background: rgba(16, 24, 39, .48); }
-    .strip-grid { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px; padding: 18px 0; }
-    .strip-grid span {
-      color: var(--muted); font-size: .92rem; padding: 8px 12px;
-      border: 1px solid var(--border); border-radius: 999px; background: rgba(255, 255, 255, .03);
-    }
-
-    .section-alt {
-      background: linear-gradient(180deg, rgba(21, 31, 50, .28), rgba(7, 10, 18, 0)), rgba(255, 255, 255, .015);
-    }
-    .section-heading { max-width: 760px; margin-bottom: 40px; }
-
-    /* Pillar cards (the 6 sections) */
-    .pillar-list { display: grid; gap: 20px; }
-    .pillar-card { padding: 28px; position: relative; overflow: hidden; scroll-margin-top: 96px; }
-    .pillar-card::after {
-      content: ""; position: absolute; inset: auto 24px 0 24px; height: 1px;
-      background: linear-gradient(90deg, transparent, var(--secondary), transparent); opacity: .5;
-    }
-    .pillar-head { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; flex-wrap: wrap; }
-    .pillar-badge {
-      display: inline-grid; place-items: center; min-width: 44px; height: 44px; padding: 0 10px;
-      border-radius: 12px; font-weight: 900; color: white; font-size: 1.05rem;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-    }
-    .pillar-tag {
-      margin-left: auto; padding: 5px 10px; border-radius: 999px; font-size: .72rem; font-weight: 800;
-      text-transform: uppercase; letter-spacing: .08em; color: #ddd6fe; background: rgba(124, 58, 237, .18);
-    }
-    .pillar-card h3 { font-size: 1.4rem; margin-bottom: 6px; letter-spacing: -.02em; }
-    .pillar-card > p { color: var(--muted); }
-    .pillar-grid { display: grid; gap: 18px; margin-top: 18px; }
-    .pillar-block h4 { margin: 0 0 8px; font-size: .82rem; text-transform: uppercase; letter-spacing: .08em; color: var(--secondary); }
-    .checklist { list-style: none; padding: 0; margin: 0; display: grid; gap: 9px; }
-    .checklist li { display: flex; gap: 10px; align-items: flex-start; color: var(--muted); font-size: .96rem; }
-    .checklist li::before { content: "✓"; color: var(--secondary); font-weight: 900; flex: none; }
-    .ask-line {
-      margin-top: 16px; padding: 14px 16px; border-left: 3px solid var(--secondary);
-      background: rgba(6, 182, 212, .08); border-radius: 14px; color: var(--text); font-size: .96rem;
-    }
-    .ask-line strong { color: var(--secondary); }
-
-    /* Quote / article reference */
-    .quote-card { padding: clamp(24px, 5vw, 40px); }
-    .quote-card blockquote { margin: 0 0 14px; font-size: clamp(1.2rem, 3vw, 1.7rem); line-height: 1.35; letter-spacing: -.02em; }
-    .quote-card cite { color: var(--muted); font-style: normal; font-size: .95rem; }
-
-    /* How-it-works steps */
-    .step-grid { display: grid; gap: 16px; }
-    .card { padding: 24px; }
-    .card p { color: var(--muted); margin-bottom: 0; }
-    .step-num {
-      display: inline-flex; margin-bottom: 14px; color: var(--secondary); font-weight: 900; letter-spacing: .08em;
-    }
-
-    /* CTA */
-    .cta-card {
-      padding: clamp(28px, 6vw, 58px); text-align: center;
-      background: radial-gradient(circle at top left, rgba(124, 58, 237, .28), transparent 25rem),
-        radial-gradient(circle at bottom right, rgba(6, 182, 212, .18), transparent 24rem),
-        rgba(16, 24, 39, .78);
-    }
-    .cta-card .hero-actions { justify-content: center; }
-
-    /* Trust note */
-    .trust-note {
-      border: 1px solid var(--border); border-left: 3px solid var(--hot);
-      background: rgba(249, 115, 22, .07); border-radius: var(--radius-sm);
-      padding: 20px 22px; color: var(--muted); font-size: .95rem;
-    }
-    .trust-note strong { color: var(--text); }
-
-    /* FAQ */
-    .faq-wrap { max-width: 880px; }
-    .faq-list { display: grid; gap: 12px; }
-    details { padding: 18px 20px; }
-    summary { cursor: pointer; font-weight: 800; }
-    summary:focus-visible { outline: 2px solid var(--secondary); outline-offset: 4px; }
-    details p { padding-top: 12px; color: var(--muted); margin-bottom: 0; }
-
-    .site-footer { padding: 34px 0; border-top: 1px solid var(--border); }
-    .footer-links { display: flex; flex-wrap: wrap; gap: 16px; color: var(--muted); }
-    .footer-links a:hover { color: var(--text); }
-
-    @media (min-width: 760px) {
-      .nav-toggle { display: none; }
-      .nav-links { display: flex; }
-      .hero-grid { grid-template-columns: minmax(0, 1.05fr) minmax(340px, .95fr); align-items: start; }
-      .section-grid, .footer-grid { grid-template-columns: 1fr 1fr; align-items: start; }
-      .pillar-grid { grid-template-columns: 1fr 1fr; }
-      .step-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .footer-links { justify-content: end; }
-    }
-  </style>
+  <meta property="og:url" content="https://ai-citation-auditor.vercel.app/pages/cite-framework.html" />
+  <meta property="og:image" content="https://ai-citation-auditor.vercel.app/assets/img/ui/og-default.svg" />
+  <meta name="theme-color" content="#060913" />
+  <link rel="icon" href="/assets/img/brand/favicon.svg" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <script defer src="/assets/js/main.js"></script>
 </head>
-<body>
+<body class="page">
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header" data-header>
-    <nav class="nav container" aria-label="Main navigation">
-      <a class="brand" href="#top" aria-label="AI Citation Auditor home">
-        <span class="brand-mark">C</span>
-        <span>AI Citation Auditor</span>
-      </a>
-
-      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-nav-toggle>
-        <span></span><span></span><span></span>
-      </button>
-
-      <div class="nav-links" data-nav-menu>
-        <a href="#clarify">Clarify</a>
-        <a href="#include">Evidence</a>
-        <a href="#engineer">Extraction</a>
-        <a href="#wording">Wording</a>
-        <a href="#schema">Schema</a>
-        <a href="#links">Links</a>
-        <a class="btn btn-small" href="https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor" target="_blank" rel="noopener">Try the GPT</a>
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="/" aria-label="AI Citation Auditor home"><span class="brand-mark">C</span><span>AI Citation Auditor</span></a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav" data-nav-toggle><span></span><span></span><span></span></button>
+      <div class="nav-links" id="primary-nav" data-nav-menu>
+        <a href="/pages/services.html">Services</a>
+        <a href="/pages/audit.html">Audit</a>
+        <a href="/pages/cite-framework.html">C.I.T.E.</a>
+        <a href="/pages/examples.html">Examples</a>
+        <a href="/pages/blog/index.html">Blog</a>
+        <a class="btn btn-secondary btn-small" href="mailto:jasonfeimster@gmail.com">Contact</a>
+        <a class="btn btn-primary btn-small" href="https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor" target="_blank" rel="noopener">Open GPT</a>
       </div>
     </nav>
   </header>
 
   <main id="main">
-    <!-- HERO -->
-    <section class="hero section" id="top">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">The framework behind the audit</p>
-          <h1>The C.I.T.E. Framework for finance content.</h1>
-          <p class="hero-subhead">
-            C.I.T.E. is a finance-specific method for making content that answer engines can understand,
-            summarize, and potentially cite — without turning your claims into compliance roulette. It powers
-            every audit the AI Citation Auditor runs: Clarify the answer, Include evidence and context,
-            Tie it to a financial decision, and Engineer the page for extraction.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor" target="_blank" rel="noopener">
-              Audit Your Content With C.I.T.E.
-            </a>
-            <a class="btn btn-secondary" href="#clarify">See the framework</a>
-          </div>
-
-          <p class="microcopy">
-            Built for Google AI Overviews, ChatGPT, Gemini, and Perplexity. No ranking, citation, approval, credit, or financial-outcome guarantees.
-          </p>
-        </div>
-
-        <div class="hero-panel" aria-label="C.I.T.E. acronym overview">
-          <div class="cite-stack">
-            <div class="cite-row">
-              <span class="cite-letter">C</span>
-              <div><strong>Clarify the answer</strong><span>Make the page easy to quote.</span></div>
-            </div>
-            <div class="cite-row">
-              <span class="cite-letter">I</span>
-              <div><strong>Include evidence &amp; context</strong><span>Give the advice a trust trail.</span></div>
-            </div>
-            <div class="cite-row">
-              <span class="cite-letter">T</span>
-              <div><strong>Tie it to a financial decision</strong><span>Connect to real operator outcomes.</span></div>
-            </div>
-            <div class="cite-row">
-              <span class="cite-letter">E</span>
-              <div><strong>Engineer for extraction</strong><span>Make it easy to scan and summarize.</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="trust-strip" aria-label="Core audit areas">
-      <div class="container strip-grid">
-        <span>Answer clarity</span>
-        <span>Evidence &amp; context</span>
-        <span>Extraction structure</span>
-        <span>Finance-safe wording</span>
-        <span>Schema fit</span>
-        <span>Internal links</span>
-      </div>
-    </section>
-
-    <!-- WHY IT EXISTS -->
-    <section class="section" id="why">
-      <div class="container section-grid">
+    <section class="hero page-hero">
+      <div class="container page-hero-grid">
         <div>
-          <p class="eyebrow">Why C.I.T.E. exists</p>
-          <h2>Not a vibe check. A finance-specific audit system.</h2>
+          <p class="eyebrow">Framework</p>
+          <h1>C.I.T.E. is the filter that keeps finance audits from becoming guesswork.</h1>
+          <p class="lead">
+            The framework checks whether a finance page is clear, structurally easy to extract, trusted enough to quote,
+            and connected to the right entity ecosystem before anyone asks AI to summarize it.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor" target="_blank" rel="noopener">Open the GPT</a>
+            <a class="btn btn-secondary" href="/pages/examples.html">See examples</a>
+          </div>
+        </div>
+        <aside class="panel">
+          <p class="eyebrow">What C.I.T.E. means</p>
+          <ul class="list-stack">
+            <li><strong>Clarity</strong> - can the page answer the question fast?</li>
+            <li><strong>Information structure</strong> - is the page easy to scan and extract?</li>
+            <li><strong>Trust signals</strong> - does the page feel grounded and careful?</li>
+            <li><strong>Entity fit</strong> - do links, schema, and CTAs support the right decision?</li>
+          </ul>
+          <p class="note">Educational only. No legal, tax, underwriting, lending, or financial advice. No guarantees.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="signals">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Signal map</p>
+          <h2>The framework is blunt on purpose.</h2>
+        </div>
+        <div class="card-grid">
+          <article class="card"><h3>Clarity</h3><p>Start with the answer, name the audience, and remove vague filler.</p></article>
+          <article class="card"><h3>Information structure</h3><p>Use question-style H2s, tables, lists, and short paragraphs that machines can parse.</p></article>
+          <article class="card"><h3>Trust signals</h3><p>Show boundaries, context, and careful wording instead of fake certainty.</p></article>
+          <article class="card"><h3>Entity fit</h3><p>Link to related pages that explain the topic, the risk, and the next decision.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="scorecard">
+      <div class="container content-grid">
+        <div>
+          <p class="eyebrow">Scorecard</p>
+          <h2>Use the scorecard to decide whether the page is ready.</h2>
           <p class="section-lede">
-            Most content frameworks still grade pages like search is just ten blue links. Finance content now has
-            to be understandable, extractable, trustworthy, and careful enough for AI answer engines to summarize
-            without turning your claims into a compliance mess. C.I.T.E. is the repeatable method that gets it there.
+            A good finance page usually has a direct answer, useful structure, enough context, and a CTA that matches the reader’s likely next move.
           </p>
         </div>
-
-        <div class="quote-card">
-          <blockquote>
-            “Search turned into an answer box with a wallet. If your finance content is vague, risky, or hard to extract,
-            AI search tools may skip it even when the topic is valuable.”
-          </blockquote>
-          <cite>From “AI Search Optimization for Finance Brands: How to Get Cited When Google and ChatGPT Answer First.”</cite>
+        <div class="table-shell">
+          <table>
+            <thead>
+              <tr>
+                <th>Area</th>
+                <th>Healthy signal</th>
+                <th>Weak signal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Clarity</td><td>Direct answer in the first screen</td><td>Long setup before the point</td></tr>
+              <tr><td>Structure</td><td>Useful H2s, table, FAQ</td><td>Generic headings and long blocks</td></tr>
+              <tr><td>Trust</td><td>Boundaries, examples, careful claims</td><td>Hype, certainty, invented proof</td></tr>
+              <tr><td>Entity fit</td><td>Relevant internal links and schema</td><td>Orphan page with no next step</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
 
-    <!-- THE FRAMEWORK: 6 SECTIONS -->
-    <section class="section section-alt" id="framework">
+    <section class="section">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow">The framework</p>
-          <h2>Six pillars that decide whether AI can use your page.</h2>
-          <p>
-            The four C.I.T.E. letters expand into six practical pillars the auditor pressure-tests on every page —
-            from the first answer block to the internal-link web that holds your cluster together.
-          </p>
+          <p class="eyebrow">When to use it</p>
+          <h2>Run the framework on pages that carry conversion or compliance risk.</h2>
         </div>
-
-        <div class="pillar-list">
-          <!-- 1. CLARIFY / ANSWER CLARITY -->
-          <article class="pillar-card" id="clarify">
-            <div class="pillar-head">
-              <span class="pillar-badge">C</span>
-              <div><h3>Answer clarity</h3></div>
-              <span class="pillar-tag">Clarify the answer</span>
-            </div>
-            <p>
-              Answer engines reward pages that state the answer fast and in plain English. If your reader has to
-              scroll past 500 words of “AI is changing everything” to find the point, the machine gives up first.
-            </p>
-            <div class="pillar-grid">
-              <div class="pillar-block">
-                <h4>What it checks</h4>
-                <ul class="checklist">
-                  <li>A 40–60 word direct answer near the top</li>
-                  <li>Primary keyword in the first 100 words, naturally</li>
-                  <li>Plain-English definition of the topic</li>
-                  <li>A named audience and a clear outcome</li>
-                  <li>No throat-clearing intro or fake certainty</li>
-                </ul>
-              </div>
-              <div class="pillar-block">
-                <h4>Answer block formula</h4>
-                <ul class="checklist">
-                  <li>[Keyword] is [plain-English definition]</li>
-                  <li>It helps [finance audience] do [outcome]</li>
-                  <li>…by using [mechanism]</li>
-                  <li>It matters because [trust / visibility / revenue angle]</li>
-                  <li>It does not [unsafe overclaim]</li>
-                </ul>
-              </div>
-            </div>
-            <p class="ask-line"><strong>The question AI asks:</strong> Can I quote one clean sentence from this page and be right?</p>
-          </article>
-
-          <!-- 2. INCLUDE / EVIDENCE & CONTEXT -->
-          <article class="pillar-card" id="include">
-            <div class="pillar-head">
-              <span class="pillar-badge">I</span>
-              <div><h3>Evidence &amp; context</h3></div>
-              <span class="pillar-tag">Include evidence</span>
-            </div>
-            <p>
-              Finance is a trust category. Answer engines weigh signals that the advice is current, sourced, and
-              honest about its limits. A page with no trust trail is a page AI hesitates to repeat.
-            </p>
-            <div class="pillar-grid">
-              <div class="pillar-block">
-                <h4>What it checks</h4>
-                <ul class="checklist">
-                  <li>Author or reviewer trust signals</li>
-                  <li>An updated date and clear methodology</li>
-                  <li>Realistic examples, not invented case studies</li>
-                  <li>Source notes for any stat or claim</li>
-                  <li>Finance-specific context, not generic advice</li>
-                </ul>
-              </div>
-              <div class="pillar-block">
-                <h4>Trust box template</h4>
-                <ul class="checklist">
-                  <li>States what the content can help with</li>
-                  <li>States what it cannot do</li>
-                  <li>Flags funding, credit, tax, or legal topics</li>
-                  <li>Notes that outcomes vary by profile and criteria</li>
-                  <li>Discloses broker, affiliate, or referral relationships</li>
-                </ul>
-              </div>
-            </div>
-            <p class="ask-line"><strong>The question AI asks:</strong> Is this safe to repeat to someone making a money decision?</p>
-          </article>
-
-          <!-- 3. ENGINEER / EXTRACTION STRUCTURE -->
-          <article class="pillar-card" id="engineer">
-            <div class="pillar-head">
-              <span class="pillar-badge">E</span>
-              <div><h3>Extraction structure</h3></div>
-              <span class="pillar-tag">Engineer for extraction</span>
-            </div>
-            <p>
-              Even a great answer gets ignored if it is buried in a wall of text. Extraction structure is how you
-              package the page so machines — and skimming humans — can lift the useful parts cleanly.
-            </p>
-            <div class="pillar-grid">
-              <div class="pillar-block">
-                <h4>What it checks</h4>
-                <ul class="checklist">
-                  <li>Question-style H2s that mirror real prompts</li>
-                  <li>Short paragraphs and scannable lists</li>
-                  <li>Comparison, summary, and workflow tables</li>
-                  <li>An FAQ block built for AI-style questions</li>
-                  <li>Step-by-step sections where a process exists</li>
-                </ul>
-              </div>
-              <div class="pillar-block">
-                <h4>H2 question map</h4>
-                <ul class="checklist">
-                  <li>“Introduction” → “What is [topic]?”</li>
-                  <li>“Benefits” → “Why does [topic] matter for [audience]?”</li>
-                  <li>“Strategy” → “How can [audience] use [topic]?”</li>
-                  <li>“Risks” → “What should [audience] avoid?”</li>
-                  <li>“Next steps” → “What to do before [decision]?”</li>
-                </ul>
-              </div>
-            </div>
-            <p class="ask-line"><strong>The question AI asks:</strong> Can I lift a heading, table, or FAQ answer and use it as-is?</p>
-          </article>
-
-          <!-- 4. FINANCIAL-RISK WORDING -->
-          <article class="pillar-card" id="wording">
-            <div class="pillar-head">
-              <span class="pillar-badge">T</span>
-              <div><h3>Financial-risk wording</h3></div>
-              <span class="pillar-tag">Tie it to a decision, safely</span>
-            </div>
-            <p>
-              This is where finance content lives or dies. Overconfident funding, credit, and approval language
-              isn’t just risky for compliance — it makes answer engines wary of citing you at all. Tie the content
-              to a real financial decision without promising the outcome.
-            </p>
-            <div class="pillar-grid">
-              <div class="pillar-block">
-                <h4>What it checks</h4>
-                <ul class="checklist">
-                  <li>No guaranteed approval, funding, or rankings</li>
-                  <li>No “AI predicts approval” style claims</li>
-                  <li>“Best option” reframed as fit- or profile-based</li>
-                  <li>Education, referral, brokerage, and lending kept distinct</li>
-                  <li>Examples that don’t imply universal outcomes</li>
-                </ul>
-              </div>
-              <div class="pillar-block">
-                <h4>Risky → safer rewrites</h4>
-                <ul class="checklist">
-                  <li>“Guaranteed approval” → “Help prepare for a funding conversation”</li>
-                  <li>“Get funded today” → “Explore options based on current criteria”</li>
-                  <li>“Instant qualification” → “Initial readiness review”</li>
-                  <li>“This will improve your credit” → “May support better credit habits”</li>
-                  <li>“AI predicts loan approval” → “AI can organize signals lenders may review”</li>
-                </ul>
-              </div>
-            </div>
-            <p class="ask-line"><strong>The question AI asks:</strong> Will repeating this claim mislead someone or create risk?</p>
-          </article>
-
-          <!-- 5. SCHEMA FIT -->
-          <article class="pillar-card" id="schema">
-            <div class="pillar-head">
-              <span class="pillar-badge">E</span>
-              <div><h3>Schema fit</h3></div>
-              <span class="pillar-tag">Engineer for machines</span>
-            </div>
-            <p>
-              Schema is structured data that tells engines what your page actually is. Used well, it reinforces
-              clarity and structure. Used as glitter — schema that doesn’t match the visible content — it backfires.
-            </p>
-            <div class="pillar-grid">
-              <div class="pillar-block">
-                <h4>What it checks</h4>
-                <ul class="checklist">
-                  <li>Article schema matches the visible article</li>
-                  <li>FAQPage only when FAQs are actually on the page</li>
-                  <li>HowTo only when visible steps exist</li>
-                  <li>BreadcrumbList matches the real page path</li>
-                  <li>VideoObject only when a video is embedded</li>
-                </ul>
-              </div>
-              <div class="pillar-block">
-                <h4>Technical QA</h4>
-                <ul class="checklist">
-                  <li>Meta title and description match intent</li>
-                  <li>Short, readable, keyword-aligned slug</li>
-                  <li>Descriptive image alt text</li>
-                  <li>Indexable and readable on mobile</li>
-                  <li>No schema that overstates the content</li>
-                </ul>
-              </div>
-            </div>
-            <p class="ask-line"><strong>The question AI asks:</strong> Does the structured data tell the truth about this page?</p>
-          </article>
-
-          <!-- 6. INTERNAL LINKS -->
-          <article class="pillar-card" id="links">
-            <div class="pillar-head">
-              <span class="pillar-badge">E</span>
-              <div><h3>Internal links</h3></div>
-              <span class="pillar-tag">Engineer the ecosystem</span>
-            </div>
-            <p>
-              A lonely blog post has no authority. Internal links build a topical web that helps engines understand
-              your expertise and guides readers toward the next useful decision — not random traffic confetti.
-            </p>
-            <div class="pillar-grid">
-              <div class="pillar-block">
-                <h4>What it checks</h4>
-                <ul class="checklist">
-                  <li>A link to the main pillar or authority hub</li>
-                  <li>Links to relevant spoke articles</li>
-                  <li>Descriptive anchor text, not “click here”</li>
-                  <li>One clear primary intent (no cannibalization)</li>
-                  <li>A CTA that connects to a real next step</li>
-                </ul>
-              </div>
-              <div class="pillar-block">
-                <h4>Internal link web</h4>
-                <ul class="checklist">
-                  <li>Pillar: primary authority page</li>
-                  <li>Spokes: definition, workflow, comparison guides</li>
-                  <li>Tool: checklist, scorecard, or calculator</li>
-                  <li>Support: risk or FAQ page</li>
-                  <li>Destination: the reader’s next logical decision</li>
-                </ul>
-              </div>
-            </div>
-            <p class="ask-line"><strong>The question AI asks:</strong> Does this page belong to a credible, connected body of work?</p>
-          </article>
+        <div class="who-grid">
+          <article class="card"><h3>Funding explainers</h3><p>Check approval, speed, and eligibility language before it starts promising things.</p></article>
+          <article class="card"><h3>Credit content</h3><p>Make sure the page is careful about outcomes and user expectations.</p></article>
+          <article class="card"><h3>Fintech landing pages</h3><p>Ensure the page can be extracted without losing the actual offer.</p></article>
+          <article class="card"><h3>Content refreshes</h3><p>Use the framework when old pages need a second pass for clarity and structure.</p></article>
         </div>
       </div>
     </section>
 
-    <!-- HOW THE GPT APPLIES IT -->
-    <section class="section" id="apply">
+    <section class="section">
       <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">From framework to audit</p>
-          <h2>How the GPT runs C.I.T.E. on your page.</h2>
-          <p>
-            The framework isn’t theory you have to memorize. The AI Citation Auditor applies all six pillars and
-            hands back a practical, finance-aware audit you can act on before you publish.
-          </p>
-        </div>
-
-        <div class="step-grid">
-          <article class="card">
-            <span class="step-num">01</span>
-            <h3>Paste your content</h3>
-            <p>Drop in a draft article, landing page, outline, or page copy — plus optional keyword and audience.</p>
-          </article>
-          <article class="card">
-            <span class="step-num">02</span>
-            <h3>Score against C.I.T.E.</h3>
-            <p>Get a 100-point citation-readiness scorecard across clarity, evidence, structure, wording, schema, and links.</p>
-          </article>
-          <article class="card">
-            <span class="step-num">03</span>
-            <h3>Ship the fixes</h3>
-            <p>Receive missing answer blocks, better H2s, safer claim rewrites, schema notes, and a final publish checklist.</p>
-          </article>
+        <div class="panel">
+          <p class="eyebrow">Related pages</p>
+          <div class="footer-links">
+            <a href="/pages/services.html">Services</a>
+        <a href="/pages/audit.html">Audit</a>
+            <a href="/pages/examples.html">Examples</a>
+            <a href="/pages/risk-claims.html">Risk claims</a>
+            <a href="/pages/blog/index.html">Blog</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="section cta-section" id="access">
-      <div class="container cta-card">
-        <p class="eyebrow">Put the framework to work</p>
-        <h2>Audit your content with C.I.T.E.</h2>
-        <p>
-          Open the AI Citation Auditor, paste your finance content, and get a C.I.T.E.-based review with structure
-          fixes, safer wording, schema suggestions, internal-link additions, and a final publish checklist.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor" target="_blank" rel="noopener">
-            Audit Your Content With C.I.T.E.
-          </a>
-          <a class="btn btn-secondary" href="#framework">Review the six pillars</a>
-        </div>
-        <p class="microcopy">ChatGPT account required. Designed as a free utility and lead-in for deeper finance content audits.</p>
-      </div>
-    </section>
-
-    <!-- TRUST NOTE + FAQ -->
-    <section class="section" id="faq">
-      <div class="container faq-wrap">
-        <div class="trust-note" style="margin-bottom:34px;">
-          <strong>Trust Note:</strong> The C.I.T.E. Framework improves citation readiness and content clarity.
-          It does not guarantee rankings, AI citations, AI Overview placement, ChatGPT or Perplexity visibility,
-          traffic, leads, approvals, revenue, loan offers, credit outcomes, or financial results. It is not legal,
-          tax, accounting, underwriting, lending, financial, or compliance advice.
-        </div>
-
+    <section class="section">
+      <div class="container">
         <div class="section-heading">
           <p class="eyebrow">FAQ</p>
-          <h2>Questions about the framework.</h2>
+          <h2>How strict is C.I.T.E.?</h2>
         </div>
-
         <div class="faq-list">
           <details>
-            <summary>What does C.I.T.E. stand for?</summary>
-            <p>Clarify the answer, Include evidence and context, Tie it to a financial decision, and Engineer the page for extraction. Those four ideas expand into six practical pillars: answer clarity, evidence and context, extraction structure, financial-risk wording, schema fit, and internal links.</p>
+            <summary>Does C.I.T.E. replace a content brief?</summary>
+            <p>No. It tightens the audit and revision lens. You still need a content brief, a business goal, and a compliance review where appropriate.</p>
           </details>
           <details>
-            <summary>Is C.I.T.E. just SEO with a new name?</summary>
-            <p>No. Traditional SEO optimizes for ranking in a list of links. C.I.T.E. optimizes for whether an answer engine can understand, trust, and safely summarize finance content — and it adds compliance-safe wording, which generic SEO frameworks ignore.</p>
+            <summary>Is one weak area enough to fail the page?</summary>
+            <p>Not always. The point is to find the most material gaps first so you can decide whether the page is publishable or needs another pass.</p>
           </details>
           <details>
-            <summary>Do I have to memorize the framework to use it?</summary>
-            <p>No. The AI Citation Auditor applies all six pillars for you and returns a scorecard plus specific fixes. The framework page just explains what the audit is checking and why.</p>
+            <summary>Why is entity fit part of the framework?</summary>
+            <p>Because internal links, schema, and CTAs shape what the page becomes in the broader site system.</p>
           </details>
-          <details>
-            <summary>Is this only for finance content?</summary>
-            <p>It is strongest for finance, fintech, funding, lending, business credit, ecommerce finance, and related operator content where clarity and claim safety matter most. The structure principles apply broadly, but the wording guardrails are finance-specific.</p>
-          </details>
-          <details>
-            <summary>Does C.I.T.E. guarantee I’ll get cited by AI?</summary>
-            <p>No. No framework or tool can guarantee AI citations, rankings, or traffic. C.I.T.E. improves citation readiness — how understandable, extractable, and trustworthy your content is — which is the part you can actually control.</p>
-          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="panel">
+          <p class="eyebrow">Final CTA</p>
+          <h2>Use the framework, then run the audit.</h2>
+          <p>The GPT is built to apply C.I.T.E. without making the page sound like a committee wrote it.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor" target="_blank" rel="noopener">Open GPT</a>
+            <a class="btn btn-secondary" href="/pages/services.html">Back to services</a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <a class="brand" href="#top">
-          <span class="brand-mark">C</span>
-          <span>AI Citation Auditor</span>
-        </a>
-        <p>Finance-content audits for operators who need answers, not another dashboard.</p>
+        <a class="brand" href="/"><span class="brand-mark">C</span><span>AI Citation Auditor</span></a>
+        <p class="footer-copy">Educational only. No legal, tax, underwriting, lending, or financial advice. No guarantees.</p>
       </div>
       <div class="footer-links">
-        <a href="#framework">The framework</a>
-        <a href="#apply">How it works</a>
-        <a href="#access">Audit with C.I.T.E.</a>
+        <a href="/pages/legal/disclaimer.html">Disclaimer</a>
+        <a href="/pages/legal/privacy.html">Privacy</a>
+        <a href="mailto:jasonfeimster@gmail.com">jasonfeimster@gmail.com</a>
       </div>
     </div>
   </footer>
-
-  <script>
-    (function () {
-      "use strict";
-
-      document.addEventListener("DOMContentLoaded", function () {
-        initMobileNav();
-        initStickyHeader();
-        initCurrentYear();
-      });
-
-      function initMobileNav() {
-        var toggle = document.querySelector("[data-nav-toggle]");
-        var menu = document.querySelector("[data-nav-menu]");
-        if (!toggle || !menu) return;
-
-        toggle.addEventListener("click", function () {
-          var isOpen = menu.classList.toggle("is-open");
-          toggle.setAttribute("aria-expanded", String(isOpen));
-          document.body.classList.toggle("nav-open", isOpen);
-        });
-
-        menu.addEventListener("click", function (e) {
-          if (!e.target.closest("a")) return;
-          menu.classList.remove("is-open");
-          toggle.setAttribute("aria-expanded", "false");
-          document.body.classList.remove("nav-open");
-        });
-
-        document.addEventListener("keydown", function (e) {
-          if (e.key !== "Escape") return;
-          menu.classList.remove("is-open");
-          toggle.setAttribute("aria-expanded", "false");
-          document.body.classList.remove("nav-open");
-        });
-      }
-
-      function initStickyHeader() {
-        var header = document.querySelector("[data-header]");
-        if (!header) return;
-        function update() { header.classList.toggle("is-scrolled", window.scrollY > 12); }
-        update();
-        window.addEventListener("scroll", update, { passive: true });
-      }
-
-      function initCurrentYear() {
-        var els = document.querySelectorAll("[data-year]");
-        var year = new Date().getFullYear();
-        els.forEach(function (el) { el.textContent = year; });
-      }
-    })();
-  </script>
 </body>
 </html>

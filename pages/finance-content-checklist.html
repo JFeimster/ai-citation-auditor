@@ -1,813 +1,193 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The Finance Content Publish Checklist — AI Citation Auditor</title>
-  <meta name="description" content="A practical pre-publish checklist for finance content: answer clarity, evidence and trust signals, extraction structure, risky-claim wording, schema fit, and internal links. Copy it, download the markdown, or run it through the AI Citation Auditor GPT." />
-  <meta property="og:title" content="The Finance Content Publish Checklist" />
-  <meta property="og:description" content="Don't publish finance content until it passes this AI citation readiness checklist. Copy it, print it, or run it through the GPT." />
+  <title>Finance Content Checklist | AI Citation Auditor</title>
+  <meta name="description" content="A practical finance content checklist for answer blocks, trust notes, tables, internal links, and safer wording." />
+  <link rel="canonical" href="https://ai-citation-auditor.vercel.app/pages/finance-content-checklist.html" />
+  <meta property="og:title" content="Finance Content Checklist | AI Citation Auditor" />
+  <meta property="og:description" content="A pre-publish checklist for finance pages that need clearer answers and safer claims." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://dummyimage.com/1200x630/070a12/f8fafc&text=Finance+Content+Publish+Checklist" />
-  <meta name="theme-color" content="#070A12" />
-
-  <style>
-    :root {
-      --bg: #070A12;
-      --surface: #101827;
-      --surface-2: #151F32;
-      --text: #F8FAFC;
-      --muted: #94A3B8;
-      --primary: #7C3AED;
-      --secondary: #06B6D4;
-      --hot: #F97316;
-      --success: #22C55E;
-      --border: rgba(148, 163, 184, .18);
-      --shadow: 0 24px 80px rgba(0, 0, 0, .35);
-      --radius: 24px;
-      --radius-sm: 16px;
-      --max: 1140px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(124, 58, 237, .24), transparent 30rem),
-        radial-gradient(circle at top right, rgba(6, 182, 212, .16), transparent 28rem),
-        var(--bg);
-      line-height: 1.6;
-    }
-
-    body.nav-open { overflow: hidden; }
-    a { color: inherit; text-decoration: none; }
-    button, input, textarea { font: inherit; }
-
-    .container { width: min(100% - 32px, var(--max)); margin-inline: auto; }
-
-    .skip-link {
-      position: absolute; left: 16px; top: -80px; z-index: 100;
-      padding: 10px 14px; background: var(--text); color: var(--bg); border-radius: 999px;
-    }
-    .skip-link:focus { top: 16px; }
-
-    /* Header */
-    .site-header {
-      position: sticky; top: 0; z-index: 50;
-      border-bottom: 1px solid transparent;
-      transition: background .2s ease, border-color .2s ease, backdrop-filter .2s ease;
-    }
-    .site-header.is-scrolled {
-      background: rgba(7, 10, 18, .82);
-      border-color: var(--border);
-      backdrop-filter: blur(18px);
-    }
-    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; }
-    .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: -.03em; }
-    .brand-mark {
-      width: 34px; height: 34px; display: inline-grid; place-items: center;
-      border: 1px solid var(--border); border-radius: 12px;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white; box-shadow: 0 10px 36px rgba(124, 58, 237, .45);
-    }
-    .nav-links { display: none; align-items: center; gap: 22px; color: var(--muted); font-size: .95rem; }
-    .nav-links a:hover, .nav-links a:focus-visible { color: var(--text); }
-    .nav-toggle {
-      width: 44px; height: 44px; border: 1px solid var(--border); border-radius: 14px;
-      background: rgba(16, 24, 39, .85); color: var(--text);
-      display: inline-grid; place-content: center; gap: 5px; cursor: pointer;
-    }
-    .nav-toggle span { width: 18px; height: 2px; background: currentColor; border-radius: 999px; }
-    .nav-links.is-open {
-      position: fixed; inset: 76px 16px auto 16px; display: grid; gap: 14px; padding: 18px;
-      background: rgba(16, 24, 39, .98); border: 1px solid var(--border);
-      border-radius: var(--radius-sm); box-shadow: var(--shadow);
-    }
-
-    .section { padding: 80px 0; }
-    .hero { padding: 84px 0 56px; }
-
-    .hero-grid, .footer-grid { display: grid; gap: 36px; }
-
-    .eyebrow {
-      margin: 0 0 14px; color: var(--secondary); font-size: .78rem; font-weight: 800;
-      letter-spacing: .12em; text-transform: uppercase;
-    }
-    h1, h2, h3, p { margin-top: 0; }
-    h1 { max-width: 820px; margin-bottom: 22px; font-size: clamp(2.6rem, 7vw, 4.6rem); line-height: .94; letter-spacing: -.06em; }
-    h2 { margin-bottom: 18px; font-size: clamp(1.9rem, 4.5vw, 3.2rem); line-height: 1; letter-spacing: -.05em; }
-    h3 { margin-bottom: 10px; font-size: 1.08rem; letter-spacing: -.02em; }
-
-    .hero-subhead, .section-lede, .section-heading p, .cta-card p {
-      color: var(--muted); font-size: clamp(1.02rem, 2vw, 1.18rem);
-    }
-    .hero-subhead { max-width: 640px; }
-
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 30px 0 12px; }
-
-    .btn {
-      display: inline-flex; min-height: 48px; align-items: center; justify-content: center;
-      border-radius: 999px; border: 1px solid transparent; padding: 13px 18px; font-weight: 800;
-      transition: transform .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease;
-      cursor: pointer;
-    }
-    .btn:hover, .btn:focus-visible { transform: translateY(-2px); }
-    .btn-primary {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white; box-shadow: 0 18px 44px rgba(124, 58, 237, .32);
-    }
-    .btn-secondary { border-color: var(--border); background: rgba(248, 250, 252, .04); color: var(--text); }
-    .btn-ghost { border-color: var(--border); background: transparent; color: var(--text); }
-    .btn-small { min-height: 40px; padding: 9px 14px; background: var(--text); color: var(--bg); }
-    .btn-block { width: 100%; }
-    .microcopy { color: var(--muted); font-size: .92rem; }
-
-    .hero-panel, .checklist-card, .cta-card, .toolbar, details {
-      border: 1px solid var(--border);
-      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.025)), rgba(16, 24, 39, .74);
-      border-radius: var(--radius); box-shadow: var(--shadow);
-    }
-
-    /* Hero progress panel */
-    .hero-panel { padding: 24px; overflow: hidden; position: relative; }
-    .hero-panel::before {
-      content: ""; position: absolute; inset: -90px -90px auto auto;
-      width: 180px; height: 180px; border-radius: 999px;
-      background: rgba(249, 115, 22, .25); filter: blur(30px);
-    }
-    .panel-top { display: flex; align-items: center; gap: 9px; color: var(--muted); margin-bottom: 18px; position: relative; }
-    .status-dot { width: 10px; height: 10px; border-radius: 999px; background: var(--success); box-shadow: 0 0 24px var(--success); }
-    .ring-wrap { display: flex; align-items: center; gap: 20px; position: relative; }
-    .score-ring {
-      width: 104px; height: 104px; flex: none; display: grid; place-items: center; border-radius: 50%;
-      background:
-        radial-gradient(circle at center, var(--surface) 60%, transparent 62%),
-        conic-gradient(var(--secondary) var(--ring-deg, 0deg), rgba(148, 163, 184, .2) 0);
-      font-weight: 900; font-size: 1.5rem;
-      transition: background .4s ease;
-    }
-    .ring-copy strong { display: block; font-size: 1.05rem; }
-    .ring-copy span { color: var(--muted); font-size: .9rem; }
-    .mini-progress { margin-top: 18px; }
-    .mini-progress .bar { height: 8px; border-radius: 999px; background: rgba(148,163,184,.2); overflow: hidden; }
-    .mini-progress .bar > span { display: block; height: 100%; width: 0%; border-radius: 999px; background: linear-gradient(90deg, var(--primary), var(--secondary)); transition: width .4s ease; }
-    .mini-progress p { margin: 10px 0 0; color: var(--muted); font-size: .88rem; }
-
-    /* Trust strip */
-    .trust-strip { border-block: 1px solid var(--border); background: rgba(16, 24, 39, .48); }
-    .strip-grid { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px; padding: 18px 0; }
-    .strip-grid span {
-      color: var(--muted); font-size: .92rem; padding: 8px 12px;
-      border: 1px solid var(--border); border-radius: 999px; background: rgba(255, 255, 255, .03);
-    }
-
-    .section-alt {
-      background: linear-gradient(180deg, rgba(21, 31, 50, .28), rgba(7, 10, 18, 0)), rgba(255, 255, 255, .015);
-    }
-    .section-heading { max-width: 760px; margin-bottom: 30px; }
-
-    /* Sticky toolbar */
-    .toolbar {
-      position: sticky; top: 90px; z-index: 20;
-      display: flex; flex-wrap: wrap; align-items: center; gap: 12px;
-      padding: 16px 18px; margin-bottom: 26px;
-    }
-    .toolbar .bar { flex: 1 1 200px; min-width: 160px; height: 10px; border-radius: 999px; background: rgba(148,163,184,.2); overflow: hidden; }
-    .toolbar .bar > span { display: block; height: 100%; width: 0%; border-radius: 999px; background: linear-gradient(90deg, var(--primary), var(--secondary)); transition: width .4s ease; }
-    .toolbar .count { font-weight: 800; font-size: .95rem; white-space: nowrap; }
-    .toolbar-actions { display: flex; flex-wrap: wrap; gap: 8px; }
-    .toolbar-actions .btn { min-height: 40px; padding: 9px 14px; font-size: .9rem; }
-    .copied-note { color: var(--success); font-size: .85rem; min-height: 1.2em; width: 100%; margin: 0; }
-
-    /* Checklist groups */
-    .checklist-list { display: grid; gap: 18px; }
-    .checklist-card { padding: 26px; scroll-margin-top: 150px; }
-    .group-head { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; flex-wrap: wrap; }
-    .group-badge {
-      display: inline-grid; place-items: center; min-width: 42px; height: 42px; padding: 0 10px;
-      border-radius: 12px; font-weight: 900; color: white; font-size: 1.05rem;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-    }
-    .group-head h3 { font-size: 1.35rem; margin: 0; letter-spacing: -.02em; }
-    .group-tag {
-      margin-left: auto; padding: 5px 10px; border-radius: 999px; font-size: .72rem; font-weight: 800;
-      text-transform: uppercase; letter-spacing: .08em; color: #ddd6fe; background: rgba(124, 58, 237, .18);
-    }
-    .group-lede { color: var(--muted); margin-bottom: 16px; }
-
-    .check-items { list-style: none; padding: 0; margin: 0; display: grid; gap: 4px; }
-    .check-item {
-      display: flex; gap: 12px; align-items: flex-start; padding: 11px 12px; border-radius: 12px;
-      cursor: pointer; transition: background .15s ease;
-    }
-    .check-item:hover { background: rgba(255,255,255,.03); }
-    .check-item input {
-      appearance: none; -webkit-appearance: none; margin: 3px 0 0; flex: none;
-      width: 20px; height: 20px; border: 1px solid var(--border); border-radius: 7px;
-      background: rgba(7, 10, 18, .55); cursor: pointer; position: relative; transition: background .15s ease, border-color .15s ease;
-    }
-    .check-item input:checked { background: linear-gradient(135deg, var(--primary), var(--secondary)); border-color: transparent; }
-    .check-item input:checked::after {
-      content: "✓"; position: absolute; inset: 0; display: grid; place-items: center;
-      color: white; font-size: .8rem; font-weight: 900;
-    }
-    .check-item input:focus-visible { outline: 2px solid var(--secondary); outline-offset: 2px; }
-    .check-item span { font-size: .98rem; }
-    .check-item input:checked + span { color: var(--muted); text-decoration: line-through; text-decoration-color: rgba(148,163,184,.5); }
-    .priority { margin-left: 6px; font-size: .68rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; padding: 2px 7px; border-radius: 999px; vertical-align: middle; }
-    .priority.must { color: #fecaca; background: rgba(248,113,113,.16); }
-    .priority.should { color: #fed7aa; background: rgba(249,115,22,.16); }
-    .priority.nice { color: #bae6fd; background: rgba(6,182,212,.16); }
-
-    /* CTA */
-    .cta-card {
-      padding: clamp(28px, 6vw, 58px); text-align: center;
-      background: radial-gradient(circle at top left, rgba(124, 58, 237, .28), transparent 25rem),
-        radial-gradient(circle at bottom right, rgba(6, 182, 212, .18), transparent 24rem),
-        rgba(16, 24, 39, .78);
-    }
-    .cta-card .hero-actions { justify-content: center; }
-
-    /* Trust note */
-    .trust-note {
-      border: 1px solid var(--border); border-left: 3px solid var(--hot);
-      background: rgba(249, 115, 22, .07); border-radius: var(--radius-sm);
-      padding: 20px 22px; color: var(--muted); font-size: .95rem;
-    }
-    .trust-note strong { color: var(--text); }
-
-    /* FAQ */
-    .faq-wrap { max-width: 880px; }
-    .faq-list { display: grid; gap: 12px; }
-    details { padding: 18px 20px; }
-    summary { cursor: pointer; font-weight: 800; }
-    summary:focus-visible { outline: 2px solid var(--secondary); outline-offset: 4px; }
-    details p { padding-top: 12px; color: var(--muted); margin-bottom: 0; }
-
-    .site-footer { padding: 34px 0; border-top: 1px solid var(--border); }
-    .footer-links { display: flex; flex-wrap: wrap; gap: 16px; color: var(--muted); }
-    .footer-links a:hover { color: var(--text); }
-
-    @media (min-width: 760px) {
-      .nav-toggle { display: none; }
-      .nav-links { display: flex; }
-      .hero-grid { grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr); align-items: start; }
-      .footer-grid { grid-template-columns: 1fr 1fr; align-items: center; }
-      .check-items.two-col { grid-template-columns: 1fr 1fr; gap: 4px 24px; }
-    }
-
-    /* Print: clean black-on-white checklist */
-    @media print {
-      body { background: #fff; color: #000; }
-      .site-header, .trust-strip, .hero-panel, .toolbar-actions, .cta-section,
-      .nav-toggle, .skip-link, .hero-actions, .site-footer, #faq { display: none !important; }
-      .section { padding: 12px 0; }
-      .checklist-card, .toolbar { box-shadow: none; border: 1px solid #ccc; background: #fff; }
-      .group-badge, .group-tag, .priority { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-      .check-item input { border: 1px solid #444; }
-      a { color: #000; }
-    }
-  </style>
+  <meta property="og:url" content="https://ai-citation-auditor.vercel.app/pages/finance-content-checklist.html" />
+  <meta property="og:image" content="https://ai-citation-auditor.vercel.app/assets/img/ui/og-default.svg" />
+  <meta name="theme-color" content="#060913" />
+  <link rel="icon" href="/assets/img/brand/favicon.svg" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <script defer src="/assets/js/main.js"></script>
 </head>
-<body>
+<body class="page">
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header" data-header>
-    <nav class="nav container" aria-label="Main navigation">
-      <a class="brand" href="#top" aria-label="AI Citation Auditor home">
-        <span class="brand-mark">C</span>
-        <span>AI Citation Auditor</span>
-      </a>
-
-      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-nav-toggle>
-        <span></span><span></span><span></span>
-      </button>
-
-      <div class="nav-links" data-nav-menu>
-        <a href="#checklist">Checklist</a>
-        <a href="#how">How to use</a>
-        <a href="#faq">FAQ</a>
-        <a class="btn btn-small" href="https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor" target="_blank" rel="noopener">Try the GPT</a>
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="/" aria-label="AI Citation Auditor home"><span class="brand-mark">C</span><span>AI Citation Auditor</span></a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav" data-nav-toggle><span></span><span></span><span></span></button>
+      <div class="nav-links" id="primary-nav" data-nav-menu>
+        <a href="/pages/services.html">Services</a>
+        <a href="/pages/audit.html">Audit</a>
+        <a href="/pages/cite-framework.html">C.I.T.E.</a>
+        <a href="/pages/examples.html">Examples</a>
+        <a href="/pages/blog/index.html">Blog</a>
+        <a class="btn btn-secondary btn-small" href="mailto:jasonfeimster@gmail.com">Contact</a>
+        <a class="btn btn-primary btn-small" href="https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor" target="_blank" rel="noopener">Open GPT</a>
       </div>
     </nav>
   </header>
 
   <main id="main">
-    <!-- HERO -->
-    <section class="hero section" id="top">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">Free lead magnet · Pre-publish checklist</p>
-          <h1>The finance content publish checklist.</h1>
-          <p class="hero-subhead">
-            Don’t publish another finance, funding, credit, or fintech page until it clears this list. It’s the
-            same C.I.T.E. logic the AI Citation Auditor runs — answer clarity, evidence and trust, extraction
-            structure, risky-claim wording, schema fit, and internal links — turned into a checklist you can tick,
-            copy, print, or hand to a writer.
+    <section class="hero page-hero">
+      <div class="container page-hero-grid">
+        <div>
+          <p class="eyebrow">Checklist</p>
+          <h1>Use this before you publish anything that touches finance decisions.</h1>
+          <p class="lead">
+            This page distills the audit into a publish checklist for funding, credit, fintech, and business-finance content.
+            The goal is simple: make the page clearer, safer, and easier to extract.
           </p>
-
           <div class="hero-actions">
-            <button class="btn btn-primary" type="button" data-copy>Copy the Checklist</button>
-            <a class="btn btn-secondary" href="https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor" target="_blank" rel="noopener">
-              Run This Through the GPT
-            </a>
-          </div>
-
-          <p class="microcopy">
-            Free to use. No email required. No ranking, citation, approval, credit, or financial-outcome guarantees.
-          </p>
-        </div>
-
-        <!-- Live progress panel -->
-        <div class="hero-panel" aria-label="Checklist progress">
-          <div class="panel-top">
-            <span class="status-dot"></span>
-            <span>Readiness progress</span>
-          </div>
-          <div class="ring-wrap">
-            <div class="score-ring" id="heroRing" aria-hidden="true">0%</div>
-            <div class="ring-copy">
-              <strong id="heroRingLabel">0 of 0 done</strong>
-              <span>Tick items as you fix them. This runs locally — nothing is saved or sent.</span>
-            </div>
-          </div>
-          <div class="mini-progress">
-            <div class="bar"><span id="heroBar"></span></div>
-            <p id="heroHint">Work top to bottom. Clear every <em>Must fix</em> before you publish.</p>
+            <a class="btn btn-primary" href="https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor" target="_blank" rel="noopener">Open the GPT</a>
+            <a class="btn btn-secondary" href="/pages/audit.html">Free Audit</a>
+            <a class="btn btn-secondary" href="/pages/risk-claims.html">Check claim risk</a>
           </div>
         </div>
+        <aside class="panel">
+          <p class="eyebrow">Use it on</p>
+          <ul class="list-stack">
+            <li>Blog posts and explainers</li>
+            <li>Landing pages and lead magnets</li>
+            <li>Funding and credit pages</li>
+            <li>Refreshes of high-value old content</li>
+          </ul>
+        </aside>
       </div>
     </section>
 
-    <section class="trust-strip" aria-label="Core checklist areas">
-      <div class="container strip-grid">
-        <span>Answer clarity</span>
-        <span>Evidence &amp; trust</span>
-        <span>Extraction structure</span>
-        <span>Finance-safe wording</span>
-        <span>Schema fit</span>
-        <span>Internal links</span>
-      </div>
-    </section>
-
-    <!-- CHECKLIST -->
-    <section class="section" id="checklist">
+    <section class="section">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow">The checklist</p>
-          <h2>Six checks between your draft and publish.</h2>
-          <p>
-            Each item is tagged <strong>Must fix</strong>, <strong>Should fix</strong>, or <strong>Nice to have</strong>.
-            Clear every <em>Must fix</em> before the page goes live. Use the toolbar to copy the markdown, download it,
-            print it, or reset.
+          <p class="eyebrow">Publish checklist</p>
+          <h2>The page should answer the question, not just occupy the URL.</h2>
+        </div>
+        <div class="checklist-grid">
+          <article class="card"><h3>1. Answer block</h3><p>The page gives a direct answer in the first screen and names the audience.</p></article>
+          <article class="card"><h3>2. Trust note</h3><p>Anything touching money, credit, or funding includes a clear boundary statement.</p></article>
+          <article class="card"><h3>3. Structure</h3><p>H2s, lists, and tables follow the reader’s decision path, not the writer’s keyword dump.</p></article>
+          <article class="card"><h3>4. Claim safety</h3><p>Guarantees, approvals, and outcome promises are rewritten before publish.</p></article>
+          <article class="card"><h3>5. Internal links</h3><p>The page points to the framework, examples, or a relevant supporting page.</p></article>
+          <article class="card"><h3>6. CTA fit</h3><p>The CTA matches the reader’s next logical step instead of forcing a leap.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container content-grid">
+        <div>
+          <p class="eyebrow">Quick checks</p>
+          <h2>These are the questions the audit keeps asking.</h2>
+          <p class="section-lede">
+            If the answer is no to any of these, the page probably needs another pass before it ships.
           </p>
         </div>
-
-        <!-- Sticky toolbar with progress + actions -->
-        <div class="toolbar" role="region" aria-label="Checklist tools">
-          <span class="count" id="count">0 / 0</span>
-          <div class="bar"><span id="toolbarBar"></span></div>
-          <div class="toolbar-actions">
-            <button class="btn btn-primary" type="button" data-copy>Copy the Checklist</button>
-            <button class="btn btn-secondary" type="button" data-download>Download .md</button>
-            <button class="btn btn-ghost" type="button" data-print>Print</button>
-            <button class="btn btn-ghost" type="button" data-reset>Reset</button>
-          </div>
-          <p class="copied-note" id="copiedNote" role="status" aria-live="polite"></p>
+        <div class="timeline">
+          <div class="timeline-item"><strong>Can I quote the intro?</strong><span>If not, the answer block is too soft.</span></div>
+          <div class="timeline-item"><strong>Can a machine extract the structure?</strong><span>If not, the H2s and tables need work.</span></div>
+          <div class="timeline-item"><strong>Does the page overpromise?</strong><span>If yes, rewrite the claims before publish.</span></div>
+          <div class="timeline-item"><strong>Does the CTA make sense?</strong><span>If not, it is likely the wrong next step.</span></div>
         </div>
-
-        <!-- Items are rendered here from the single source of truth in JS -->
-        <div class="checklist-list" id="checklistList"></div>
       </div>
     </section>
 
-    <!-- HOW TO USE -->
-    <section class="section section-alt" id="how">
+    <section class="section">
+      <div class="container content-grid">
+        <article class="card">
+          <p class="eyebrow">High-value additions</p>
+          <ul class="list-stack">
+            <li>A direct definition near the top.</li>
+            <li>A useful table or comparison block.</li>
+            <li>Question-style H2s and real FAQs.</li>
+            <li>Internal links to related pages.</li>
+            <li>Clear wording around limits and outcomes.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <p class="eyebrow">Red flags</p>
+          <ul class="list-stack">
+            <li>Guaranteed approval language.</li>
+            <li>Thin copy that never gets to the point.</li>
+            <li>Claims that sound better than the business reality.</li>
+            <li>No supporting links or page context.</li>
+            <li>FAQs that answer questions nobody asked.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
       <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">How to use it</p>
-          <h2>Three ways to run the checklist.</h2>
-        </div>
-        <div class="checklist-list">
-          <div class="checklist-card">
-            <div class="group-head"><span class="group-badge">1</span><h3>Tick it live</h3></div>
-            <p class="group-lede">Work through the items on this page before you publish. The progress ring shows how close the page is to ready. Nothing is saved or sent — it resets on reload.</p>
-          </div>
-          <div class="checklist-card">
-            <div class="group-head"><span class="group-badge">2</span><h3>Copy or print it</h3></div>
-            <p class="group-lede">Hit <strong>Copy the Checklist</strong> to drop the markdown into Notion, Google Docs, or a content brief, or <strong>Download .md</strong> / <strong>Print</strong> for a paper pass with your editor.</p>
-          </div>
-          <div class="checklist-card">
-            <div class="group-head"><span class="group-badge">3</span><h3>Run it through the GPT</h3></div>
-            <p class="group-lede">Want the items graded for you? Paste your draft into the AI Citation Auditor and it scores the page against this exact list and returns the fixes.</p>
+        <div class="panel">
+          <p class="eyebrow">Internal links</p>
+          <div class="footer-links">
+            <a href="/pages/audit.html">Audit</a>
+            <a href="/pages/cite-framework.html">C.I.T.E. framework</a>
+            <a href="/pages/examples.html">Examples</a>
+            <a href="/pages/risk-claims.html">Risk claims</a>
+            <a href="/pages/blog/2026/ai-citation-readiness-for-finance.html">Blog post: citation readiness</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="section cta-section" id="access">
-      <div class="container cta-card">
-        <p class="eyebrow">Let the GPT do the grading</p>
-        <h2>Run this through the AI Citation Auditor.</h2>
-        <p>
-          Paste your finance content and the GPT scores it against this checklist — answer blocks, risky claims,
-          H2s, schema, internal links — and hands back a prioritized publish checklist of its own.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor" target="_blank" rel="noopener">
-            Run This Through the GPT
-          </a>
-          <button class="btn btn-secondary" type="button" data-copy>Copy the Checklist</button>
-        </div>
-        <p class="microcopy">ChatGPT account required. Designed as a free utility and lead-in for deeper finance content audits.</p>
-      </div>
-    </section>
-
-    <!-- TRUST NOTE + FAQ -->
-    <section class="section" id="faq">
-      <div class="container faq-wrap">
-        <div class="trust-note" style="margin-bottom:34px;">
-          <strong>Trust Note:</strong> This checklist improves citation readiness and content clarity. It does not
-          guarantee rankings, AI citations, AI Overview placement, ChatGPT or Perplexity visibility, traffic, leads,
-          approvals, revenue, loan offers, credit outcomes, or financial results. It is not legal, tax, accounting,
-          underwriting, lending, financial, or compliance advice.
-        </div>
-
+    <section class="section">
+      <div class="container">
         <div class="section-heading">
           <p class="eyebrow">FAQ</p>
-          <h2>Questions before you publish.</h2>
+          <h2>How strict should the checklist be?</h2>
         </div>
-
         <div class="faq-list">
           <details>
-            <summary>Does clearing this checklist guarantee AI citations or rankings?</summary>
-            <p>No. It improves how clear, trustworthy, and extractable your content is — the part you control. No checklist or tool can guarantee rankings, AI citations, traffic, approvals, or financial outcomes.</p>
+            <summary>Do all finance pages need every checklist item?</summary>
+            <p>No. Use judgment. The more the page influences money decisions, the more you should expect from the structure and wording.</p>
           </details>
           <details>
-            <summary>Is my progress saved if I leave the page?</summary>
-            <p>No. The checkboxes run entirely in your browser for the session and reset on reload. Use Copy or Download to keep a version, or print it for an editing pass.</p>
+            <summary>Is a FAQ section always required?</summary>
+            <p>No. Only use FAQ blocks when they answer real questions and add real value to the page.</p>
           </details>
           <details>
-            <summary>What’s the difference between “Must fix” and “Should fix”?</summary>
-            <p>Must fix items block publishing — usually answer clarity and risky-claim wording. Should fix items strengthen the page soon after, and Nice to have items are upgrades when you have time.</p>
+            <summary>What’s the minimum publish bar?</summary>
+            <p>Direct answer, careful wording, clear structure, at least one useful support block, and a CTA that fits the page intent.</p>
           </details>
-          <details>
-            <summary>Is this only for finance content?</summary>
-            <p>It’s strongest for finance, fintech, funding, lending, business credit, and ecommerce finance content where clarity and claim safety matter most. The structure items apply broadly; the wording guardrails are finance-specific.</p>
-          </details>
-          <details>
-            <summary>Can I hand this to a writer or editor?</summary>
-            <p>Yes — that’s the point. Copy the markdown into a brief, download the <code>.md</code>, or print it so a writer, editor, SEO, or compliance reviewer can work the list before anything goes live.</p>
-          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="panel">
+          <p class="eyebrow">Final CTA</p>
+          <h2>Run the checklist through the GPT before you ship the page.</h2>
+          <p>It will surface what is missing, what is risky, and what should be rewritten before publish.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor" target="_blank" rel="noopener">Open GPT</a>
+            <a class="btn btn-secondary" href="/pages/blog/index.html">Read the blog</a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <a class="brand" href="#top">
-          <span class="brand-mark">C</span>
-          <span>AI Citation Auditor</span>
-        </a>
-        <p>Finance-content audits for operators who need answers, not another dashboard.</p>
+        <a class="brand" href="/"><span class="brand-mark">C</span><span>AI Citation Auditor</span></a>
+        <p class="footer-copy">Educational only. No legal, tax, underwriting, lending, or financial advice. No guarantees.</p>
       </div>
       <div class="footer-links">
-        <a href="#checklist">The checklist</a>
-        <a href="#how">How to use</a>
-        <a href="#access">Run the GPT</a>
+        <a href="/pages/legal/disclaimer.html">Disclaimer</a>
+        <a href="/pages/legal/privacy.html">Privacy</a>
+        <a href="mailto:jasonfeimster@gmail.com">jasonfeimster@gmail.com</a>
       </div>
     </div>
   </footer>
-
-  <script>
-    (function () {
-      "use strict";
-
-      var GPT_URL = "https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor";
-      var DOC_TITLE = "Finance Content Publish Checklist — AI Citation Auditor";
-
-      /* ------------------------------------------------------------------ */
-      /* SINGLE SOURCE OF TRUTH                                              */
-      /* The on-page checklist AND the copied/downloaded markdown are both  */
-      /* generated from this data, so they never drift apart.               */
-      /* p: "must" | "should" | "nice"                                      */
-      /* ------------------------------------------------------------------ */
-      var GROUPS = [
-        {
-          id: "clarify",
-          letter: "C",
-          title: "Answer clarity",
-          tag: "Clarify the answer",
-          lede: "Can an answer engine quote one clean sentence from this page and be right?",
-          items: [
-            { t: "A direct 40–60 word answer appears near the top of the page", p: "must" },
-            { t: "The primary keyword shows up naturally in the first 100 words", p: "must" },
-            { t: "The topic is defined in plain English (no jargon wall)", p: "must" },
-            { t: "The intended audience is named explicitly", p: "should" },
-            { t: "The outcome or payoff for the reader is stated early", p: "should" },
-            { t: "No throat-clearing intro or vague “AI is changing everything” opener", p: "should" }
-          ]
-        },
-        {
-          id: "evidence",
-          letter: "I",
-          title: "Evidence & trust signals",
-          tag: "Include evidence",
-          lede: "Is this safe to repeat to someone making a money decision?",
-          items: [
-            { t: "An author or reviewer with relevant credibility is shown", p: "should" },
-            { t: "A published or updated date is visible", p: "should" },
-            { t: "A trust note / disclaimer is present for finance, credit, or lending topics", p: "must" },
-            { t: "Claims and stats include a source or clear basis", p: "should" },
-            { t: "Examples are realistic, not invented case studies or fake results", p: "must" },
-            { t: "Any broker, affiliate, or referral relationship is disclosed", p: "should" }
-          ]
-        },
-        {
-          id: "structure",
-          letter: "E",
-          title: "Extraction structure",
-          tag: "Engineer for extraction",
-          lede: "Can AI lift a heading, table, or FAQ answer and use it as-is?",
-          items: [
-            { t: "H2s are written as real questions readers (and AI) actually ask", p: "must" },
-            { t: "Paragraphs are short and the page is scannable", p: "should" },
-            { t: "At least one comparison, summary, or workflow table is included", p: "should" },
-            { t: "An FAQ block answers 5–8 AI-style questions concisely", p: "should" },
-            { t: "Step-by-step sections exist wherever there is a process", p: "nice" },
-            { t: "Key takeaways or a summary block appear where useful", p: "nice" }
-          ]
-        },
-        {
-          id: "wording",
-          letter: "T",
-          title: "Financial-risk wording",
-          tag: "Tie it to a decision, safely",
-          lede: "Will repeating a claim from this page mislead someone or create risk?",
-          items: [
-            { t: "No “guaranteed approval,” “get funded today,” or guaranteed-rankings language", p: "must" },
-            { t: "No “AI predicts approval” or fake-certainty claims", p: "must" },
-            { t: "“Best option” is reframed as fit- or profile-based", p: "should" },
-            { t: "Education, referral, brokerage, and lending are kept distinct", p: "should" },
-            { t: "Outcome language notes that results vary by profile and criteria", p: "must" },
-            { t: "Risky phrases are swapped for safer educational rewrites", p: "should" }
-          ]
-        },
-        {
-          id: "schema",
-          letter: "E",
-          title: "Schema & technical fit",
-          tag: "Engineer for machines",
-          lede: "Does the structured data tell the truth about this page?",
-          items: [
-            { t: "Article schema matches the visible article", p: "should" },
-            { t: "FAQPage schema is used only when FAQs are actually on the page", p: "must" },
-            { t: "HowTo schema is used only when visible steps exist", p: "should" },
-            { t: "Meta title and description match search intent", p: "should" },
-            { t: "Slug is short, readable, and keyword-aligned", p: "nice" },
-            { t: "Images have descriptive alt text and the page is mobile-readable", p: "nice" }
-          ]
-        },
-        {
-          id: "links",
-          letter: "E",
-          title: "Internal links & CTA",
-          tag: "Engineer the ecosystem",
-          lede: "Does this page belong to a credible, connected body of work — and point somewhere useful?",
-          items: [
-            { t: "Links to the main pillar or authority hub are present", p: "should" },
-            { t: "Links to relevant spoke / supporting articles are present", p: "should" },
-            { t: "Anchor text is descriptive (no “click here”)", p: "nice" },
-            { t: "The page has one clear primary intent (no cannibalization)", p: "should" },
-            { t: "The CTA matches the reader’s next logical step", p: "must" }
-          ]
-        }
-      ];
-
-      var PRIORITY_LABEL = { must: "Must fix", should: "Should fix", nice: "Nice to have" };
-
-      var listEl = document.getElementById("checklistList");
-      var allInputs = [];
-
-      /* Render the checklist from data */
-      function render() {
-        var html = "";
-        GROUPS.forEach(function (g, gi) {
-          html += '<article class="checklist-card" id="' + g.id + '">';
-          html += '<div class="group-head">';
-          html += '<span class="group-badge">' + g.letter + '</span>';
-          html += '<h3>' + esc(g.title) + '</h3>';
-          html += '<span class="group-tag">' + esc(g.tag) + '</span>';
-          html += '</div>';
-          html += '<p class="group-lede">' + esc(g.lede) + '</p>';
-          html += '<ul class="check-items' + (g.items.length > 4 ? ' two-col' : '') + '">';
-          g.items.forEach(function (it, ii) {
-            var id = "chk-" + gi + "-" + ii;
-            html += '<li class="check-item">';
-            html += '<label style="display:flex;gap:12px;align-items:flex-start;cursor:pointer;width:100%;">';
-            html += '<input type="checkbox" id="' + id + '" data-priority="' + it.p + '" />';
-            html += '<span>' + esc(it.t) + ' <span class="priority ' + it.p + '">' + PRIORITY_LABEL[it.p] + '</span></span>';
-            html += '</label>';
-            html += '</li>';
-          });
-          html += '</ul></article>';
-        });
-        listEl.innerHTML = html;
-        allInputs = Array.prototype.slice.call(listEl.querySelectorAll('input[type="checkbox"]'));
-        allInputs.forEach(function (input) {
-          input.addEventListener("change", updateProgress);
-        });
-        updateProgress();
-      }
-
-      /* Progress UI */
-      function updateProgress() {
-        var total = allInputs.length;
-        var done = allInputs.filter(function (i) { return i.checked; }).length;
-        var pct = total ? Math.round((done / total) * 100) : 0;
-
-        var countEl = document.getElementById("count");
-        if (countEl) countEl.textContent = done + " / " + total;
-
-        var toolbarBar = document.getElementById("toolbarBar");
-        if (toolbarBar) toolbarBar.style.width = pct + "%";
-
-        var heroBar = document.getElementById("heroBar");
-        if (heroBar) heroBar.style.width = pct + "%";
-
-        var ring = document.getElementById("heroRing");
-        if (ring) {
-          ring.textContent = pct + "%";
-          ring.style.setProperty("--ring-deg", (pct * 3.6) + "deg");
-        }
-
-        var ringLabel = document.getElementById("heroRingLabel");
-        if (ringLabel) ringLabel.textContent = done + " of " + total + " done";
-
-        var hint = document.getElementById("heroHint");
-        if (hint) {
-          var mustLeft = allInputs.filter(function (i) {
-            return i.getAttribute("data-priority") === "must" && !i.checked;
-          }).length;
-          if (total && done === total) {
-            hint.innerHTML = "Every item cleared. This page is publish-ready by the checklist.";
-          } else if (mustLeft > 0) {
-            hint.innerHTML = mustLeft + " <em>Must fix</em> item" + (mustLeft === 1 ? "" : "s") + " left before you publish.";
-          } else {
-            hint.innerHTML = "All <em>Must fix</em> items cleared. Tidy up the rest when you can.";
-          }
-        }
-      }
-
-      /* Build the markdown version from the same data */
-      function buildMarkdown() {
-        var lines = [];
-        lines.push("# " + DOC_TITLE);
-        lines.push("");
-        lines.push("A pre-publish checklist for finance, funding, credit, and fintech content. Clear every **Must fix** item before publishing.");
-        lines.push("");
-        GROUPS.forEach(function (g) {
-          lines.push("## " + g.letter + " — " + g.title + " (" + g.tag + ")");
-          lines.push("_" + g.lede + "_");
-          lines.push("");
-          g.items.forEach(function (it) {
-            lines.push("- [ ] " + it.t + " _(" + PRIORITY_LABEL[it.p] + ")_");
-          });
-          lines.push("");
-        });
-        lines.push("---");
-        lines.push("");
-        lines.push("**Trust Note:** This checklist improves citation readiness and content clarity. It does not guarantee rankings, AI citations, AI Overview placement, ChatGPT or Perplexity visibility, traffic, leads, approvals, revenue, loan offers, credit outcomes, or financial results. It is not legal, tax, accounting, underwriting, lending, financial, or compliance advice.");
-        lines.push("");
-        lines.push("Grade it automatically with the AI Citation Auditor GPT: " + GPT_URL);
-        return lines.join("\n");
-      }
-
-      /* Actions */
-      function initActions() {
-        document.querySelectorAll("[data-copy]").forEach(function (btn) {
-          btn.addEventListener("click", function () {
-            var md = buildMarkdown();
-            copyText(md).then(function () {
-              note("Checklist copied as markdown. Paste it into Notion, Docs, or a brief.");
-            }).catch(function () {
-              fallbackCopy(md);
-              note("Checklist copied as markdown. Paste it into Notion, Docs, or a brief.");
-            });
-          });
-        });
-
-        document.querySelectorAll("[data-download]").forEach(function (btn) {
-          btn.addEventListener("click", function () {
-            var md = buildMarkdown();
-            var blob = new Blob([md], { type: "text/markdown;charset=utf-8" });
-            var url = URL.createObjectURL(blob);
-            var a = document.createElement("a");
-            a.href = url;
-            a.download = "finance-content-checklist.md";
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-            note("Downloaded finance-content-checklist.md");
-          });
-        });
-
-        document.querySelectorAll("[data-print]").forEach(function (btn) {
-          btn.addEventListener("click", function () { window.print(); });
-        });
-
-        document.querySelectorAll("[data-reset]").forEach(function (btn) {
-          btn.addEventListener("click", function () {
-            allInputs.forEach(function (i) { i.checked = false; });
-            updateProgress();
-            note("Checklist reset.");
-          });
-        });
-      }
-
-      function note(msg) {
-        var el = document.getElementById("copiedNote");
-        if (!el) return;
-        el.textContent = msg;
-        window.setTimeout(function () { el.textContent = ""; }, 4000);
-      }
-
-      function copyText(text) {
-        if (!navigator.clipboard || !window.isSecureContext) {
-          return Promise.reject(new Error("Clipboard API unavailable"));
-        }
-        return navigator.clipboard.writeText(text);
-      }
-
-      function fallbackCopy(text) {
-        var ta = document.createElement("textarea");
-        ta.value = text;
-        ta.setAttribute("readonly", "");
-        ta.style.position = "fixed";
-        ta.style.top = "-9999px";
-        document.body.appendChild(ta);
-        ta.select();
-        try { document.execCommand("copy"); } catch (e) {}
-        document.body.removeChild(ta);
-      }
-
-      function esc(s) {
-        return String(s)
-          .replace(/&/g, "&amp;")
-          .replace(/</g, "&lt;")
-          .replace(/>/g, "&gt;");
-      }
-
-      /* Nav + header */
-      function initMobileNav() {
-        var toggle = document.querySelector("[data-nav-toggle]");
-        var menu = document.querySelector("[data-nav-menu]");
-        if (!toggle || !menu) return;
-
-        toggle.addEventListener("click", function () {
-          var isOpen = menu.classList.toggle("is-open");
-          toggle.setAttribute("aria-expanded", String(isOpen));
-          document.body.classList.toggle("nav-open", isOpen);
-        });
-
-        menu.addEventListener("click", function (e) {
-          if (!e.target.closest("a")) return;
-          menu.classList.remove("is-open");
-          toggle.setAttribute("aria-expanded", "false");
-          document.body.classList.remove("nav-open");
-        });
-
-        document.addEventListener("keydown", function (e) {
-          if (e.key !== "Escape") return;
-          menu.classList.remove("is-open");
-          toggle.setAttribute("aria-expanded", "false");
-          document.body.classList.remove("nav-open");
-        });
-      }
-
-      function initStickyHeader() {
-        var header = document.querySelector("[data-header]");
-        if (!header) return;
-        function update() { header.classList.toggle("is-scrolled", window.scrollY > 12); }
-        update();
-        window.addEventListener("scroll", update, { passive: true });
-      }
-
-      document.addEventListener("DOMContentLoaded", function () {
-        render();
-        initActions();
-        initMobileNav();
-        initStickyHeader();
-      });
-    })();
-  </script>
 </body>
 </html>
