@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">AI Citation Auditor dark logo</title>
+  <desc id="desc">Dark-background version of the AI Citation Auditor logo with a citation check motif.</desc>
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#93c5fd"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="360" rx="40" fill="#060913"/>
+  <g transform="translate(60 60)">
+    <rect x="0" y="0" width="240" height="240" rx="52" fill="#0f172a" stroke="rgba(148,163,184,0.28)"/>
+    <rect x="22" y="22" width="196" height="196" rx="42" fill="url(#g)" opacity="0.16"/>
+    <path d="M73 126l44 44 70-84" fill="none" stroke="url(#g)" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M116 58h66" fill="none" stroke="#e2e8f0" stroke-width="14" stroke-linecap="round"/>
+    <path d="M116 182h74" fill="none" stroke="#e2e8f0" stroke-width="14" stroke-linecap="round"/>
+    <circle cx="176" cy="82" r="10" fill="#22d3ee"/>
+    <circle cx="186" cy="166" r="8" fill="#93c5fd"/>
+  </g>
+  <g transform="translate(340 110)">
+    <text x="0" y="0" fill="#f8fafc" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="68" font-weight="800" letter-spacing="-1.5">AI Citation Auditor</text>
+    <text x="0" y="72" fill="#cbd5e1" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="30" font-weight="600">Finance content audits for AI answer engines</text>
+  </g>
+</svg>
