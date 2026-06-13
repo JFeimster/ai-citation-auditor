@@ -1,0 +1,6 @@
+[
+  { "label": "Home", "href": "/" },
+  { "label": "Services", "href": "/pages/services.html" },
+  { "label": "C.I.T.E. Framework", "href": "/pages/cite-framework.html" },
+  { "label": "Blog", "href": "/pages/blog/index.html" }
+]
