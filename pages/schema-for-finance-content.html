@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Schema for Finance Content | AI Citation Auditor</title>
+  <meta name="description" content="Use the right schema for finance content: FAQPage, Article, BreadcrumbList, Organization, and SoftwareApplication, plus when not to use HowTo." />
+  <link rel="canonical" href="https://ai-citation-auditor.vercel.app/pages/schema-for-finance-content.html" />
+  <meta property="og:title" content="Schema for Finance Content | AI Citation Auditor" />
+  <meta property="og:description" content="A finance schema fit guide for SEO operators, technical marketers, and content teams." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ai-citation-auditor.vercel.app/pages/schema-for-finance-content.html" />
+  <meta property="og:image" content="https://ai-citation-auditor.vercel.app/assets/img/ui/og-default.svg" />
+  <meta name="theme-color" content="#060913" />
+  <link rel="icon" href="/assets/img/brand/favicon.svg" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <script defer src="/assets/js/main.js"></script>
+</head>
+<body class="page">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="/" aria-label="AI Citation Auditor home">
+        <span class="brand-mark">C</span>
+        <span>AI Citation Auditor</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="primary-nav" data-nav-menu>
+        <a href="/pages/services.html">Services</a>
+        <a href="/pages/cite-framework.html">C.I.T.E.</a>
+        <a href="/pages/examples.html">Examples</a>
+        <a href="/pages/resources.html">Resources</a>
+        <a href="/pages/audit.html">Audit</a>
+        <a class="btn btn-primary btn-small" href="https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor" target="_blank" rel="noopener">Open GPT</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero page-hero">
+      <div class="container page-hero-grid">
+        <div>
+          <p class="eyebrow">Schema guide</p>
+          <h1>Pick schema that matches the page, not schema that looks busy.</h1>
+          <p class="lead">
+            Schema helps when it describes visible content. On finance pages, the goal is fit, not decoration. The wrong
+            schema can create confusion fast, especially when the page already deals with trust-sensitive claims.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor" target="_blank" rel="noopener">Ask the GPT which schema fits your page</a>
+            <a class="btn btn-secondary" href="/pages/resources.html">Open resources</a>
+          </div>
+        </div>
+        <aside class="panel">
+          <p class="eyebrow">Short answer</p>
+          <p>Use FAQPage for visible FAQs, Article for editorial pages, BreadcrumbList for real breadcrumbs, Organization for the brand, and SoftwareApplication for the GPT or tool page.</p>
+          <p class="note">No HowTo schema unless the visible page truly contains sequential instructions.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Schema types</p>
+          <h2>These are the common fit checks for finance content.</h2>
+        </div>
+        <div class="card-grid">
+          <article class="card">
+            <h3>FAQPage</h3>
+            <p>Use it only when the FAQ is visible on the same page and the questions match the JSON-LD exactly.</p>
+          </article>
+          <article class="card">
+            <h3>Article</h3>
+            <p>Use it for article-style pages with a clear editorial structure, not for thin service pages or promos.</p>
+          </article>
+          <article class="card">
+            <h3>BreadcrumbList</h3>
+            <p>Use it when the page visibly shows breadcrumbs that reflect the real page hierarchy.</p>
+          </article>
+          <article class="card">
+            <h3>Organization</h3>
+            <p>Use it to describe the brand or site. Keep it grounded in real site details and logos.</p>
+          </article>
+          <article class="card">
+            <h3>SoftwareApplication</h3>
+            <p>Use it for the GPT or other tool pages when the page is actually describing a software-like product.</p>
+          </article>
+          <article class="card">
+            <h3>HowTo</h3>
+            <p>Do not use it unless the page has real sequential instructions that are visible to the reader.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Validation checklist</p>
+          <h2>Check the schema against the HTML before you ship it.</h2>
+        </div>
+        <div class="panel">
+          <ul class="list-stack">
+            <li>Schema matches visible page content.</li>
+            <li>No FAQPage without a visible FAQ block.</li>
+            <li>No HowTo unless real steps are on the page.</li>
+            <li>No fabricated dates, offers, or review claims.</li>
+            <li>No schema that describes content the user cannot see.</li>
+            <li>Rich results validator passes without critical errors.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Common mistakes</p>
+          <h2>Most schema problems come from trying to make the page look smarter than it is.</h2>
+        </div>
+        <div class="table-shell">
+          <table>
+            <thead>
+              <tr>
+                <th>Mistake</th>
+                <th>Why it is a problem</th>
+                <th>Better move</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>FAQPage without a visible FAQ</td><td>Schema and page content no longer match.</td><td>Add the FAQ visibly or remove the schema.</td></tr>
+              <tr><td>HowTo on a broad guide</td><td>It implies step-by-step instructions that do not exist.</td><td>Use a normal article structure instead.</td></tr>
+              <tr><td>Article on a service page</td><td>It can misrepresent the page type.</td><td>Use Article only on actual editorial pages.</td></tr>
+              <tr><td>Organization with made-up details</td><td>Unsupported schema is worse than no schema.</td><td>Keep the brand data real and minimal.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="panel">
+          <p class="eyebrow">Next step</p>
+          <h2>Ask the GPT which schema fits your page before you add anything decorative.</h2>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor" target="_blank" rel="noopener">Ask the GPT</a>
+            <a class="btn btn-secondary" href="/pages/internal-link-map.html">Open internal-link map</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="/"><span class="brand-mark">C</span><span>AI Citation Auditor</span></a>
+        <p class="footer-copy">Educational only. No legal, tax, underwriting, lending, or financial advice. No guarantees.</p>
+      </div>
+      <div class="footer-links">
+        <a href="/pages/services.html">Services</a>
+        <a href="/pages/resources.html">Resources</a>
+        <a href="/pages/faq.html">FAQ</a>
+        <a href="/pages/pricing.html">Pricing</a>
+        <a href="mailto:jasonfeimster@gmail.com">jasonfeimster@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
