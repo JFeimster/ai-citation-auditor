@@ -1,31 +1,34 @@
 # Knowledge Files
 
-This directory tracks files intended for upload to the AI Citation Auditor Custom GPT's **Knowledge** section.
+This directory tracks files intended for upload to the custom GPT's **Knowledge** section.
 
-Use these files as the GPT's durable reference layer: audit rules, rewrite banks, schema guidance, service context, prompt patterns, and project-specific operating notes.
+These files are not runtime site code. They are reference materials the GPT can use to understand the project, brand voice, content rules, audit process, offer structure, and reusable operating guidance.
 
 ## Purpose
 
-Knowledge files should help the GPT answer consistently about:
+Use this directory for files that should help the GPT answer consistently, including:
 
-- AI citation readiness
-- finance-content audit criteria
-- risky finance claim rewrites
-- schema fit and structured-data choices
-- internal-link mapping
-- service offers and manual-audit scope
-- brand voice and no-guarantee claim guardrails
+- Brand and positioning notes
+- C.I.T.E. framework guidance
+- AI citation audit rules
+- Risky finance claim examples
+- Copy and CTA guidance
+- Service offer summaries
+- QA and publishing checklists
+- Prompt libraries
+- Internal operating notes
 
-## Recommended Upload Set
+## Recommended source files
 
-Start with these repo files when refreshing the Custom GPT knowledge base:
+Good candidates for GPT Knowledge uploads include:
 
 - `AGENTS.md`
-- `docs/prompts.md`
+- `README.md`
 - `docs/copy-bank.md`
+- `docs/prompts.md`
+- `docs/qa.md`
 - `docs/schema.md`
 - `docs/service-offers.md`
-- `docs/qa.md`
 - `docs/resources/audit-checklist.md`
 - `docs/resources/prompt-template.md`
 - `docs/resources/risky-claims-rewrite-bank.md`
@@ -34,30 +37,22 @@ Start with these repo files when refreshing the Custom GPT knowledge base:
 - `docs/resources/sample-audit-output.md`
 - `docs/resources/content-refresh-brief.md`
 
-## Maintenance Rules
+## Maintenance rules
 
-- Keep knowledge files plain-text friendly.
-- Prefer Markdown for uploaded reference files.
-- Avoid duplicate files with conflicting instructions.
-- Keep claim guardrails synchronized across `AGENTS.md`, `docs/copy-bank.md`, and rewrite-bank files.
-- Remove stale service offers or CTAs before uploading.
-- Re-upload revised files after meaningful changes to prompts, services, risky claims, schema guidance, or site positioning.
+- Keep knowledge files text-first and easy to parse.
+- Avoid uploading private client data.
+- Avoid stale screenshots or temporary notes.
+- Keep claims compliance-safe.
+- Remove duplicate or outdated instructions before upload.
+- Update this README when the recommended knowledge set changes.
 
-## What Not to Upload
+## What does not belong here
 
-Avoid uploading files that are primarily implementation details unless the GPT needs them for a specific support workflow:
+Do not use this directory for:
 
-- full HTML pages
-- full CSS files
-- generated sitemap files
-- robots.txt
-- raw screenshots
-- temporary Codex/Jules working notes
-
-## Suggested Refresh Workflow
-
-1. Review the files listed in the recommended upload set.
-2. Confirm no files contain outdated CTAs, pricing, or service claims.
-3. Confirm no file implies guaranteed rankings, citations, funding, approvals, credit improvement, or compliance approval.
-4. Upload the current file set to the Custom GPT Knowledge section.
-5. Test the GPT with one content audit prompt, one risky claim rewrite prompt, and one schema recommendation prompt.
+- Public site HTML
+- CSS or JavaScript
+- OpenAPI action schemas
+- Private API keys or secrets
+- Client files with sensitive data
+- Proprietary font files
