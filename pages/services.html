@@ -1,242 +1,516 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Services | AI Citation Auditor</title>
-  <meta name="description" content="Use the AI Citation Auditor GPT to score finance pages, surface risky claims, improve structure, and tighten citation readiness." />
-  <link rel="canonical" href="https://ai-citation-auditor.vercel.app/pages/services.html" />
-  <meta property="og:title" content="Services | AI Citation Auditor" />
-  <meta property="og:description" content="Finance-content audit support for answer clarity, structure, trust signals, and safer wording." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ai-citation-auditor.vercel.app/pages/services.html" />
-  <meta property="og:image" content="https://ai-citation-auditor.vercel.app/assets/img/ui/og-default.svg" />
-  <meta name="theme-color" content="#060913" />
-  <link rel="icon" href="/assets/img/brand/favicon.svg" />
-  <link rel="stylesheet" href="/assets/css/styles.css" />
-  <script defer src="/assets/js/main.js"></script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Done-for-You Finance Content Audit Service | AI Citation Auditor</title>
+<meta name="description" content="Done-for-you finance content audits that make your pages clearer, safer, and easier for AI search to cite. Single-page audits, citation readiness refreshes, SEO cleanups, content cluster audits, and AI-search optimization sprints." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="services.html" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Done-for-You Finance Content Audit Service" />
+<meta property="og:description" content="Turn your finance content into pages AI search actually cites. Manual, compliance-aware audits and refreshes." />
+<meta property="og:url" content="services.html" />
+
+<style>
+  :root{
+    --bg:#070A12; --surface:#101827; --surface-2:#151F32; --text:#F8FAFC;
+    --muted:#94A3B8; --primary:#7C3AED; --secondary:#06B6D4; --hot:#F97316;
+    --success:#22C55E; --border:rgba(148,163,184,.18);
+    --shadow:0 24px 80px rgba(0,0,0,.35);
+    --radius:24px; --radius-sm:16px; --max:1140px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg); color:var(--text); line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    background-image:
+      radial-gradient(60rem 60rem at 80% -10%, rgba(124,58,237,.18), transparent 60%),
+      radial-gradient(50rem 50rem at -10% 10%, rgba(6,182,212,.14), transparent 55%);
+    background-attachment:fixed;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 24px}
+
+  .skip-link{position:absolute;left:-9999px;top:0;background:var(--primary);color:#fff;padding:10px 16px;border-radius:8px;z-index:200}
+  .skip-link:focus{left:16px;top:16px}
+
+  /* Header */
+  header.site{position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);
+    background:rgba(7,10,18,.72);border-bottom:1px solid transparent;transition:border-color .25s,background .25s}
+  header.site.scrolled{border-bottom-color:var(--border);background:rgba(7,10,18,.9)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:-.01em}
+  .brand .mark{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;
+    background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;font-weight:800;font-size:19px;
+    box-shadow:0 8px 24px rgba(124,58,237,.45)}
+  .brand small{display:block;font-weight:500;color:var(--muted);font-size:12px;letter-spacing:.02em}
+  .nav-links{display:flex;align-items:center;gap:8px}
+  .nav-links a{padding:9px 14px;border-radius:10px;color:var(--muted);font-size:15px;font-weight:500;transition:color .2s,background .2s}
+  .nav-links a:hover{color:var(--text);background:rgba(148,163,184,.1)}
+  .nav-cta{margin-left:6px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:none;cursor:pointer;
+    font-family:inherit;font-weight:600;font-size:15px;border-radius:12px;padding:12px 20px;transition:transform .15s,box-shadow .2s,background .2s,border-color .2s;white-space:nowrap}
+  .btn:active{transform:translateY(1px)}
+  .btn-primary{background:linear-gradient(135deg,var(--primary),#9333EA);color:#fff;box-shadow:0 12px 30px rgba(124,58,237,.4)}
+  .btn-primary:hover{box-shadow:0 16px 40px rgba(124,58,237,.55)}
+  .btn-hot{background:linear-gradient(135deg,var(--hot),#FB923C);color:#fff;box-shadow:0 12px 30px rgba(249,115,22,.4)}
+  .btn-hot:hover{box-shadow:0 16px 40px rgba(249,115,22,.55)}
+  .btn-ghost{background:rgba(148,163,184,.08);color:var(--text);border:1px solid var(--border)}
+  .btn-ghost:hover{background:rgba(148,163,184,.16)}
+  .btn-lg{padding:15px 28px;font-size:16px}
+  .menu-toggle{display:none;background:none;border:1px solid var(--border);border-radius:10px;width:42px;height:42px;cursor:pointer;color:var(--text)}
+  .menu-toggle svg{width:20px;height:20px;margin:auto}
+
+  /* Hero */
+  .hero{padding:84px 0 56px;position:relative}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;
+    background:rgba(124,58,237,.12);border:1px solid rgba(124,58,237,.3);color:#C4B5FD;font-size:13px;font-weight:600;letter-spacing:.02em;margin-bottom:22px}
+  .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--hot);box-shadow:0 0 0 4px rgba(249,115,22,.18)}
+  h1{font-size:clamp(2.1rem,5vw,3.5rem);line-height:1.08;letter-spacing:-.03em;font-weight:800;margin-bottom:22px}
+  h1 .grad{background:linear-gradient(120deg,#A78BFA,#22D3EE);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lede{font-size:clamp(1.05rem,2vw,1.28rem);color:var(--muted);max-width:680px;margin-bottom:34px}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .hero-note{font-size:13.5px;color:var(--muted);margin-top:18px}
+
+  /* Trust strip */
+  .trust{border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-top:56px;background:rgba(16,24,39,.5)}
+  .trust .wrap{display:flex;flex-wrap:wrap;gap:14px 36px;align-items:center;justify-content:space-between;padding-top:20px;padding-bottom:20px}
+  .trust-item{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:14.5px;font-weight:500}
+  .trust-item svg{width:18px;height:18px;color:var(--success);flex-shrink:0}
+
+  /* Sections */
+  section{padding:72px 0}
+  .section-head{max-width:680px;margin-bottom:46px}
+  .kicker{color:var(--secondary);font-weight:700;font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
+  h2{font-size:clamp(1.7rem,3.5vw,2.5rem);line-height:1.14;letter-spacing:-.02em;font-weight:800;margin-bottom:16px}
+  h3{font-size:1.18rem;font-weight:700;letter-spacing:-.01em;margin-bottom:10px}
+  .section-head p{color:var(--muted);font-size:1.08rem}
+
+  /* Services grid */
+  .services{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .svc{position:relative;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:30px 28px;display:flex;flex-direction:column;transition:transform .2s,border-color .2s,box-shadow .2s;overflow:hidden}
+  .svc::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,var(--primary),var(--secondary));opacity:.75}
+  .svc:hover{transform:translateY(-4px);border-color:rgba(124,58,237,.4);box-shadow:var(--shadow)}
+  .svc.featured{border-color:rgba(249,115,22,.4)}
+  .svc.featured::before{background:linear-gradient(90deg,var(--hot),#FBBF24)}
+  .svc-badge{position:absolute;top:18px;right:18px;font-size:11.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#FED7AA;background:rgba(249,115,22,.15);border:1px solid rgba(249,115,22,.35);padding:5px 10px;border-radius:999px}
+  .svc-ico{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;margin-bottom:18px;
+    background:linear-gradient(135deg,rgba(124,58,237,.22),rgba(6,182,212,.22));border:1px solid var(--border)}
+  .svc-ico svg{width:24px;height:24px;color:#C4B5FD}
+  .svc h3{margin-bottom:8px}
+  .svc .who{font-size:13px;font-weight:600;color:var(--secondary);margin-bottom:12px;letter-spacing:.01em}
+  .svc p{color:var(--muted);font-size:14.5px;margin-bottom:18px}
+  .svc ul{list-style:none;margin-bottom:22px;display:grid;gap:9px}
+  .svc ul li{position:relative;padding-left:26px;font-size:14px;color:#CBD5E1}
+  .svc ul li svg{position:absolute;left:0;top:3px;width:16px;height:16px;color:var(--success)}
+  .svc .svc-foot{margin-top:auto}
+  .svc .svc-cta{width:100%}
+
+  /* Process */
+  .process{background:rgba(16,24,39,.5);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:step}
+  .step{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:28px 24px;position:relative}
+  .step::before{counter-increment:step;content:counter(step);position:absolute;top:-16px;left:24px;width:42px;height:42px;border-radius:12px;
+    display:grid;place-items:center;font-weight:800;font-size:18px;color:#fff;
+    background:linear-gradient(135deg,var(--primary),var(--secondary));box-shadow:0 8px 22px rgba(124,58,237,.4)}
+  .step h3{margin-top:18px}
+  .step p{color:var(--muted);font-size:14.5px}
+
+  /* Front-door / GPT crosslink */
+  .frontdoor{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;
+    background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:44px;box-shadow:var(--shadow)}
+  .frontdoor h2{margin-bottom:14px}
+  .frontdoor p{color:var(--muted);margin-bottom:18px}
+  .frontdoor .fd-list{list-style:none;display:grid;gap:12px;margin-bottom:26px}
+  .frontdoor .fd-list li{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:#CBD5E1}
+  .frontdoor .fd-list svg{width:20px;height:20px;color:var(--secondary);flex-shrink:0;margin-top:2px}
+  .fd-card{background:linear-gradient(135deg,rgba(124,58,237,.16),rgba(6,182,212,.12));border:1px solid var(--border);border-radius:var(--radius-sm);padding:30px;text-align:center}
+  .fd-card .big{font-size:2.4rem;font-weight:800;letter-spacing:-.02em;margin-bottom:6px;
+    background:linear-gradient(120deg,#A78BFA,#22D3EE);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .fd-card p{font-size:14px;color:var(--muted);margin-bottom:20px}
+
+  /* CTA card */
+  .cta-card{background:linear-gradient(135deg,rgba(124,58,237,.2),rgba(6,182,212,.14));
+    border:1px solid rgba(124,58,237,.35);border-radius:var(--radius);padding:52px 44px;text-align:center;box-shadow:var(--shadow)}
+  .cta-card h2{margin-bottom:14px}
+  .cta-card p{color:#CBD5E1;max-width:540px;margin:0 auto 28px}
+  .cta-card .hero-cta{justify-content:center}
+
+  /* Trust note */
+  .note{display:flex;gap:16px;align-items:flex-start;background:var(--surface-2);border:1px solid var(--border);
+    border-left:3px solid var(--secondary);border-radius:var(--radius-sm);padding:22px 24px;color:var(--muted);font-size:14.5px}
+  .note svg{width:22px;height:22px;color:var(--secondary);flex-shrink:0;margin-top:1px}
+  .note strong{color:var(--text)}
+
+  /* FAQ */
+  .faq{display:grid;gap:14px;max-width:820px}
+  details{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;transition:border-color .2s}
+  details[open]{border-color:rgba(124,58,237,.4)}
+  summary{cursor:pointer;list-style:none;padding:20px 24px;font-weight:600;font-size:1.04rem;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  summary::-webkit-details-marker{display:none}
+  summary .chev{width:20px;height:20px;color:var(--muted);transition:transform .2s;flex-shrink:0}
+  details[open] summary .chev{transform:rotate(180deg)}
+  details .answer{padding:0 24px 22px;color:var(--muted);font-size:15px}
+
+  /* Footer */
+  footer.site{border-top:1px solid var(--border);padding:48px 0 40px;margin-top:24px;background:rgba(16,24,39,.5)}
+  .foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:30px;align-items:flex-start}
+  .foot-links{display:flex;flex-wrap:wrap;gap:10px 26px}
+  .foot-links a{color:var(--muted);font-size:14.5px;transition:color .2s}
+  .foot-links a:hover{color:var(--text)}
+  .foot-bottom{margin-top:34px;padding-top:24px;border-top:1px solid var(--border);color:var(--muted);font-size:13.5px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between}
+
+  @media (max-width:860px){
+    .nav-links{position:fixed;inset:72px 0 auto 0;flex-direction:column;align-items:stretch;gap:4px;padding:18px 24px 26px;
+      background:rgba(7,10,18,.97);border-bottom:1px solid var(--border);transform:translateY(-130%);transition:transform .28s ease;visibility:hidden}
+    .nav-links.open{transform:translateY(0);visibility:visible}
+    .nav-links a{padding:13px 14px;font-size:16px}
+    .nav-cta{margin:8px 0 0}
+    .nav-cta .btn{width:100%}
+    .menu-toggle{display:grid}
+    .services,.steps{grid-template-columns:1fr}
+    .frontdoor{grid-template-columns:1fr;padding:32px 26px}
+    .cta-card{padding:40px 26px}
+  }
+</style>
 </head>
-<body class="page">
-  <a class="skip-link" href="#main">Skip to content</a>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header" data-header>
-    <nav class="nav container" aria-label="Primary">
-      <a class="brand" href="/" aria-label="AI Citation Auditor home">
-        <span class="brand-mark">C</span>
-        <span>AI Citation Auditor</span>
-      </a>
-      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav" data-nav-toggle>
-        <span></span><span></span><span></span>
-      </button>
-      <div class="nav-links" id="primary-nav" data-nav-menu>
-        <a href="/pages/services.html">Services</a>
-        <a href="/pages/cite-framework.html">C.I.T.E.</a>
-        <a href="/pages/examples.html">Examples</a>
-        <a href="/pages/blog/index.html">Blog</a>
-        <a class="btn btn-secondary btn-small" href="mailto:jasonfeimster@gmail.com">Contact</a>
-        <a class="btn btn-primary btn-small" href="https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor" target="_blank" rel="noopener">Open GPT</a>
-      </div>
+<header class="site" id="top">
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="AI Citation Auditor home">
+      <span class="mark">C</span>
+      <span>AI Citation Auditor<small>Done-for-you finance content audits</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#how">How it works</a>
+      <a href="#frontdoor">Start free</a>
+      <a href="#faq">FAQ</a>
+      <span class="nav-cta"><a class="btn btn-hot" href="mailto:jasonfeimster@gmail.com?subject=Request%20a%20Manual%20Audit&body=Hi%20Jason%2C%0A%0AI%27d%20like%20to%20request%20a%20manual%20finance%20content%20audit.%0A%0AService%20I%27m%20interested%20in%3A%20%0APage%2FURL%20to%20review%3A%20%0APrimary%20goal%3A%20%0ATimeline%3A%20">Request a Manual Audit</a></span>
     </nav>
-  </header>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
 
-  <main id="main">
-    <section class="hero page-hero">
-      <div class="container page-hero-grid">
-        <div>
-          <p class="eyebrow">Services</p>
-          <h1>A finance-content audit that behaves like an editor, not a cheerleader.</h1>
-          <p class="lead">
-            The GPT scores your page, flags risky claims, recommends better structure, and gives you a practical
-            publish checklist. It is built for finance teams that want cleaner pages without fake certainty.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor" target="_blank" rel="noopener">Open the GPT</a>
-            <a class="btn btn-secondary" href="/pages/cite-framework.html">See C.I.T.E.</a>
-          </div>
-        </div>
-        <aside class="panel">
-          <p class="eyebrow">What you get</p>
-          <ul class="list-stack">
-            <li>Scorecard across clarity, structure, trust, schema, links, and claim risk.</li>
-            <li>Rewrite suggestions for funding, credit, and outcome language.</li>
-            <li>H2, FAQ, and table recommendations that fit the page’s actual intent.</li>
-            <li>A publish checklist that keeps the page honest enough to ship.</li>
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow"><span class="dot"></span> Done-for-you · Finance content audits</span>
+      <h1>Stop guessing why AI search <span class="grad">skips your finance pages</span>. Let me fix them for you.</h1>
+      <p class="lede">The free GPT shows you what's wrong. This is where I do the work — manually rewriting and restructuring your finance content so it's clearer, compliance-aware, and far easier for AI search and search engines to quote.</p>
+      <div class="hero-cta">
+        <a class="btn btn-hot btn-lg" href="mailto:jasonfeimster@gmail.com?subject=Request%20a%20Manual%20Audit&body=Hi%20Jason%2C%0A%0AI%27d%20like%20to%20request%20a%20manual%20finance%20content%20audit.%0A%0AService%20I%27m%20interested%20in%3A%20%0APage%2FURL%20to%20review%3A%20%0APrimary%20goal%3A%20%0ATimeline%3A%20">Request a Manual Audit</a>
+        <a class="btn btn-ghost btn-lg" href="#services">See the services</a>
+      </div>
+      <p class="hero-note">Built for funding, fintech, business credit, and finance-adjacent brands. Plain-language, no-hype, compliance-safe.</p>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="trust">
+    <div class="wrap">
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Manual, human review — not just a tool dump</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Built on the C.I.T.E. framework</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Compliance-aware finance wording</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Copy-ready deliverables you can ship</div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">What you can hire me for</div>
+        <h2>Five ways to make your finance content citable</h2>
+        <p>Each engagement uses the same backbone — Clarify, Include evidence, Tie to a financial decision, Engineer for extraction — applied at the depth you need.</p>
+      </div>
+
+      <div class="services">
+
+        <!-- 1 -->
+        <article class="svc featured">
+          <span class="svc-badge">Most popular</span>
+          <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg></div>
+          <h3>Single-page finance content audit</h3>
+          <div class="who">Best for a money page you need to perform</div>
+          <p>A deep, manual teardown of one critical page — your funding offer, product explainer, or pillar guide — with a prioritized fix list and the rewritten language to use.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Full C.I.T.E. scorecard for the page</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Answer-block rewrites for key questions</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Risky → safer wording swaps</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Schema + internal link recommendations</li>
           </ul>
-          <p class="note">Educational only. No legal, tax, underwriting, lending, or financial advice. No guarantees.</p>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section" id="what-it-does">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">What it does</p>
-          <h2>It checks the page the way AI answer engines and real readers will.</h2>
-        </div>
-        <div class="feature-grid">
-          <article class="card">
-            <h3>Score the page</h3>
-            <p>Rate the page on direct answers, evidence, trust, structure, links, CTA fit, and risk.</p>
-          </article>
-          <article class="card">
-            <h3>Surface weak blocks</h3>
-            <p>Find missing definitions, thin intros, awkward sections, and vague summaries before they ship.</p>
-          </article>
-          <article class="card">
-            <h3>Rewrite risky claims</h3>
-            <p>Swap certainty, approval, and outcome claims for wording that is clearer and safer.</p>
-          </article>
-          <article class="card">
-            <h3>Map the next link</h3>
-            <p>Point readers toward the framework, examples, or risk-claim page when more context is needed.</p>
-          </article>
-          <article class="card">
-            <h3>Suggest structure</h3>
-            <p>Recommend question-style H2s, tables, and FAQs that help extraction without stuffing keywords.</p>
-          </article>
-          <article class="card">
-            <h3>End with a checklist</h3>
-            <p>Ship with a final pass that calls out what to fix before the page goes live.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-alt" id="how-it-works">
-      <div class="container content-grid">
-        <div>
-          <p class="eyebrow">How it works</p>
-          <h2>The workflow is simple enough to use, strict enough to be useful.</h2>
-          <p class="section-lede">
-            Paste the page, ask for a score, and let the GPT return a practical audit. Then use the scorecard,
-            fixes, and checklist to clean up the page before it reaches readers or answer engines.
-          </p>
-        </div>
-        <div class="timeline">
-          <div class="timeline-item">
-            <strong>1. Paste the page</strong>
-            <span>Drop in draft copy, extracted text, or a section you want reviewed.</span>
+          <div class="svc-foot">
+            <a class="btn btn-hot svc-cta" href="mailto:jasonfeimster@gmail.com?subject=Request%20a%20Manual%20Audit%20%E2%80%94%20Single-page%20finance%20content%20audit&body=Hi%20Jason%2C%0A%0AI%27d%20like%20a%20single-page%20finance%20content%20audit.%0A%0APage%2FURL%20to%20review%3A%20%0APrimary%20goal%3A%20%0ATarget%20question%2Faudience%3A%20">Request a Manual Audit</a>
           </div>
-          <div class="timeline-item">
-            <strong>2. Read the score</strong>
-            <span>See where the page is strong, weak, or risky in plain English.</span>
-          </div>
-          <div class="timeline-item">
-            <strong>3. Fix the structure</strong>
-            <span>Apply the H2, table, FAQ, and internal-link suggestions.</span>
-          </div>
-          <div class="timeline-item">
-            <strong>4. Ship with less noise</strong>
-            <span>Use the final checklist to reduce avoidable claim and extraction issues.</span>
-          </div>
-        </div>
-      </div>
-    </section>
+        </article>
 
-    <section class="section" id="who-for">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Who it’s for</p>
-          <h2>Built for teams that cannot afford sloppy finance wording.</h2>
-        </div>
-        <div class="who-grid">
-          <article class="card"><h3>Finance brands</h3><p>Use it on landing pages, explainers, and comparison content.</p></article>
-          <article class="card"><h3>Fintech operators</h3><p>Use it when the page needs structure and product context.</p></article>
-          <article class="card"><h3>Funding teams</h3><p>Use it to pressure-test claims around access, approval, and speed.</p></article>
-          <article class="card"><h3>Content leads</h3><p>Use it to give writers a tighter brief and cleaner revision target.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="sample-output">
-      <div class="container content-grid">
-        <div class="prompt-box">
-          <p class="eyebrow">Starter prompt</p>
-          <div class="prompt-label">Copy this</div>
-          <p>
-            “Audit this finance page for AI citation readiness. Score it, identify risky claims, recommend better H2s,
-            suggest tables and FAQs, map internal links, and give me a publish checklist.”
-          </p>
-          <button class="copy-btn" type="button" data-copy="Audit this finance page for AI citation readiness. Score it, identify risky claims, recommend better H2s, suggest tables and FAQs, map internal links, and give me a publish checklist.">Copy prompt</button>
-        </div>
-        <div class="card">
-          <p class="eyebrow">Sample output</p>
-          <h3>What the audit usually returns</h3>
-          <div class="table-shell">
-            <table>
-              <thead>
-                <tr>
-                  <th>Area</th>
-                  <th>Read</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>Intro answer</td><td>Good</td><td>Keep it direct and under 60 words.</td></tr>
-                <tr><td>Funding claim</td><td>Risky</td><td>Replace certainty with fit-based language.</td></tr>
-                <tr><td>Tables</td><td>Missing</td><td>Add one comparison table or decision table.</td></tr>
-                <tr><td>Internal links</td><td>Thin</td><td>Link to C.I.T.E., examples, and risk claims.</td></tr>
-              </tbody>
-            </table>
+        <!-- 2 -->
+        <article class="svc">
+          <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg></div>
+          <h3>AI citation readiness refresh</h3>
+          <div class="who">Best for content that ranks but never gets quoted</div>
+          <p>Your pages already exist and may even rank — but AI answers cite someone else. I restructure them into clean, extractable answer blocks AI engines can lift verbatim.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Question-first headings and direct answers</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Definition, comparison & list formatting</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Evidence and source-context layering</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Extraction-ready rewrite of each section</li>
+          </ul>
+          <div class="svc-foot">
+            <a class="btn btn-ghost svc-cta" href="mailto:jasonfeimster@gmail.com?subject=Request%20a%20Manual%20Audit%20%E2%80%94%20AI%20citation%20readiness%20refresh&body=Hi%20Jason%2C%0A%0AI%27d%20like%20an%20AI%20citation%20readiness%20refresh.%0A%0APages%2FURLs%3A%20%0AWhat%27s%20getting%20quoted%20instead%3A%20%0APrimary%20goal%3A%20">Request a Manual Audit</a>
           </div>
-        </div>
-      </div>
-    </section>
+        </article>
 
-    <section class="section">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">FAQ</p>
-          <h2>What this does not do matters as much as what it does.</h2>
-        </div>
-        <div class="faq-list">
-          <details>
-            <summary>Is this a legal or compliance review?</summary>
-            <p>No. It helps spot wording and structure issues, but it is not legal, tax, underwriting, lending, or financial advice.</p>
-          </details>
-          <details>
-            <summary>Will it guarantee citations or rankings?</summary>
-            <p>No. The goal is better readiness, not promises about search placement, traffic, or business outcomes.</p>
-          </details>
-          <details>
-            <summary>Can I use it on existing pages?</summary>
-            <p>Yes. It works well on both drafts and live pages when you want a cleaner second pass.</p>
-          </details>
-          <details>
-            <summary>Where should I go next?</summary>
-            <p>Use the <a href="/pages/cite-framework.html">C.I.T.E. framework</a>, then compare your wording on the <a href="/pages/risk-claims.html">risk claims page</a>.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="panel">
-          <p class="eyebrow">Final CTA</p>
-          <h2>Open the GPT and clean up the page before the page becomes your problem.</h2>
-          <p>Use the audit to tighten structure, reduce claim risk, and give AI systems less room to improvise.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor" target="_blank" rel="noopener">Open GPT</a>
-            <a class="btn btn-secondary" href="/pages/examples.html">View examples</a>
+        <!-- 3 -->
+        <article class="svc">
+          <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M7 12h10"/><path d="M10 18h4"/></svg></div>
+          <h3>Finance SEO content cleanup</h3>
+          <div class="who">Best for thin, dated, or messy finance pages</div>
+          <p>A practical cleanup pass that tightens structure, removes hype and risk-flag wording, fixes clarity gaps, and aligns each page with the question it should actually answer.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Heading and structure rework</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Compliance-aware language pass</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Clarity, scannability & intent alignment</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Metadata and on-page basics tune-up</li>
+          </ul>
+          <div class="svc-foot">
+            <a class="btn btn-ghost svc-cta" href="mailto:jasonfeimster@gmail.com?subject=Request%20a%20Manual%20Audit%20%E2%80%94%20Finance%20SEO%20content%20cleanup&body=Hi%20Jason%2C%0A%0AI%27d%20like%20a%20finance%20SEO%20content%20cleanup.%0A%0APages%2FURLs%3A%20%0AHow%20many%20pages%3A%20%0APrimary%20goal%3A%20">Request a Manual Audit</a>
           </div>
-        </div>
-      </div>
-    </section>
-  </main>
+        </article>
 
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div>
-        <a class="brand" href="/"><span class="brand-mark">C</span><span>AI Citation Auditor</span></a>
-        <p class="footer-copy">Educational only. No legal, tax, underwriting, lending, or financial advice. No guarantees.</p>
-      </div>
-      <div class="footer-links">
-        <a href="/pages/legal/disclaimer.html">Disclaimer</a>
-        <a href="/pages/legal/privacy.html">Privacy</a>
-        <a href="mailto:jasonfeimster@gmail.com">jasonfeimster@gmail.com</a>
+        <!-- 4 -->
+        <article class="svc">
+          <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.5"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="M6.7 7.3l3.6 3.6M17.3 7.3l-3.6 3.6M6.7 16.7l3.6-3.6M17.3 16.7l-3.6-3.6"/></svg></div>
+          <h3>Content cluster audit</h3>
+          <div class="who">Best for a topic hub or pillar + supporting pages</div>
+          <p>I audit a whole cluster as a system — pillar page plus its supporting articles — so they reinforce each other, cover the full question map, and link in a way AI search can follow.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Cluster-wide coverage & gap map</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Internal link architecture plan</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Per-page priority fix list</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Duplicate / cannibalization cleanup</li>
+          </ul>
+          <div class="svc-foot">
+            <a class="btn btn-ghost svc-cta" href="mailto:jasonfeimster@gmail.com?subject=Request%20a%20Manual%20Audit%20%E2%80%94%20Content%20cluster%20audit&body=Hi%20Jason%2C%0A%0AI%27d%20like%20a%20content%20cluster%20audit.%0A%0ACluster%2Fhub%20topic%3A%20%0APillar%20URL%3A%20%0ANumber%20of%20supporting%20pages%3A%20%0APrimary%20goal%3A%20">Request a Manual Audit</a>
+          </div>
+        </article>
+
+        <!-- 5 -->
+        <article class="svc">
+          <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4.5 12.5h6L9 22l9-11.5h-6L13 2z"/></svg></div>
+          <h3>AI-search optimization sprint</h3>
+          <div class="who">Best for a focused, fast push across key pages</div>
+          <p>A time-boxed sprint where we attack your highest-value finance pages together — audit, rewrite, restructure, and prep for AI search — with a clear roadmap of what to ship next.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Prioritized page-by-page game plan</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Batch rewrites of priority sections</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Schema + linking blueprint</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Next-90-days content roadmap</li>
+          </ul>
+          <div class="svc-foot">
+            <a class="btn btn-ghost svc-cta" href="mailto:jasonfeimster@gmail.com?subject=Request%20a%20Manual%20Audit%20%E2%80%94%20AI-search%20optimization%20sprint&body=Hi%20Jason%2C%0A%0AI%27d%20like%20an%20AI-search%20optimization%20sprint.%0A%0ASite%2Fbrand%3A%20%0ANumber%20of%20priority%20pages%3A%20%0ATimeline%3A%20%0APrimary%20goal%3A%20">Request a Manual Audit</a>
+          </div>
+        </article>
+
+        <!-- Not sure card -->
+        <article class="svc">
+          <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.8.4-1 .9-1 1.7"/><line x1="12" y1="17" x2="12" y2="17"/></svg></div>
+          <h3>Not sure which one?</h3>
+          <div class="who">Start with the free GPT, then we'll scope it</div>
+          <p>Run your page through the free AI Citation Auditor first. Send me the output and I'll tell you honestly which engagement (if any) is worth your money — no pressure.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Free self-serve audit to start</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Honest scope recommendation</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> No retainer, no lock-in pitch</li>
+          </ul>
+          <div class="svc-foot">
+            <a class="btn btn-primary svc-cta" id="gptStart" href="https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor" target="_blank" rel="noopener">Start free with the GPT</a>
+          </div>
+        </article>
+
       </div>
     </div>
-  </footer>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="process" id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">How it works</div>
+        <h2>From free audit to shipped fixes</h2>
+        <p>Simple, low-friction, and built so you always know what you're getting before any money changes hands.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>Run the free GPT</h3>
+          <p>Paste your finance page into the AI Citation Auditor. You'll get a C.I.T.E. scorecard and a list of what's holding it back — in minutes, for free.</p>
+        </div>
+        <div class="step">
+          <h3>Request a manual audit</h3>
+          <p>Send me the page (and the GPT output if you have it). I review it by hand, confirm scope and fit, and tell you exactly what I'd change and why.</p>
+        </div>
+        <div class="step">
+          <h3>Get copy-ready fixes</h3>
+          <p>You receive rewritten answer blocks, safer wording, structure changes, and schema/linking guidance — ready to paste into your CMS and ship.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FRONT DOOR / GPT CROSSLINK -->
+  <section id="frontdoor">
+    <div class="wrap">
+      <div class="frontdoor">
+        <div>
+          <div class="kicker">Try before you buy</div>
+          <h2>The free GPT is the front door</h2>
+          <p>You don't have to take my word for any of this. The AI Citation Auditor will tell you what's wrong with your finance content for free — then you decide if you want me to fix it for you.</p>
+          <ul class="fd-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> See your C.I.T.E. weak spots instantly</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Catch risky finance wording before it ships</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Upgrade to done-for-you only when it's worth it</li>
+          </ul>
+          <div class="hero-cta">
+            <a class="btn btn-primary btn-lg" href="https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor" target="_blank" rel="noopener">Open the free GPT</a>
+            <a class="btn btn-ghost btn-lg" href="mailto:jasonfeimster@gmail.com?subject=Request%20a%20Manual%20Audit&body=Hi%20Jason%2C%0A%0AI%27d%20like%20to%20request%20a%20manual%20finance%20content%20audit.%0A%0AService%20I%27m%20interested%20in%3A%20%0APage%2FURL%20to%20review%3A%20">Skip ahead — request a manual audit</a>
+          </div>
+        </div>
+        <div class="fd-card">
+          <div class="big">Free → Done</div>
+          <p>Self-serve audit to find the gaps. Manual service to close them.</p>
+          <a class="btn btn-hot" href="https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor" target="_blank" rel="noopener">Start free now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA CARD -->
+  <section>
+    <div class="wrap">
+      <div class="cta-card">
+        <div class="kicker">Ready when you are</div>
+        <h2>Request a manual audit</h2>
+        <p>Tell me the page, the goal, and the timeline. I'll reply with whether it's a fit, what I'd do, and what it takes to get it done.</p>
+        <div class="hero-cta">
+          <a class="btn btn-hot btn-lg" href="mailto:jasonfeimster@gmail.com?subject=Request%20a%20Manual%20Audit&body=Hi%20Jason%2C%0A%0AI%27d%20like%20to%20request%20a%20manual%20finance%20content%20audit.%0A%0AService%20I%27m%20interested%20in%3A%20%0APage%2FURL%20to%20review%3A%20%0APrimary%20goal%3A%20%0ATimeline%3A%20">Request a Manual Audit</a>
+          <a class="btn btn-ghost btn-lg" href="#services">Compare the services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST NOTE -->
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="8"/></svg>
+        <div><strong>A note on expectations.</strong> These services improve the clarity, structure, and compliance-readiness of your finance content so it's better positioned for AI search and search engines. They do not guarantee specific rankings, AI citations, traffic, funding approvals, or financial outcomes. AI engines and search results change constantly and are outside any single provider's control. Nothing here is legal, financial, or compliance advice — always have regulated content reviewed by a qualified professional before publishing.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">FAQ</div>
+        <h2>Common questions</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How is this different from the free GPT?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
+          <div class="answer">The GPT is a self-serve audit — it tells you what's wrong. These services are done-for-you: I personally rewrite, restructure, and prep your finance content so the fixes are actually made, not just identified.</div>
+        </details>
+        <details>
+          <summary>What kinds of brands do you work with?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
+          <div class="answer">Finance and finance-adjacent brands — business funding, fintech, business credit, lending, alternative capital, and the content teams and agencies that serve them. If your content lives in a compliance-sensitive money space, it's a fit.</div>
+        </details>
+        <details>
+          <summary>Do you guarantee I'll get cited by AI or rank higher?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
+          <div class="answer">No — and be skeptical of anyone who does. AI engines and search rankings are outside any provider's control. What I do is make your content materially clearer, safer, and more extractable, which is what gives it the best possible shot.</div>
+        </details>
+        <details>
+          <summary>What do I actually receive?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
+          <div class="answer">Copy-ready deliverables: a C.I.T.E. scorecard, rewritten answer blocks, risky-to-safer wording swaps, structure/heading changes, and schema plus internal-link recommendations — formatted so you can paste them straight into your CMS.</div>
+        </details>
+        <details>
+          <summary>How do I get started and how much does it cost?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></summary>
+          <div class="answer">Run the free GPT, then request a manual audit with your page and goal. I'll reply with scope, fit, and pricing for your specific situation — every engagement is quoted based on page count, depth, and timeline.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <a class="brand" href="index.html" aria-label="AI Citation Auditor home">
+        <span class="mark">C</span>
+        <span>AI Citation Auditor<small>Done-for-you finance content audits</small></span>
+      </a>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="audit.html">Free Audit</a>
+        <a href="cite-framework.html">C.I.T.E. Framework</a>
+        <a href="finance-content-checklist.html">Publish Checklist</a>
+        <a href="#services">Services</a>
+        <a href="mailto:jasonfeimster@gmail.com?subject=Request%20a%20Manual%20Audit">Request an Audit</a>
+      </nav>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> AI Citation Auditor. Built for finance brands that want to get quoted.</span>
+      <span>Educational use only · Not legal, financial, or compliance advice.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    // Mobile nav
+    var toggle = document.getElementById('menuToggle');
+    var links = document.getElementById('navLinks');
+    if(toggle && links){
+      toggle.addEventListener('click', function(){
+        var open = links.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      links.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click', function(){
+          links.classList.remove('open');
+          toggle.setAttribute('aria-expanded','false');
+        });
+      });
+    }
+
+    // Sticky header shadow
+    var header = document.querySelector('header.site');
+    var onScroll = function(){
+      if(window.scrollY > 8){ header.classList.add('scrolled'); }
+      else { header.classList.remove('scrolled'); }
+    };
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+
+    // Current year
+    var y = document.getElementById('year');
+    if(y){ y.textContent = new Date().getFullYear(); }
+  })();
+</script>
 </body>
 </html>
