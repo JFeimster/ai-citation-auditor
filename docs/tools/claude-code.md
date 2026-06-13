@@ -15,7 +15,7 @@ PowerShell:
 Get-ChildItem -Force
 rg --files
 git status --short
-git grep "dummyimage.com" || true
+git grep "<pattern-to-check>" || true
 python -m http.server 8080
 ```
 
@@ -24,7 +24,7 @@ Unix-friendly:
 ls -la
 rg --files
 git status --short
-git grep "dummyimage.com" || true
+git grep "<pattern-to-check>" || true
 python -m http.server 8080
 ```
 
