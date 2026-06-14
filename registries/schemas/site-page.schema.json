@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Site Page",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "path",
+    "url",
+    "title",
+    "description",
+    "type",
+    "cluster",
+    "last_modified"
+  ],
+  "properties": {
+    "path": { "type": "string" },
+    "url": { "type": "string" },
+    "title": { "type": "string" },
+    "description": { "type": "string" },
+    "type": { "type": "string" },
+    "cluster": { "type": "string" },
+    "last_modified": { "type": "string" }
+  }
+}

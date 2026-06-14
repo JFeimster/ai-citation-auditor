@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Action",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "slug",
+    "name",
+    "auth_type",
+    "openapi_path",
+    "status",
+    "test_prompts_path",
+    "owner"
+  ],
+  "properties": {
+    "slug": { "type": "string" },
+    "name": { "type": "string" },
+    "auth_type": { "type": "string" },
+    "openapi_path": { "type": "string" },
+    "status": { "type": "string" },
+    "test_prompts_path": { "type": "string" },
+    "owner": { "type": "string" }
+  }
+}

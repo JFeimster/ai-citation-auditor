@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CTA",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "slug",
+    "label",
+    "href"
+  ],
+  "properties": {
+    "slug": { "type": "string" },
+    "label": { "type": "string" },
+    "href": { "type": "string" }
+  }
+}
