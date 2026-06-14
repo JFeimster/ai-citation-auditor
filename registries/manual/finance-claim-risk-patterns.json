@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-06-13",
+  "patterns": [
+    {
+      "pattern": "guaranteed approval",
+      "risk_type": "approval guarantee",
+      "severity": "high",
+      "explanation": "This language promises an outcome that cannot be guaranteed.",
+      "safer_direction": "Use eligibility-based or review-before-publishing wording."
+    },
+    {
+      "pattern": "get funded instantly",
+      "risk_type": "instant funding claim",
+      "severity": "high",
+      "explanation": "This implies immediate funding and can mislead readers.",
+      "safer_direction": "Use faster-review or streamlined-process language instead."
+    },
+    {
+      "pattern": "fix your credit",
+      "risk_type": "credit-improvement promise",
+      "severity": "high",
+      "explanation": "This implies a guaranteed credit outcome.",
+      "safer_direction": "Use educational or review-oriented language."
+    },
+    {
+      "pattern": "boost your score",
+      "risk_type": "score-improvement promise",
+      "severity": "high",
+      "explanation": "This suggests guaranteed score movement.",
+      "safer_direction": "Use guidance or factors that may affect score language."
+    },
+    {
+      "pattern": "AI will rank this",
+      "risk_type": "ai-ranking guarantee",
+      "severity": "medium",
+      "explanation": "This claims a ranking outcome that cannot be promised.",
+      "safer_direction": "Use clarity, structure, and extraction-readiness language."
+    },
+    {
+      "pattern": "guaranteed citation",
+      "risk_type": "citation guarantee",
+      "severity": "high",
+      "explanation": "This overstates what AI systems or search engines will do.",
+      "safer_direction": "Use citation-readiness or answer-clarity language."
+    }
+  ]
+}

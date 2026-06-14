@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Custom GPT",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "slug",
+    "name",
+    "status",
+    "category",
+    "description",
+    "target_user",
+    "knowledge_files",
+    "actions",
+    "source_url"
+  ],
+  "properties": {
+    "slug": { "type": "string" },
+    "name": { "type": "string" },
+    "status": { "type": "string" },
+    "category": { "type": "string" },
+    "description": { "type": "string" },
+    "target_user": { "type": "string" },
+    "knowledge_files": { "type": "array", "items": { "type": "string" } },
+    "actions": { "type": "array", "items": { "type": "string" } },
+    "source_url": { "type": "string" }
+  }
+}

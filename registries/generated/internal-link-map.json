@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-06-13",
+  "links": [
+    {
+      "source": "/pages/resources.html",
+      "target": "/pages/services.html",
+      "anchor_text": "See services"
+    },
+    {
+      "source": "/pages/resources.html",
+      "target": "/pages/faq.html",
+      "anchor_text": "FAQ"
+    },
+    {
+      "source": "/pages/business-funding-content-audit.html",
+      "target": "/pages/funding-content-audit.html",
+      "anchor_text": "funding content audit"
+    }
+  ]
+}

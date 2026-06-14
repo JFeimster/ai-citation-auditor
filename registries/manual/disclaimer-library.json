@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-06-13",
+  "disclaimers": [
+    {
+      "slug": "ai-citation-disclaimer",
+      "label": "AI citation disclaimer",
+      "text": "Citation readiness may improve clarity, but it does not guarantee citation placement."
+    },
+    {
+      "slug": "finance-content-disclaimer",
+      "label": "Finance content disclaimer",
+      "text": "Educational only. No legal, tax, underwriting, lending, or financial advice."
+    },
+    {
+      "slug": "funding-disclaimer",
+      "label": "Funding disclaimer",
+      "text": "Eligibility-based wording only. No guaranteed funding or approvals."
+    },
+    {
+      "slug": "credit-disclaimer",
+      "label": "Credit disclaimer",
+      "text": "No guaranteed credit improvement or score changes."
+    },
+    {
+      "slug": "legal-compliance-disclaimer",
+      "label": "Legal/compliance disclaimer",
+      "text": "Not a compliance approval or legal review."
+    },
+    {
+      "slug": "educational-only-disclaimer",
+      "label": "Educational only disclaimer",
+      "text": "For educational and planning purposes only."
+    }
+  ]
+}

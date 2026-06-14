@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-06-13",
+  "rewrites": [
+    {
+      "risky_phrase": "guaranteed approval",
+      "risk_type": "approval guarantee",
+      "safer_rewrites": [
+        "subject to review",
+        "eligibility-based review",
+        "fit-based consideration"
+      ],
+      "notes": "Keep the user aware that outcomes are not guaranteed."
+    },
+    {
+      "risky_phrase": "get funded instantly",
+      "risk_type": "instant funding claim",
+      "safer_rewrites": [
+        "faster review process",
+        "streamlined intake",
+        "review your options quickly"
+      ],
+      "notes": "Avoid promising timing or approval."
+    },
+    {
+      "risky_phrase": "fix your credit",
+      "risk_type": "credit-improvement promise",
+      "safer_rewrites": [
+        "learn how credit factors work",
+        "review potential credit considerations",
+        "understand credit-related steps"
+      ],
+      "notes": "Keep the language educational."
+    },
+    {
+      "risky_phrase": "guaranteed citation",
+      "risk_type": "citation guarantee",
+      "safer_rewrites": [
+        "citation-ready",
+        "structured for clearer extraction",
+        "designed for answer clarity"
+      ],
+      "notes": "Never imply a guaranteed AI outcome."
+    }
+  ]
+}

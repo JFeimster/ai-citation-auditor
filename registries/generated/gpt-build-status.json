@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-06-13",
+  "build_status": [
+    {
+      "gpt_slug": "ai-citation-auditor",
+      "status": "active",
+      "last_reviewed": "2026-06-13"
+    },
+    {
+      "gpt_slug": "funding-fit-router-demo",
+      "status": "demo",
+      "last_reviewed": "2026-06-13"
+    }
+  ]
+}

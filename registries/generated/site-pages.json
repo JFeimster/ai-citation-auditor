@@ -1,0 +1,276 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-06-13",
+  "pages": [
+    {
+      "path": "/pages/ai-citation-auditor-vs-content-brief.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/ai-citation-auditor-vs-content-brief.html",
+      "title": "AI Citation Auditor vs Content Brief | AI Citation Auditor",
+      "description": "Compare a finance-content brief with a finance-content audit so teams know when to plan the page and when to pressure-test the draft.",
+      "type": "page",
+      "cluster": "Core Pages",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/ai-citation-auditor-vs-seo-audit.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/ai-citation-auditor-vs-seo-audit.html",
+      "title": "AI Citation Auditor vs SEO Audit | AI Citation Auditor",
+      "description": "Compare a finance-specific AI citation audit with a traditional SEO audit so teams can pick the right review path for the page.",
+      "type": "page",
+      "cluster": "Core Pages",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/ai-citation-readiness-finance.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/ai-citation-readiness-finance.html",
+      "title": "AI Citation Readiness for Finance Content | AI Citation Auditor",
+      "description": "A concise landing page on AI citation readiness for finance content, with links to the deeper article, audit workflow, and related finance SEO pages.",
+      "type": "page",
+      "cluster": "Core Pages",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/ai-search-audit-vs-compliance-review.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/ai-search-audit-vs-compliance-review.html",
+      "title": "AI Search Audit vs Compliance Review | AI Citation Auditor",
+      "description": "Set the boundary between an AI search audit for finance content and an actual compliance review so teams do not confuse editorial screening with approval.",
+      "type": "page",
+      "cluster": "Core Pages",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/answer-engine-optimization-finance.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/answer-engine-optimization-finance.html",
+      "title": "Answer Engine Optimization for Finance | AI Citation Auditor",
+      "description": "Answer engine optimization for finance brands, brokers, fintechs, and funding teams that need pages to be easier to summarize and safer to trust.",
+      "type": "page",
+      "cluster": "Core Pages",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/audit.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/audit.html",
+      "title": "Free Audit | AI Citation Auditor",
+      "description": "Run a free AI citation readiness audit for finance content and surface risky claims, structure gaps, and missing trust signals.",
+      "type": "page",
+      "cluster": "Core Pages",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/best-gpt-for-finance-content-audits.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/best-gpt-for-finance-content-audits.html",
+      "title": "Best GPT for Finance Content Audits | AI Citation Auditor",
+      "description": "A fit-based look at what makes a GPT useful for finance content audits, and when a finance-specific audit GPT is a better fit than a general tool.",
+      "type": "page",
+      "cluster": "Core Pages",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/blog/2026/ai-citation-readiness-for-finance.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/blog/2026/ai-citation-readiness-for-finance.html",
+      "title": "AI Citation Readiness for Finance | AI Citation Auditor",
+      "description": "What citation readiness means for finance content, which signals matter most, and how to make a page easier for AI systems to read.",
+      "type": "blog",
+      "cluster": "Blog",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/blog/2026/risky-funding-claims-checklist.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/blog/2026/risky-funding-claims-checklist.html",
+      "title": "Risky Funding Claims Checklist | AI Citation Auditor",
+      "description": "A practical checklist for finding and rewriting risky funding claims before they cause compliance or credibility problems.",
+      "type": "blog",
+      "cluster": "Business Funding Content",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/blog/index.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/blog/index.html",
+      "title": "Blog | AI Citation Auditor",
+      "description": "Read practical notes on citation readiness, risky claims, and finance-content structure for AI answer engines.",
+      "type": "blog",
+      "cluster": "Blog",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/business-credit-content-audit.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/business-credit-content-audit.html",
+      "title": "Business Credit Content Audit | AI Citation Auditor",
+      "description": "Audit business credit content for score claims, tradelines, education pages, and risk-safe copy that avoids overpromising credit outcomes.",
+      "type": "page",
+      "cluster": "Business Credit Content",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/business-funding-content-audit.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/business-funding-content-audit.html",
+      "title": "Business Funding Content Audit | AI Citation Auditor",
+      "description": "Audit business funding content for landing page clarity, funding explainers, broker pages, RBF or MCA copy, and eligibility-based wording.",
+      "type": "page",
+      "cluster": "Business Funding Content",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/chatgpt-for-finance-seo.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/chatgpt-for-finance-seo.html",
+      "title": "ChatGPT for Finance SEO | AI Citation Auditor",
+      "description": "What ChatGPT can help with for finance SEO, what it should not replace, and a safer workflow for using it on finance pages.",
+      "type": "page",
+      "cluster": "Core Pages",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/chatgpt-vs-ai-citation-auditor.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/chatgpt-vs-ai-citation-auditor.html",
+      "title": "ChatGPT vs AI Citation Auditor | AI Citation Auditor",
+      "description": "Compare general ChatGPT help with a finance-specific AI citation audit workflow for finance content teams.",
+      "type": "page",
+      "cluster": "Core Pages",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/cite-framework.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/cite-framework.html",
+      "title": "C.I.T.E. Framework | AI Citation Auditor",
+      "description": "Learn the C.I.T.E. framework behind AI Citation Auditor: Clarity, Information structure, Trust signals, and Entity fit.",
+      "type": "page",
+      "cluster": "Core Pages",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/examples.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/examples.html",
+      "title": "Examples | AI Citation Auditor",
+      "description": "See before-and-after examples for vague intros, weak H2s, risky claims, missing FAQ blocks, and table recommendations.",
+      "type": "page",
+      "cluster": "Core Pages",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/faq.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/faq.html",
+      "title": "FAQ | AI Citation Auditor",
+      "description": "Read answers about AI citation readiness, AI search audits, finance content risk, schema, internal links, manual audits, and next steps.",
+      "type": "page",
+      "cluster": "Core Pages",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/finance-content-ai-seo.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/finance-content-ai-seo.html",
+      "title": "Finance Content AI SEO | AI Citation Auditor",
+      "description": "How finance brands should write pages for AI Overviews, ChatGPT, Gemini, and Perplexity without making guaranteed ranking or citation claims.",
+      "type": "page",
+      "cluster": "Core Pages",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/finance-content-checklist.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/finance-content-checklist.html",
+      "title": "Finance Content Checklist | AI Citation Auditor",
+      "description": "A practical finance content checklist for answer blocks, trust notes, tables, internal links, and safer wording.",
+      "type": "page",
+      "cluster": "Core Pages",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/finance-content-compliance-seo.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/finance-content-compliance-seo.html",
+      "title": "Finance Content Compliance SEO | AI Citation Auditor",
+      "description": "Finance content compliance SEO means safer wording, better disclaimers, clear review workflows, and cleaner page structure. This is not legal or compliance advice.",
+      "type": "page",
+      "cluster": "Core Pages",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/fintech-content-audit.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/fintech-content-audit.html",
+      "title": "Fintech Content Audit | AI Citation Auditor",
+      "description": "Audit fintech content for product-page clarity, embedded finance messaging, SaaS finance content, and trust-sensitive positioning.",
+      "type": "page",
+      "cluster": "Core Pages",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/internal-link-map.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/internal-link-map.html",
+      "title": "Internal Link Map | AI Citation Auditor",
+      "description": "Plan finance internal links with hubs, comparison pages, definitions, product pages, FAQ support pages, and example anchor text.",
+      "type": "page",
+      "cluster": "Core Pages",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/legal/disclaimer.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/legal/disclaimer.html",
+      "title": "Disclaimer | AI Citation Auditor",
+      "description": "Educational disclaimer for AI Citation Auditor. No legal, tax, underwriting, lending, or financial advice.",
+      "type": "page",
+      "cluster": "Core Pages",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/legal/privacy.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/legal/privacy.html",
+      "title": "Privacy | AI Citation Auditor",
+      "description": "Privacy notice for AI Citation Auditor. Simple, minimal, and specific about what this site does and does not collect.",
+      "type": "page",
+      "cluster": "Core Pages",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/llm-optimization-finance.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/llm-optimization-finance.html",
+      "title": "LLM Optimization for Finance Websites | AI Citation Auditor",
+      "description": "A practical guide to LLM optimization for finance websites, including structure, entity clarity, answer blocks, schema, internal links, and safer wording.",
+      "type": "page",
+      "cluster": "Core Pages",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/pricing.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/pricing.html",
+      "title": "Pricing | AI Citation Auditor",
+      "description": "Review audit package options for single pages, five-page refreshes, content cluster sprints, and AI search optimization support.",
+      "type": "page",
+      "cluster": "Core Pages",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/resources.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/resources.html",
+      "title": "Resources | AI Citation Auditor",
+      "description": "Find audit checklists, prompt libraries, rewrite banks, schema notes, internal-link templates, knowledge files, and tool workflow docs for AI citation readiness work.",
+      "type": "page",
+      "cluster": "Core Pages",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/risk-claims.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/risk-claims.html",
+      "title": "Risk Claims | AI Citation Auditor",
+      "description": "Find and rewrite risky finance claims before they turn into compliance problems or misleading AI summaries.",
+      "type": "page",
+      "cluster": "Core Pages",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/schema-for-finance-content.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/schema-for-finance-content.html",
+      "title": "Schema for Finance Content | AI Citation Auditor",
+      "description": "Use the right schema for finance content: FAQPage, Article, BreadcrumbList, Organization, and SoftwareApplication, plus when not to use HowTo.",
+      "type": "page",
+      "cluster": "Core Pages",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/services.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/services.html",
+      "title": "Services | AI Citation Auditor",
+      "description": "Use the AI Citation Auditor GPT to score finance pages, surface risky claims, improve structure, and tighten citation readiness.",
+      "type": "page",
+      "cluster": "Core Pages",
+      "last_modified": "2026-06-13"
+    }
+  ]
+}

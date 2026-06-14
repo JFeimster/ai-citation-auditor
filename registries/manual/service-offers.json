@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-06-13",
+  "offers": [
+    {
+      "slug": "single-page-ai-citation-audit",
+      "name": "Single-Page AI Citation Audit",
+      "type": "audit",
+      "scope": "One public finance page",
+      "cta": "request-manual-audit",
+      "notes": "Quote-based; no guarantees."
+    },
+    {
+      "slug": "five-page-finance-content-refresh",
+      "name": "Five-Page Finance Content Refresh",
+      "type": "refresh",
+      "scope": "Five pages with risk and clarity edits",
+      "cta": "request-quote",
+      "notes": "Quote-based; no guarantees."
+    },
+    {
+      "slug": "finance-content-risk-rewrite-package",
+      "name": "Finance Content Risk Rewrite Package",
+      "type": "rewrite",
+      "scope": "Safer rewrites for risky finance claims",
+      "cta": "request-quote",
+      "notes": "Review before publish."
+    },
+    {
+      "slug": "internal-link-map-sprint",
+      "name": "Internal Link Map Sprint",
+      "type": "internal-links",
+      "scope": "Cluster mapping and anchor text",
+      "cta": "request-quote",
+      "notes": "No ranking guarantees."
+    },
+    {
+      "slug": "ai-search-optimization-sprint",
+      "name": "AI Search Optimization Sprint",
+      "type": "aeo",
+      "scope": "Answer clarity and extraction structure",
+      "cta": "request-quote",
+      "notes": "No citation or ranking guarantees."
+    },
+    {
+      "slug": "done-for-you-finance-content-system",
+      "name": "Done-for-You Finance Content System",
+      "type": "system",
+      "scope": "Longer-term content workflow setup",
+      "cta": "request-quote",
+      "notes": "Scope reviewed case by case."
+    }
+  ]
+}

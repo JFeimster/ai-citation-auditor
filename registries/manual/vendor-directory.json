@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-06-13",
+  "vendors": [
+    {
+      "slug": "vendor-alpha-demo",
+      "name": "Vendor Alpha Demo",
+      "category": "template",
+      "source_url": "https://vendor-alpha-demo.invalid",
+      "notes": "template/demo only"
+    },
+    {
+      "slug": "vendor-bravo-demo",
+      "name": "Vendor Bravo Demo",
+      "category": "template",
+      "source_url": "https://vendor-bravo-demo.invalid",
+      "notes": "template/demo only"
+    }
+  ]
+}

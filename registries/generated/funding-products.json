@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-06-13",
+  "products": [
+    {
+      "slug": "rbf",
+      "name": "Revenue-based financing",
+      "description": "Template product category for revenue-based financing."
+    },
+    {
+      "slug": "mca",
+      "name": "Merchant cash advance",
+      "description": "Template product category for merchant cash advance."
+    },
+    {
+      "slug": "term-loan",
+      "name": "Term loan",
+      "description": "Template product category for term loan."
+    },
+    {
+      "slug": "sba",
+      "name": "SBA loan",
+      "description": "Template product category for SBA loan."
+    },
+    {
+      "slug": "equipment-financing",
+      "name": "Equipment financing",
+      "description": "Template product category for equipment financing."
+    },
+    {
+      "slug": "business-credit-card",
+      "name": "Business credit card",
+      "description": "Template product category for business credit card."
+    },
+    {
+      "slug": "business-line-of-credit",
+      "name": "Business line of credit",
+      "description": "Template product category for business line of credit."
+    },
+    {
+      "slug": "startup-funding",
+      "name": "Startup funding",
+      "description": "Template product category for startup funding."
+    },
+    {
+      "slug": "dscr",
+      "name": "DSCR loan",
+      "description": "Template product category for DSCR loan."
+    },
+    {
+      "slug": "bridge-loan",
+      "name": "Bridge loan",
+      "description": "Template product category for bridge loan."
+    }
+  ]
+}

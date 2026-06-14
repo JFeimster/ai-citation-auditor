@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-06-13",
+  "mappings": [
+    {
+      "keyword": "AI citation readiness",
+      "page_path": "/pages/ai-citation-readiness-finance.html",
+      "intent": "informational"
+    },
+    {
+      "keyword": "finance content audit",
+      "page_path": "/pages/audit.html",
+      "intent": "commercial"
+    },
+    {
+      "keyword": "business funding content audit",
+      "page_path": "/pages/business-funding-content-audit.html",
+      "intent": "commercial"
+    }
+  ]
+}

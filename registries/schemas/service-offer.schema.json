@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Service Offer",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "slug",
+    "name",
+    "type",
+    "scope",
+    "cta",
+    "notes"
+  ],
+  "properties": {
+    "slug": { "type": "string" },
+    "name": { "type": "string" },
+    "type": { "type": "string" },
+    "scope": { "type": "string" },
+    "cta": { "type": "string" },
+    "notes": { "type": "string" }
+  }
+}

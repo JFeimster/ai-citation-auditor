@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-06-13",
+  "gpts": [
+    {
+      "slug": "ai-citation-auditor",
+      "name": "AI Citation Auditor",
+      "status": "active",
+      "category": "finance-content-audit",
+      "description": "Audits finance content for citation readiness, clarity, structure, schema fit, internal links, trust signals, and risky claims.",
+      "target_user": "Finance content operators",
+      "knowledge_files": [
+        "/tools/chatgpt-openai/prompts.md",
+        "/knowledge/README.md"
+      ],
+      "actions": [
+        "/actions/no-auth/README.md"
+      ],
+      "source_url": "https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor"
+    },
+    {
+      "slug": "funding-fit-router-demo",
+      "name": "Funding Fit Router Demo",
+      "status": "demo",
+      "category": "funding-routing",
+      "description": "Demo GPT for fit-based funding routing and safer eligibility language.",
+      "target_user": "Funding operators",
+      "knowledge_files": [
+        "/tools/chatgpt-openai/prompts/funding-partner-routing-prompts.md"
+      ],
+      "actions": [
+        "/tools/chatgpt-openai/actions/funding-partner-actions.md"
+      ],
+      "source_url": "https://template.invalid/gpts/funding-fit-router-demo"
+    }
+  ]
+}

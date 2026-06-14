@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-06-13",
+  "skills": [
+    {
+      "slug": "content-auditing",
+      "title": "Content Auditing",
+      "repo_path": "/tools/chatgpt-openai/skills/content-auditing.md",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/tools/chatgpt-openai/skills/content-auditing.md"
+    },
+    {
+      "slug": "risk-claim-rewriting",
+      "title": "Risk Claim Rewriting",
+      "repo_path": "/tools/chatgpt-openai/skills/risk-claim-rewriting.md",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/tools/chatgpt-openai/skills/risk-claim-rewriting.md"
+    },
+    {
+      "slug": "schema-selection",
+      "title": "Schema Selection",
+      "repo_path": "/tools/chatgpt-openai/skills/schema-selection.md",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/tools/chatgpt-openai/skills/schema-selection.md"
+    },
+    {
+      "slug": "internal-link-mapping",
+      "title": "Internal Link Mapping",
+      "repo_path": "/tools/chatgpt-openai/skills/internal-link-mapping.md",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/tools/chatgpt-openai/skills/internal-link-mapping.md"
+    },
+    {
+      "slug": "registry-design",
+      "title": "Registry Design",
+      "repo_path": "/tools/chatgpt-openai/skills/registry-design.md",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/tools/chatgpt-openai/skills/registry-design.md"
+    },
+    {
+      "slug": "notion-to-json-normalization",
+      "title": "Notion to JSON Normalization",
+      "repo_path": "/tools/chatgpt-openai/skills/notion-to-json-normalization.md",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/tools/chatgpt-openai/skills/notion-to-json-normalization.md"
+    },
+    {
+      "slug": "custom-gpt-spec-writing",
+      "title": "Custom GPT Spec Writing",
+      "repo_path": "/tools/chatgpt-openai/skills/custom-gpt-spec-writing.md",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/tools/chatgpt-openai/skills/custom-gpt-spec-writing.md"
+    },
+    {
+      "slug": "openapi-action-design",
+      "title": "OpenAPI Action Design",
+      "repo_path": "/tools/chatgpt-openai/skills/openapi-action-design.md",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/tools/chatgpt-openai/skills/openapi-action-design.md"
+    }
+  ]
+}

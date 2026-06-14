@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-06-13",
+  "variables": [
+    {
+      "name": "NOTION_TOKEN",
+      "description": "Notion access token name only."
+    },
+    {
+      "name": "FUNDING_PARTNERS_DATA_SOURCE_ID",
+      "description": "Funding Partners source identifier only."
+    },
+    {
+      "name": "OPENAI_API_KEY",
+      "description": "OpenAI API key name only."
+    },
+    {
+      "name": "VERCEL_TOKEN",
+      "description": "Vercel token name only."
+    },
+    {
+      "name": "GITHUB_TOKEN",
+      "description": "GitHub token name only."
+    }
+  ]
+}

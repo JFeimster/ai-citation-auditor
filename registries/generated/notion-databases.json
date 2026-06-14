@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-06-13",
+  "databases": [
+    {
+      "slug": "funding-partners",
+      "name": "Funding Partners Database",
+      "data_source_id": "collection://1c54bc1b-d63c-801f-946c-000bd9dd59b5",
+      "url": "https://myfunding.notion.site/funding",
+      "notes": "Source identifier only; not a secret."
+    },
+    {
+      "slug": "custom-gpts",
+      "name": "My Custom GPTs Database",
+      "data_source_id": null,
+      "url": "https://feimster.notion.site/ai-agents",
+      "notes": "Workspace URL reference only."
+    }
+  ]
+}

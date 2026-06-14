@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-06-13",
+  "manifest": [
+    {
+      "file": "/tools/chatgpt-openai/prompts.md",
+      "purpose": "Prompt pack index",
+      "status": "ready"
+    },
+    {
+      "file": "/tools/chatgpt-openai/skills.md",
+      "purpose": "Skill index",
+      "status": "ready"
+    },
+    {
+      "file": "/tools/chatgpt-openai/actions.md",
+      "purpose": "Action planning index",
+      "status": "ready"
+    },
+    {
+      "file": "/tools/chatgpt-openai/integrations.md",
+      "purpose": "Integration index",
+      "status": "ready"
+    }
+  ]
+}

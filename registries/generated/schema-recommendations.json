@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-06-13",
+  "recommendations": [
+    {
+      "path": "/pages/faq.html",
+      "schema": "FAQPage",
+      "reason": "Visible FAQ content on page."
+    },
+    {
+      "path": "/pages/resources.html",
+      "schema": "BreadcrumbList",
+      "reason": "Helpful navigation and hub page."
+    },
+    {
+      "path": "/pages/services.html",
+      "schema": "Organization",
+      "reason": "Service hub and brand context."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Prompt Library Item",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "slug",
+    "title",
+    "repo_path",
+    "source_url"
+  ],
+  "properties": {
+    "slug": { "type": "string" },
+    "title": { "type": "string" },
+    "repo_path": { "type": "string" },
+    "source_url": { "type": "string" }
+  }
+}

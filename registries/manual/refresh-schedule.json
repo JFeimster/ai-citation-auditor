@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-06-13",
+  "schedule": [
+    {
+      "item": "funding partners",
+      "cadence": "monthly"
+    },
+    {
+      "item": "custom GPTs",
+      "cadence": "weekly"
+    },
+    {
+      "item": "site pages",
+      "cadence": "on commit"
+    },
+    {
+      "item": "blog posts",
+      "cadence": "on publish"
+    },
+    {
+      "item": "actions",
+      "cadence": "on schema change"
+    },
+    {
+      "item": "registries",
+      "cadence": "on source update"
+    }
+  ]
+}

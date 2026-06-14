@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-06-13",
+  "ctas": [
+    {
+      "slug": "open-gpt",
+      "label": "Open GPT",
+      "href": "https://chatgpt.com/g/g-6a2cefb19d3c81919b49852b4c53fc9d-ai-citation-auditor"
+    },
+    {
+      "slug": "request-quote",
+      "label": "Request a Quote",
+      "href": "mailto:jasonfeimster@gmail.com"
+    },
+    {
+      "slug": "request-manual-audit",
+      "label": "Request Manual Audit",
+      "href": "mailto:jasonfeimster@gmail.com"
+    },
+    {
+      "slug": "read-faq",
+      "label": "Read FAQ",
+      "href": "/pages/faq.html"
+    },
+    {
+      "slug": "open-resources",
+      "label": "Open Resources",
+      "href": "/pages/resources.html"
+    }
+  ]
+}

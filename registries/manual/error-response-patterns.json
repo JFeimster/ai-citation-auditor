@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-06-13",
+  "patterns": [
+    {
+      "slug": "auth_error",
+      "message": "Authentication failed or is missing."
+    },
+    {
+      "slug": "validation_error",
+      "message": "One or more parameters are invalid."
+    },
+    {
+      "slug": "rate_limited",
+      "message": "Request rate is too high right now."
+    },
+    {
+      "slug": "upstream_unavailable",
+      "message": "The upstream service is unavailable."
+    },
+    {
+      "slug": "not_found",
+      "message": "No matching record was found."
+    },
+    {
+      "slug": "privacy_boundary",
+      "message": "The request crosses a privacy boundary."
+    }
+  ]
+}

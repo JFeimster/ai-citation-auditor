@@ -1,0 +1,216 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-06-13",
+  "pages": [
+    {
+      "path": "/pages/ai-citation-auditor-vs-content-brief.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/ai-citation-auditor-vs-content-brief.html",
+      "title": "AI Citation Auditor vs Content Brief | AI Citation Auditor",
+      "type": "page",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/ai-citation-auditor-vs-seo-audit.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/ai-citation-auditor-vs-seo-audit.html",
+      "title": "AI Citation Auditor vs SEO Audit | AI Citation Auditor",
+      "type": "page",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/ai-citation-readiness-finance.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/ai-citation-readiness-finance.html",
+      "title": "AI Citation Readiness for Finance Content | AI Citation Auditor",
+      "type": "page",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/ai-search-audit-vs-compliance-review.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/ai-search-audit-vs-compliance-review.html",
+      "title": "AI Search Audit vs Compliance Review | AI Citation Auditor",
+      "type": "page",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/answer-engine-optimization-finance.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/answer-engine-optimization-finance.html",
+      "title": "Answer Engine Optimization for Finance | AI Citation Auditor",
+      "type": "page",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/audit.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/audit.html",
+      "title": "Free Audit | AI Citation Auditor",
+      "type": "page",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/best-gpt-for-finance-content-audits.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/best-gpt-for-finance-content-audits.html",
+      "title": "Best GPT for Finance Content Audits | AI Citation Auditor",
+      "type": "page",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/blog/2026/ai-citation-readiness-for-finance.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/blog/2026/ai-citation-readiness-for-finance.html",
+      "title": "AI Citation Readiness for Finance | AI Citation Auditor",
+      "type": "blog",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/blog/2026/risky-funding-claims-checklist.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/blog/2026/risky-funding-claims-checklist.html",
+      "title": "Risky Funding Claims Checklist | AI Citation Auditor",
+      "type": "blog",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/blog/index.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/blog/index.html",
+      "title": "Blog | AI Citation Auditor",
+      "type": "blog",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/business-credit-content-audit.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/business-credit-content-audit.html",
+      "title": "Business Credit Content Audit | AI Citation Auditor",
+      "type": "page",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/business-funding-content-audit.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/business-funding-content-audit.html",
+      "title": "Business Funding Content Audit | AI Citation Auditor",
+      "type": "page",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/chatgpt-for-finance-seo.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/chatgpt-for-finance-seo.html",
+      "title": "ChatGPT for Finance SEO | AI Citation Auditor",
+      "type": "page",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/chatgpt-vs-ai-citation-auditor.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/chatgpt-vs-ai-citation-auditor.html",
+      "title": "ChatGPT vs AI Citation Auditor | AI Citation Auditor",
+      "type": "page",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/cite-framework.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/cite-framework.html",
+      "title": "C.I.T.E. Framework | AI Citation Auditor",
+      "type": "page",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/examples.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/examples.html",
+      "title": "Examples | AI Citation Auditor",
+      "type": "page",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/faq.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/faq.html",
+      "title": "FAQ | AI Citation Auditor",
+      "type": "page",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/finance-content-ai-seo.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/finance-content-ai-seo.html",
+      "title": "Finance Content AI SEO | AI Citation Auditor",
+      "type": "page",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/finance-content-checklist.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/finance-content-checklist.html",
+      "title": "Finance Content Checklist | AI Citation Auditor",
+      "type": "page",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/finance-content-compliance-seo.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/finance-content-compliance-seo.html",
+      "title": "Finance Content Compliance SEO | AI Citation Auditor",
+      "type": "page",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/fintech-content-audit.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/fintech-content-audit.html",
+      "title": "Fintech Content Audit | AI Citation Auditor",
+      "type": "page",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/internal-link-map.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/internal-link-map.html",
+      "title": "Internal Link Map | AI Citation Auditor",
+      "type": "page",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/legal/disclaimer.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/legal/disclaimer.html",
+      "title": "Disclaimer | AI Citation Auditor",
+      "type": "page",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/legal/privacy.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/legal/privacy.html",
+      "title": "Privacy | AI Citation Auditor",
+      "type": "page",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/llm-optimization-finance.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/llm-optimization-finance.html",
+      "title": "LLM Optimization for Finance Websites | AI Citation Auditor",
+      "type": "page",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/pricing.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/pricing.html",
+      "title": "Pricing | AI Citation Auditor",
+      "type": "page",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/resources.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/resources.html",
+      "title": "Resources | AI Citation Auditor",
+      "type": "page",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/risk-claims.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/risk-claims.html",
+      "title": "Risk Claims | AI Citation Auditor",
+      "type": "page",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/schema-for-finance-content.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/schema-for-finance-content.html",
+      "title": "Schema for Finance Content | AI Citation Auditor",
+      "type": "page",
+      "last_modified": "2026-06-13"
+    },
+    {
+      "path": "/pages/services.html",
+      "url": "https://ai-citation-auditor.vercel.app/pages/services.html",
+      "title": "Services | AI Citation Auditor",
+      "type": "page",
+      "last_modified": "2026-06-13"
+    }
+  ]
+}

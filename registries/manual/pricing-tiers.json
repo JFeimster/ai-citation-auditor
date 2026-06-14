@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-06-13",
+  "pricing_tiers": [
+    {
+      "slug": "quote-only",
+      "name": "Quote Only",
+      "price": null,
+      "notes": "All pricing is quote-based unless the repo already states otherwise."
+    }
+  ]
+}
