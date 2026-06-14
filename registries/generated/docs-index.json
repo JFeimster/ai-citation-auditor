@@ -1,0 +1,167 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-06-13",
+  "docs": [
+    {
+      "path": "/docs/README.md",
+      "title": "README",
+      "type": "markdown",
+      "last_updated": "2026-06-13",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/docs/README.md"
+    },
+    {
+      "path": "/docs/copy-bank.md",
+      "title": "Copy Bank",
+      "type": "markdown",
+      "last_updated": "2026-06-13",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/docs/copy-bank.md"
+    },
+    {
+      "path": "/docs/deployment.md",
+      "title": "Deployment",
+      "type": "markdown",
+      "last_updated": "2026-06-13",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/docs/deployment.md"
+    },
+    {
+      "path": "/docs/prompts.md",
+      "title": "Prompts",
+      "type": "markdown",
+      "last_updated": "2026-06-13",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/docs/prompts.md"
+    },
+    {
+      "path": "/docs/qa.md",
+      "title": "Qa",
+      "type": "markdown",
+      "last_updated": "2026-06-13",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/docs/qa.md"
+    },
+    {
+      "path": "/docs/resources/audit-checklist.md",
+      "title": "Audit Checklist",
+      "type": "markdown",
+      "last_updated": "2026-06-13",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/docs/resources/audit-checklist.md"
+    },
+    {
+      "path": "/docs/resources/content-refresh-brief.md",
+      "title": "Content Refresh Brief",
+      "type": "markdown",
+      "last_updated": "2026-06-13",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/docs/resources/content-refresh-brief.md"
+    },
+    {
+      "path": "/docs/resources/internal-link-template.md",
+      "title": "Internal Link Template",
+      "type": "markdown",
+      "last_updated": "2026-06-13",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/docs/resources/internal-link-template.md"
+    },
+    {
+      "path": "/docs/resources/prompt-template.md",
+      "title": "Prompt Template",
+      "type": "markdown",
+      "last_updated": "2026-06-13",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/docs/resources/prompt-template.md"
+    },
+    {
+      "path": "/docs/resources/risky-claims-rewrite-bank.md",
+      "title": "Risky Claims Rewrite Bank",
+      "type": "markdown",
+      "last_updated": "2026-06-13",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/docs/resources/risky-claims-rewrite-bank.md"
+    },
+    {
+      "path": "/docs/resources/sample-audit-output.md",
+      "title": "Sample Audit Output",
+      "type": "markdown",
+      "last_updated": "2026-06-13",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/docs/resources/sample-audit-output.md"
+    },
+    {
+      "path": "/docs/resources/schema-recommendations.md",
+      "title": "Schema Recommendations",
+      "type": "markdown",
+      "last_updated": "2026-06-13",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/docs/resources/schema-recommendations.md"
+    },
+    {
+      "path": "/docs/roadmap.md",
+      "title": "Roadmap",
+      "type": "markdown",
+      "last_updated": "2026-06-13",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/docs/roadmap.md"
+    },
+    {
+      "path": "/docs/schema.md",
+      "title": "Schema",
+      "type": "markdown",
+      "last_updated": "2026-06-13",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/docs/schema.md"
+    },
+    {
+      "path": "/docs/service-offers.md",
+      "title": "Service Offers",
+      "type": "markdown",
+      "last_updated": "2026-06-13",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/docs/service-offers.md"
+    },
+    {
+      "path": "/docs/skills.md",
+      "title": "Skills",
+      "type": "markdown",
+      "last_updated": "2026-06-13",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/docs/skills.md"
+    },
+    {
+      "path": "/docs/tools.md",
+      "title": "Tools",
+      "type": "markdown",
+      "last_updated": "2026-06-13",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/docs/tools.md"
+    },
+    {
+      "path": "/docs/tools/claude-code.md",
+      "title": "Claude Code",
+      "type": "markdown",
+      "last_updated": "2026-06-13",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/docs/tools/claude-code.md"
+    },
+    {
+      "path": "/docs/tools/codex.md",
+      "title": "Codex",
+      "type": "markdown",
+      "last_updated": "2026-06-13",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/docs/tools/codex.md"
+    },
+    {
+      "path": "/docs/tools/cursor.md",
+      "title": "Cursor",
+      "type": "markdown",
+      "last_updated": "2026-06-13",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/docs/tools/cursor.md"
+    },
+    {
+      "path": "/docs/tools/github-copilot.md",
+      "title": "Github Copilot",
+      "type": "markdown",
+      "last_updated": "2026-06-13",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/docs/tools/github-copilot.md"
+    },
+    {
+      "path": "/docs/tools/jules.md",
+      "title": "Jules",
+      "type": "markdown",
+      "last_updated": "2026-06-13",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/docs/tools/jules.md"
+    },
+    {
+      "path": "/docs/tools/vercel.md",
+      "title": "Vercel",
+      "type": "markdown",
+      "last_updated": "2026-06-13",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/docs/tools/vercel.md"
+    }
+  ]
+}

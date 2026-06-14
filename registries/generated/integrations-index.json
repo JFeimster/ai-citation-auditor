@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-06-13",
+  "integrations": [
+    {
+      "path": "/tools/chatgpt-openai/integrations.md",
+      "title": "Integrations",
+      "last_updated": "2026-06-13"
+    },
+    {
+      "path": "/tools/cursor/integrations.md",
+      "title": "Integrations",
+      "last_updated": "2026-06-13"
+    },
+    {
+      "path": "/tools/gemini/integrations.md",
+      "title": "Integrations",
+      "last_updated": "2026-06-13"
+    },
+    {
+      "path": "/tools/vercel/integrations.md",
+      "title": "Integrations",
+      "last_updated": "2026-06-13"
+    },
+    {
+      "path": "/tools/chatgpt-openai/integrations/airtable.md",
+      "title": "Airtable",
+      "last_updated": "2026-06-13"
+    },
+    {
+      "path": "/tools/chatgpt-openai/integrations/email-platform.md",
+      "title": "Email Platform",
+      "last_updated": "2026-06-13"
+    },
+    {
+      "path": "/tools/chatgpt-openai/integrations/ga4.md",
+      "title": "Ga4",
+      "last_updated": "2026-06-13"
+    },
+    {
+      "path": "/tools/chatgpt-openai/integrations/github-repo-files.md",
+      "title": "Github Repo Files",
+      "last_updated": "2026-06-13"
+    },
+    {
+      "path": "/tools/chatgpt-openai/integrations/google-drive.md",
+      "title": "Google Drive",
+      "last_updated": "2026-06-13"
+    },
+    {
+      "path": "/tools/chatgpt-openai/integrations/google-search-console.md",
+      "title": "Google Search Console",
+      "last_updated": "2026-06-13"
+    },
+    {
+      "path": "/tools/chatgpt-openai/integrations/google-sheets.md",
+      "title": "Google Sheets",
+      "last_updated": "2026-06-13"
+    },
+    {
+      "path": "/tools/chatgpt-openai/integrations/hubspot.md",
+      "title": "Hubspot",
+      "last_updated": "2026-06-13"
+    },
+    {
+      "path": "/tools/chatgpt-openai/integrations/local-markdown-sources.md",
+      "title": "Local Markdown Sources",
+      "last_updated": "2026-06-13"
+    },
+    {
+      "path": "/tools/chatgpt-openai/integrations/notion-content-calendar.md",
+      "title": "Notion Content Calendar",
+      "last_updated": "2026-06-13"
+    },
+    {
+      "path": "/tools/chatgpt-openai/integrations/notion-custom-gpts.md",
+      "title": "Notion Custom Gpts",
+      "last_updated": "2026-06-13"
+    },
+    {
+      "path": "/tools/chatgpt-openai/integrations/notion-service-offers.md",
+      "title": "Notion Service Offers",
+      "last_updated": "2026-06-13"
+    },
+    {
+      "path": "/tools/chatgpt-openai/integrations/notion-tool-directory.md",
+      "title": "Notion Tool Directory",
+      "last_updated": "2026-06-13"
+    },
+    {
+      "path": "/tools/chatgpt-openai/integrations/notion-vendor-directory.md",
+      "title": "Notion Vendor Directory",
+      "last_updated": "2026-06-13"
+    },
+    {
+      "path": "/tools/chatgpt-openai/integrations/notion.md",
+      "title": "Notion",
+      "last_updated": "2026-06-13"
+    },
+    {
+      "path": "/tools/chatgpt-openai/integrations/openai-actions.md",
+      "title": "Openai Actions",
+      "last_updated": "2026-06-13"
+    },
+    {
+      "path": "/tools/chatgpt-openai/integrations/semrush.md",
+      "title": "Semrush",
+      "last_updated": "2026-06-13"
+    },
+    {
+      "path": "/tools/chatgpt-openai/integrations/stripe-or-paypal.md",
+      "title": "Stripe Or Paypal",
+      "last_updated": "2026-06-13"
+    },
+    {
+      "path": "/tools/chatgpt-openai/integrations/vercel.md",
+      "title": "Vercel",
+      "last_updated": "2026-06-13"
+    },
+    {
+      "path": "/tools/chatgpt-openai/integrations/wix-blog.md",
+      "title": "Wix Blog",
+      "last_updated": "2026-06-13"
+    }
+  ]
+}

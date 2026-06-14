@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0.0",
+  "source": "template/demo records only",
+  "last_updated": "2026-06-13",
+  "partners": [
+    {
+      "slug": "partner-alpha-demo",
+      "name": "Partner Alpha Demo",
+      "category": "demo",
+      "products": [
+        "rbf",
+        "mca"
+      ],
+      "minimum_revenue": 250000,
+      "minimum_time_in_business_months": 12,
+      "credit_requirements": "template/demo only",
+      "industries_supported": [
+        "general business"
+      ],
+      "industries_restricted": [
+        "restricted templates"
+      ],
+      "cta_url": "https://partner-alpha-demo.invalid/apply",
+      "source_url": "https://partner-alpha-demo.invalid/source",
+      "notes": "template/demo only; not verified"
+    },
+    {
+      "slug": "partner-bravo-demo",
+      "name": "Partner Bravo Demo",
+      "category": "template",
+      "products": [
+        "term-loan",
+        "business-line-of-credit"
+      ],
+      "minimum_revenue": 500000,
+      "minimum_time_in_business_months": 18,
+      "credit_requirements": "template/demo only",
+      "industries_supported": [
+        "general business"
+      ],
+      "industries_restricted": [
+        "restricted templates"
+      ],
+      "cta_url": "https://partner-bravo-demo.invalid/apply",
+      "source_url": "https://partner-bravo-demo.invalid/source",
+      "notes": "template/demo only; not verified"
+    }
+  ]
+}

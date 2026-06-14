@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-06-13",
+  "clusters": [
+    "AI Search & Citation",
+    "Finance Content Compliance",
+    "Business Funding Content",
+    "Business Credit Content",
+    "GPT Actions & Integrations",
+    "Tooling & Automation"
+  ]
+}

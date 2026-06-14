@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-06-13",
+  "routing_rules": [
+    {
+      "rule_id": "route-rbf-250k-12m",
+      "product": "rbf",
+      "minimum_revenue": 250000,
+      "minimum_time_in_business_months": 12,
+      "preferred_partner_slugs": [
+        "partner-alpha-demo"
+      ],
+      "excluded_partner_slugs": [
+        "partner-bravo-demo"
+      ],
+      "safe_explanation": "Eligibility-based routing only; no guarantee of approval or funding."
+    },
+    {
+      "rule_id": "route-termloan-500k-18m",
+      "product": "term-loan",
+      "minimum_revenue": 500000,
+      "minimum_time_in_business_months": 18,
+      "preferred_partner_slugs": [
+        "partner-bravo-demo"
+      ],
+      "excluded_partner_slugs": [
+        "partner-alpha-demo"
+      ],
+      "safe_explanation": "Route by product fit and keep the explanation reviewable."
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-06-13",
+  "gpt_knowledge": [
+    {
+      "gpt_slug": "ai-citation-auditor",
+      "knowledge_file": "/tools/chatgpt-openai/prompts.md",
+      "repo_path": "/tools/chatgpt-openai/prompts.md",
+      "upload_status": "ready",
+      "last_reviewed": "2026-06-13"
+    },
+    {
+      "gpt_slug": "ai-citation-auditor",
+      "knowledge_file": "/knowledge/README.md",
+      "repo_path": "/knowledge/README.md",
+      "upload_status": "ready",
+      "last_reviewed": "2026-06-13"
+    },
+    {
+      "gpt_slug": "funding-fit-router-demo",
+      "knowledge_file": "/tools/chatgpt-openai/prompts/funding-partner-routing-prompts.md",
+      "repo_path": "/tools/chatgpt-openai/prompts/funding-partner-routing-prompts.md",
+      "upload_status": "template",
+      "last_reviewed": "2026-06-13"
+    }
+  ]
+}

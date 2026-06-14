@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-06-13",
+  "prompts": [
+    {
+      "slug": "content-audit-prompts",
+      "title": "Content Audit Prompts",
+      "repo_path": "/tools/chatgpt-openai/prompts/content-audit-prompts.md",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/tools/chatgpt-openai/prompts/content-audit-prompts.md"
+    },
+    {
+      "slug": "finance-claim-rewrite-prompts",
+      "title": "Finance Claim Rewrite Prompts",
+      "repo_path": "/tools/chatgpt-openai/prompts/finance-claim-rewrite-prompts.md",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/tools/chatgpt-openai/prompts/finance-claim-rewrite-prompts.md"
+    },
+    {
+      "slug": "schema-recommendation-prompts",
+      "title": "Schema Recommendation Prompts",
+      "repo_path": "/tools/chatgpt-openai/prompts/schema-recommendation-prompts.md",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/tools/chatgpt-openai/prompts/schema-recommendation-prompts.md"
+    },
+    {
+      "slug": "internal-link-map-prompts",
+      "title": "Internal Link Map Prompts",
+      "repo_path": "/tools/chatgpt-openai/prompts/internal-link-map-prompts.md",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/tools/chatgpt-openai/prompts/internal-link-map-prompts.md"
+    },
+    {
+      "slug": "custom-gpt-builder-prompts",
+      "title": "Custom GPT Builder Prompts",
+      "repo_path": "/tools/chatgpt-openai/prompts/custom-gpt-builder-prompts.md",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/tools/chatgpt-openai/prompts/custom-gpt-builder-prompts.md"
+    },
+    {
+      "slug": "codex-task-prompts",
+      "title": "Codex Task Prompts",
+      "repo_path": "/tools/chatgpt-openai/prompts/codex-task-prompts.md",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/tools/chatgpt-openai/prompts/codex-task-prompts.md"
+    },
+    {
+      "slug": "action-schema-prompts",
+      "title": "Action Schema Prompts",
+      "repo_path": "/tools/chatgpt-openai/prompts/action-schema-prompts.md",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/tools/chatgpt-openai/prompts/action-schema-prompts.md"
+    },
+    {
+      "slug": "notion-export-prompts",
+      "title": "Notion Export Prompts",
+      "repo_path": "/tools/chatgpt-openai/prompts/notion-export-prompts.md",
+      "source_url": "file://C:/Users/jason/OneDrive/Desktop/The Prompt Lab/ai-citation-auditor/tools/chatgpt-openai/prompts/notion-export-prompts.md"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-06-13",
+  "sources": [
+    {
+      "slug": "funding-partners",
+      "source_type": "notion",
+      "notes": "Funding partners database source."
+    },
+    {
+      "slug": "custom-gpts",
+      "source_type": "notion",
+      "notes": "My Custom GPTs database source."
+    },
+    {
+      "slug": "github-repo-files",
+      "source_type": "repo-scan",
+      "notes": "Repository markdown and file indexes."
+    },
+    {
+      "slug": "local-markdown-sources",
+      "source_type": "local-markdown",
+      "notes": "Local markdown sources for prompt and knowledge extraction."
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-06-13",
+  "categories": [
+    "coding-agent",
+    "design",
+    "deployment",
+    "crm",
+    "content-ops",
+    "analytics",
+    "finance-ops",
+    "data-source",
+    "action-platform"
+  ]
+}

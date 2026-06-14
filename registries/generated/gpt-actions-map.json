@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-06-13",
+  "gpt_actions": [
+    {
+      "gpt_slug": "ai-citation-auditor",
+      "action_slug": "content-audit",
+      "auth_type": "no-auth",
+      "openapi_path": "/actions/no-auth/example-public-lookup/openapi.json",
+      "status": "active",
+      "notes": "Template mapping for the public audit workflow."
+    },
+    {
+      "gpt_slug": "funding-fit-router-demo",
+      "action_slug": "funding-partner-routing",
+      "auth_type": "no-auth",
+      "openapi_path": "/actions/no-auth/example-public-lookup/openapi.json",
+      "status": "demo",
+      "notes": "Template mapping for the funding-routing demo GPT."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-06-13",
+  "test_cases": [
+    "happy path",
+    "missing parameter",
+    "invalid auth",
+    "rate limit",
+    "empty response",
+    "upstream error",
+    "privacy boundary"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-06-13",
+  "rules": [
+    {
+      "source_page_type": "pillar",
+      "target_page_type": "supporting article",
+      "rule": "Link from the pillar to the spoke pages in the intro and body."
+    },
+    {
+      "source_page_type": "comparison",
+      "target_page_type": "service page",
+      "rule": "Link to the service page when the comparison is fit-based."
+    },
+    {
+      "source_page_type": "faq",
+      "target_page_type": "service page",
+      "rule": "Link only when the answer naturally supports the service path."
+    }
+  ]
+}

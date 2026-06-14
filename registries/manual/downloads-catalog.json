@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-06-13",
+  "downloads": [
+    {
+      "slug": "audit-checklist",
+      "name": "Audit Checklist",
+      "status": "template",
+      "notes": "Placeholder download record."
+    },
+    {
+      "slug": "prompt-template",
+      "name": "Prompt Template",
+      "status": "template",
+      "notes": "Placeholder download record."
+    },
+    {
+      "slug": "schema-reference",
+      "name": "Schema Reference",
+      "status": "template",
+      "notes": "Placeholder download record."
+    }
+  ]
+}

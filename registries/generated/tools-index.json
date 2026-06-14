@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-06-13",
+  "tools": [
+    {
+      "slug": "chatgpt-openai",
+      "path": "/tools/chatgpt-openai/README.md",
+      "title": "Chatgpt Openai",
+      "last_updated": "2026-06-13"
+    },
+    {
+      "slug": "claude-code",
+      "path": "/tools/claude-code/README.md",
+      "title": "Claude Code",
+      "last_updated": "2026-06-13"
+    },
+    {
+      "slug": "codex",
+      "path": "/tools/codex/README.md",
+      "title": "Codex",
+      "last_updated": "2026-06-13"
+    },
+    {
+      "slug": "cursor",
+      "path": "/tools/cursor/README.md",
+      "title": "Cursor",
+      "last_updated": "2026-06-13"
+    },
+    {
+      "slug": "gemini",
+      "path": "/tools/gemini/README.md",
+      "title": "Gemini",
+      "last_updated": "2026-06-13"
+    },
+    {
+      "slug": "jules",
+      "path": "/tools/jules/README.md",
+      "title": "Jules",
+      "last_updated": "2026-06-13"
+    },
+    {
+      "slug": "vercel",
+      "path": "/tools/vercel/README.md",
+      "title": "Vercel",
+      "last_updated": "2026-06-13"
+    }
+  ]
+}

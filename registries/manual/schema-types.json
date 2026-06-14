@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-06-13",
+  "types": [
+    {
+      "slug": "faqpage",
+      "name": "FAQPage"
+    },
+    {
+      "slug": "article",
+      "name": "Article"
+    },
+    {
+      "slug": "organization",
+      "name": "Organization"
+    },
+    {
+      "slug": "softwareapplication",
+      "name": "SoftwareApplication"
+    },
+    {
+      "slug": "breadcrumblist",
+      "name": "BreadcrumbList"
+    },
+    {
+      "slug": "howto-reject-rules",
+      "name": "HowTo reject rules"
+    }
+  ]
+}

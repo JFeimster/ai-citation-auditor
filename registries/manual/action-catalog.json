@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-06-13",
+  "actions": [
+    {
+      "slug": "public-lookup",
+      "name": "Public Lookup",
+      "auth_type": "no-auth",
+      "openapi_path": "/actions/no-auth/example-public-lookup/openapi.json",
+      "status": "active",
+      "test_prompts_path": "/actions/no-auth/example-public-lookup/test-prompts.md",
+      "owner": "demo"
+    },
+    {
+      "slug": "api-key-example",
+      "name": "API Key Example",
+      "auth_type": "api-key",
+      "openapi_path": "/actions/api-key/example-api-key-action.openapi.json",
+      "status": "active",
+      "test_prompts_path": "/tools/chatgpt-openai/actions/action-testing-suite.md",
+      "owner": "demo"
+    },
+    {
+      "slug": "oauth-example",
+      "name": "OAuth Example",
+      "auth_type": "oauth",
+      "openapi_path": "/actions/oauth/example-oauth-action.openapi.json",
+      "status": "active",
+      "test_prompts_path": "/tools/chatgpt-openai/actions/action-testing-suite.md",
+      "owner": "demo"
+    }
+  ]
+}

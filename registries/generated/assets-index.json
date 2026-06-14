@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-06-13",
+  "assets": [
+    {
+      "path": "/assets/img/brand/logo.svg",
+      "type": "svg"
+    },
+    {
+      "path": "/assets/img/brand/logo-dark.svg",
+      "type": "svg"
+    },
+    {
+      "path": "/assets/img/brand/favicon.svg",
+      "type": "svg"
+    },
+    {
+      "path": "/assets/img/brand/favicon.png",
+      "type": "png"
+    },
+    {
+      "path": "/assets/img/ui/og-default.svg",
+      "type": "svg"
+    },
+    {
+      "path": "/assets/img/ui/og-default.png",
+      "type": "png"
+    }
+  ]
+}
